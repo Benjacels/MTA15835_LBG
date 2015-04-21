@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="Planets" size="2848.000000 4288.000000" />
-    <ImageTarget name="Lange_GoodOne_Compressed" size="2448.000000 3264.000000" />
-    <ImageTarget name="GoodOneCompressed" size="2448.000000 3264.000000" />
+    <ImageTarget name="Planets" size="5.000000 7.549481" />
+    <ImageTarget name="Lange" size="5.000000 7.547671" />
+    <ImageTarget name="BarrelKid" size="5.000000 7.547295" />
   </Tracking>
 </QCARConfig>

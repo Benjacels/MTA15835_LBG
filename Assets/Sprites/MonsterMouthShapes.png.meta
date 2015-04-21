@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 17f6ea4d26ea94697916c6e4949ecca2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MonsterMouthShapes_0
+    21300002: MonsterMouthShapes_1
+    21300004: MonsterMouthShapes_2
+    21300006: MonsterMouthShapes_3
+    21300008: MonsterMouthShapes_4
+    21300010: MonsterMouthShapes_5
+    21300012: MonsterMouthShapes_6
+    21300014: MonsterMouthShapes_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MonsterMouthShapes_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1683
+        width: 744
+        height: 353
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterMouthShapes_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1383
+        width: 735
+        height: 219
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterMouthShapes_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1073
+        width: 735
+        height: 273
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterMouthShapes_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 668
+        width: 502
+        height: 378
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterMouthShapes_4
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 551
+        width: 744
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterMouthShapes_5
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 448
+        width: 744
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterMouthShapes_6
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 358
+        width: 744
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterMouthShapes_7
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 33
+        width: 735
+        height: 303
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

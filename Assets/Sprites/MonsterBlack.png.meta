@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 46761477252e144e9b6383c3f01a7641
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MonsterBlack_0
+    21300002: MonsterBlack_3
+    21300004: MonsterBlack_4
+    21300006: MonsterBlack_5
+    21300008: MonsterBlack_8
+    21300010: MonsterBlack_9
+    21300012: MonsterBlack_10
+    21300014: MonsterBlack_11
+    21300016: MonsterBlack_12
+    21300018: MonsterBlack_13
+    21300020: MonsterBlack_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MonsterBlack_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1734
+        width: 443
+        height: 283
+      alignment: 9
+      pivot: {x: .924000025, y: .125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_3
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1894
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_4
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 1904
+        width: 118
+        height: 123
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_5
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 1734
+        width: 443
+        height: 280
+      alignment: 9
+      pivot: {x: .0775000006, y: .125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_8
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1766
+        width: 111
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_9
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 1772
+        width: 118
+        height: 105
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_10
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 948
+        width: 329
+        height: 705
+      alignment: 9
+      pivot: {x: .698000014, y: .861999989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_11
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 58
+        width: 1148
+        height: 1662
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_12
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 948
+        width: 330
+        height: 705
+      alignment: 9
+      pivot: {x: .307999998, y: .861999989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_13
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 21
+        width: 407
+        height: 895
+      alignment: 9
+      pivot: {x: .324000001, y: .852999985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterBlack_14
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 21
+        width: 408
+        height: 895
+      alignment: 9
+      pivot: {x: .67900002, y: .852999985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: BlackMonster
+  userData: 

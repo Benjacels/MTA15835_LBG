@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: bc02ce8d394a946448125c62c48edd20
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MonsterOfArt_0
+    21300002: MonsterOfArt_1
+    21300004: MonsterOfArt_2
+    21300006: MonsterOfArt_3
+    21300008: MonsterOfArt_4
+    21300010: MonsterOfArt_5
+    21300012: MonsterOfArt_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MonsterOfArt_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1734
+        width: 443
+        height: 282
+      alignment: 9
+      pivot: {x: .924000025, y: .125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterOfArt_1
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 1734
+        width: 443
+        height: 282
+      alignment: 9
+      pivot: {x: .0775000006, y: .125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterOfArt_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 948
+        width: 329
+        height: 705
+      alignment: 9
+      pivot: {x: .698000014, y: .861999989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterOfArt_3
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 58
+        width: 1148
+        height: 1662
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterOfArt_4
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 948
+        width: 330
+        height: 705
+      alignment: 9
+      pivot: {x: .307999998, y: .861999989}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterOfArt_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 21
+        width: 407
+        height: 895
+      alignment: 9
+      pivot: {x: .324000001, y: .852999985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterOfArt_6
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 21
+        width: 408
+        height: 895
+      alignment: 9
+      pivot: {x: .67900002, y: .852999985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
