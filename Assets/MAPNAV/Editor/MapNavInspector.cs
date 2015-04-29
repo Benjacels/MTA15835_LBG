@@ -7,16 +7,17 @@ public class MapNavInspector : Editor {
 	
 	bool showZoom =true;
 	bool showTouch =true;
-
+	/*
 	//MapQuest
+
 	private string[] mapTypes = new string[]{"map","sat","hyb"}; 
 	private string[] mapSizes = new string[]{"640x640","1280x1280","1920x1920","2560x2560"};
-	
-	//Google
-	/*
-	private string[] mapTypes = new string[]{"satellite","roadmap","hybrid","terrain"};
-	private string[] mapSizes = new string[]{"640x640"};
 	*/
+
+	//Google
+	private string[] mapTypes = new string[]{"satellite","roadmap","hybrid","terrain"};
+	private string[] mapSizes = new string[]{"1024x768"};
+
 
 	/*
 	//Bing
@@ -51,7 +52,13 @@ public class MapNavInspector : Editor {
 		mapDisabled,
 		freeCam,
 		dragToPan,
-		pinchToZoom;
+		pinchToZoom,
+		markerStartLat,
+		markerStartLon,
+		markerMiddleLat,
+		markerMiddleLon,
+		markerEndLat,
+		markerEndLon;
 		
 	private void OnEnable(){
 
@@ -61,6 +68,12 @@ public class MapNavInspector : Editor {
 		realSpeed = myLoc.FindProperty("realSpeed");
 		fixLat = myLoc.FindProperty("fixLat");
 		fixLon = myLoc.FindProperty("fixLon");
+		markerStartLat = myLoc.FindProperty("markerStartLat");
+		markerStartLon = myLoc.FindProperty("markerStartLon");
+		markerMiddleLat = myLoc.FindProperty("markerMiddleLat");
+		markerMiddleLon = myLoc.FindProperty("markerMiddleLon");
+		markerEndLat = myLoc.FindProperty("markerEndLat");
+		markerEndLon = myLoc.FindProperty("markerEndLon");
 		heading = myLoc.FindProperty("heading");
 		zoom = myLoc.FindProperty("zoom");
 		key = myLoc.FindProperty("key");
@@ -115,7 +128,44 @@ public class MapNavInspector : Editor {
 		EditorGUILayout.EndHorizontal();
 		EditorGUILayout.LabelField("Heading(Read Only)",(Mathf.Round(heading.floatValue)).ToString(),GUILayout.Width(250));
 		EditorGUILayout.Space();
-		
+
+		EditorGUILayout.LabelField("Lange Kunst(57.046350, 9.922898)",GUILayout.Width(250));
+		EditorGUILayout.LabelField("SanktHansGade (57.046788, 9.92833)",GUILayout.Width(250));
+		EditorGUILayout.LabelField("DanmarksGade (57.046788, 9.92833)",GUILayout.Width(250));
+
+		//Start marker 
+		EditorGUILayout.BeginHorizontal();
+		EditorGUILayout.PropertyField(markerStartLat,new GUIContent("Start Latitude (decimal)"),GUILayout.Width(250));
+		EditorGUILayout.LabelField(dmsLat.stringValue);
+		EditorGUILayout.EndHorizontal();
+		EditorGUILayout.BeginHorizontal();
+		EditorGUILayout.PropertyField(markerStartLon,new GUIContent("Start Longitude (decimal)"),GUILayout.Width(250));
+		EditorGUILayout.LabelField(dmsLon.stringValue);
+		EditorGUILayout.EndHorizontal();
+		EditorGUILayout.Space();
+
+		//Middle marker
+		EditorGUILayout.BeginHorizontal();
+		EditorGUILayout.PropertyField(markerMiddleLat,new GUIContent("Middle Latitude (decimal)"),GUILayout.Width(250));
+		EditorGUILayout.LabelField(dmsLat.stringValue);
+		EditorGUILayout.EndHorizontal();
+		EditorGUILayout.BeginHorizontal();
+		EditorGUILayout.PropertyField(markerMiddleLon,new GUIContent("Middle Longitude (decimal)"),GUILayout.Width(250));
+		EditorGUILayout.LabelField(dmsLon.stringValue);
+		EditorGUILayout.EndHorizontal();
+		EditorGUILayout.Space();
+
+		//End marker
+		EditorGUILayout.BeginHorizontal();
+		EditorGUILayout.PropertyField(markerEndLat,new GUIContent("End Latitude (decimal)"),GUILayout.Width(250));
+		EditorGUILayout.LabelField(dmsLat.stringValue);
+		EditorGUILayout.EndHorizontal();
+		EditorGUILayout.BeginHorizontal();
+		EditorGUILayout.PropertyField(markerEndLon,new GUIContent("End Longitude (decimal)"),GUILayout.Width(250));
+		EditorGUILayout.LabelField(dmsLon.stringValue);
+		EditorGUILayout.EndHorizontal();
+		EditorGUILayout.Space();
+
 		//Zoom Control 
 		showZoom = EditorGUILayout.Foldout(showZoom,"Zoom Levels");
 		EditorGUILayout.Space();

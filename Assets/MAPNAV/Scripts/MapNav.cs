@@ -3,6 +3,8 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 
 [AddComponentMenu("MAPNAV/MapNav")]
 
@@ -23,6 +25,55 @@ public class MapNav : MonoBehaviour
 	private float multiplier; 									//1 for a size=640x640 tile, 2 for size=1280*1280 tile, etc. Automatically set when selecting tile size
 	public string key = "Fmjtd%7Cluur29072d%2Cbg%3Do5-908s00";  //AppKey (API key) code obtained from your maps provider (MapQuest, Google, etc.). 
 																//Default MapQuest key for demo purposes only (with limitations). Please get your own key before you start yout project.															 
+
+	public float markerStartLat = 57.046350f;					//startMarker latitude position 
+	public float markerStartLon = 9.922898f;					//startMarker longitude position 
+	public float markerMiddleLat = 57.046788f;					//middleMarker latitude position 
+	public float markerMiddleLon = 9.92833f;					//middleMarker longitude position 
+	public float markerEndLat = 57.04520f;						//endMarker latitude position 
+	public float markerEndLon = 9.922497f;						//endMarker longitude position 
+
+	public List<string> routePointsThere = new List<string>(); 		//Where the values from the text file will be stored 
+	public List<string> routePointsBack = new List<string>(); 		//Where the values from the text file will be stored
+
+	public string pathThere;
+	public string pathBack;
+
+	//Route points there 
+	public string point1 = "57.04635,9.922898";
+	public string point1a = "57.046424,9.922914";
+	public string point2 = "57.046615,9.922038";
+	public string point3 = "57.046120,9.921604";
+	public string point4 = "57.045819,9.922283";
+	public string point5 = "57.045634,9.923061";
+	public string point6 = "57.045693,9.923101";
+	public string point7 = "57.045648,9.923938";
+	public string point8 = "57.045851,9.924069";
+	public string point9 = "57.045692,9.925035";
+	public string point10 = "57.046191,9.925448";
+	public string point11 = "57.045736,9.927765";
+	public string point12 = "57.046486,9.928275";
+	public string point13 = "57.046788,9.928326";
+
+	//Route points back  
+	public string point14 = "57.046925,9.928268";
+	public string point15 = "57.047065,9.928236";
+	public string point16 = "57.046481,9.929534";
+	public string point17 = "57.046382,9.929427";
+	public string point18 = "57.046621,9.925135";
+	public string point19 = "57.046290,9.925295";
+	public string point20 = "57.046449,9.924533";
+	public string point21 = "57.046225,9.924334";
+	public string point22 = "57.046231,9.923524";
+	public string point23 = "57.045146,9.922865";
+	public string point24 = "57.045131,9.922395";
+	public string point25 = "57.045207,9.922497";
+
+	public string[] routeThere;
+	public string[] routeBack;
+	public string pathStringThere;
+	public string pathStringBack;
+
 	public string[] maptype;									//Array including available map types
 	public int[] mapSize;										//Array including available map sizes(pixels)
 	public int index;											//maptype array index. 
@@ -111,6 +162,18 @@ public class MapNav : MonoBehaviour
 
 
 	void Awake(){
+		pathThere = Application.dataPath + "/Raw/routePointsThere.txt";
+		pathBack = Application.dataPath + "/Raw/routePointsBack.txt";
+
+		//routeThere = new string[]{point1, point2, point3, point4, point5, point6, point7, point8, 
+		//	point9, point10, point11, point12, point13};
+
+		//routeBack = new string[]{point13, point14, point15, point16, point17, point18, point19, 
+		//	point20, point21, point22, point23, point24, point25};
+
+		//pathStringThere = string.Join("%7C",routeThere);
+		//pathStringBack = string.Join("%7C",routeBack);
+	
 		//Set the map's tag to GameController
 		transform.tag = "GameController";
 		
@@ -125,12 +188,16 @@ public class MapNav : MonoBehaviour
 		maprender = renderer;
 		screenX = Screen.width;
 		screenY = Screen.height;	
-		
-		//Add possible values to maptype and mapsize arrays 
-		//ATENTTION: Modify if using a maps provider other than MapQuest Open Static Maps.
+		/*
+		//Add possible values to maptype and mapsize arrays (MAPQUEST)
 		maptype = new string[]{"map", "sat", "hyb"};
 		mapSize = new int[]{640, 1280, 1920, 2560}; //in pixels
-		
+		*/
+
+		//Add possible values to maptype and mapsize arrays (GOOGLE)
+		maptype = new string[]{"satellite","roadmap","hybrid","terrain"};
+		mapSize = new int[]{1024, 768}; //in pixels
+
 		//Set GUI "center" button label
 		if(triDView){
 			centre = "refresh";
@@ -457,19 +524,36 @@ public class MapNav : MonoBehaviour
 				}
 			}
 		}
-		
-		//MAPQUEST=========================================================================================
 
+		/*
+		//MAPQUEST ==============================================================================
 		//Build a valid MapQuest OpenMaps tile request for the current location
-		multiplier = mapSize[indexSize]/640.0f;  //Tile Size= 640*multiplier
-		//ATENTTION: If you want to implement maps from a different tiles provider, modify the following url accordingly to create a valid request
-        //Example code can be found at http://recursivearts.com/mapnav/faq.html
+		multiplier=mapSize[indexSize]/640.0f; //Tile Size= 640*multiplier
+		url="http://open.mapquestapi.com/staticmap/v4/getmap?key="+key+"&size="+mapSize[indexSize].ToString()+","
+			+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"¢er="+fixLat+","+fixLon+"&scalebar=false";
+		tempLat = fixLat;
+		tempLon = fixLon;
+		*/ 
 
-		url = "http://open.mapquestapi.com/staticmap/v4/getmap?key="+key+"&size="+mapSize[indexSize].ToString()+","+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"&center="+fixLat+","+fixLon+"&scalebar=false";
-		tempLat = fixLat; 
+		//GOOGLE ================================================================================
+		//Build a valid Google Maps tile request for the current location
+		multiplier=1;
+		ReadThere();
+		ReadBack();
+
+		pathStringThere = string.Join("%7C",routePointsThere.ToArray());	
+		pathStringBack = string.Join("%7C",routePointsBack.ToArray());	
+
+
+		url= "http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&scale=2&size=1024x768&format=jpg&maptype="+maptype[index]+"&markers=color:red%7Clabel:A%7C"+markerStartLat+","+markerStartLon+"&markers=color:blue%7Clabel:B%7C"+markerMiddleLat+","+markerMiddleLon+"&markers=color:yellow%7Clabel:C%7C"+markerEndLat+","+markerEndLon+"&path=color:0xff0000ff%7Cweight:2%7C"+pathStringThere+"&path=color:blue%7Cweight:2%7C"+pathStringBack+"&sensor=false&key="+key;
+	
+		tempLat = fixLat;
 		tempLon = fixLon;
 
+		//Debug.Log(url);
+
 		//=================================================================================================
+
 
 		//Proceed with download if a Wireless internet connection is available 
 		if(Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork){
@@ -558,6 +642,8 @@ public class MapNav : MonoBehaviour
 		}
 	}
 
+
+
 	//RE-SCALE =========================================================================================================
 	IEnumerator ReScale(){
 		while(mapping){
@@ -612,6 +698,7 @@ public class MapNav : MonoBehaviour
 	}
 
 	void Update(){
+		//Debug.Log (url);
 
 		//Rename GUI "center" button label
 		if(!triDView){
@@ -794,6 +881,35 @@ public class MapNav : MonoBehaviour
 			}	
 		}																																
 	}
+	
+	//READ TEXT FILE =========================================================================================================
+	public void ReadThere(){
+         string curlineThere; //current line
+         //System.IO.StreamReader fileThere = new System.IO.StreamReader("/Users/stephaniegitha/Desktop/MTA15835_LBG - GPSWORK/Assets/Scenes/routePointsThere.txt");
+         
+         System.IO.StreamReader fileThere = new System.IO.StreamReader(pathThere);
+
+         while((curlineThere = fileThere.ReadLine()) != null)
+         {
+             routePointsThere.Add(curlineThere);
+         }
+
+     }
+     
+     public void ReadBack(){
+         string curlineBack; //current line
+        
+
+         //System.IO.StreamReader fileBack = new System.IO.StreamReader("/Users/stephaniegitha/Desktop/MTA15835_LBG - GPSWORK/Assets/Scenes/routePointsBack.txt");
+         
+         System.IO.StreamReader fileBack = new System.IO.StreamReader(pathBack);
+
+         while((curlineBack = fileBack.ReadLine()) != null)
+         {
+             routePointsBack.Add(curlineBack);
+         }
+
+     }
 	
 	void CheckBorders(){
 		//Reached left tile border
