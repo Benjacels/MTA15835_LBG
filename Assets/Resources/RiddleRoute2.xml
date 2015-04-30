@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<riddles>	
+	<riddle>
+		<clue>Ude på den anden side kører det hele lidt hurtigere</clue>
+		<control>Hvilke køretøjer må køre gennem tunnelen?</control>
+		<answers>
+			<answer correct="false">Biler</answer>
+			<answer correct="true">Busser</answer>
+			<answer correct="false">Motorcykler</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Jeg kan ikke lide at læse bøger, lad os gå den anden vej</clue>
+		<control>Hvilken bygning kan man se i nærheden?</control>
+		<answers>
+			<answer correct="true">Hovedbiblioteket</answer>
+			<answer correct="false">Nordkraft</answer>
+			<answer correct="false">Vor frue kirke</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Jeg er grå, fuld af strøm og folk hænger plakater på mig</clue>
+		<control>Hvad er objektet?</control>
+		<answers>
+			<answer correct="true">Strømboks</answer>
+			<answer correct="false">Solceller</answer>
+			<answer correct="false">Stikkontakt</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Trafik er ikke lige mig, men så er det godt det ikke er tilladt rundt om hjørnet!</clue>
+		<control>Hvad hedder gaden?</control>
+		<answers>
+			<answer correct="false">Nyhavnsgade</answer>
+			<answer correct="true">Nørregade</answer>
+			<answer correct="false">Jyllandsgade</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Her genbruges alt for en god mission</clue>
+		<control>Hvad hedder stedet?</control>
+		<answers>
+			<answer correct="false">Kræftens bekæmpelse</answer>
+			<answer correct="false">Røde kors</answer>
+			<answer correct="true">Mission Afrika Genbrug</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Her kan der handles ind både sommer, forår, vinder og efterår</clue>
+		<control>Hvad hedder stedet?</control>
+		<answers>
+			<answer correct="false">Fandango</answer>
+			<answer correct="true">De 4 årstider</answer>
+			<answer correct="false">Only</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Jeg føler mig så kreativ når jeg bruger tid på min hobby</clue>
+		<control>Hvad kan der købes på stedet?</control>
+		<answers>
+			<answer correct="true">Helikoptere</answer>
+			<answer correct="false">Friskbagt brød</answer>
+			<answer correct="false">Tøj og sko</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Hvis nogen skulle giftes, skulle vi tage et smut forbi her</clue>
+		<control>Hvad kan der købes på stedet?</control>
+		<answers>
+			<answer correct="false">Lagkager</answer>
+			<answer correct="true">Brudekjoler</answer>
+			<answer correct="false">Hvidevarer</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Stedet indebærer der bliver solgt noget der er solid, men du kan tage det på</clue>
+		<control>Hvad sælges der på stedet?</control>
+		<answers>
+			<answer correct="false">Elektronik</answer>
+			<answer correct="false">Smykker</answer>
+			<answer correct="true">Tøj</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Lad os følge vejen hvor man kan få en GØL pølse med</clue>
+		<control>Hvad koster en rød pølse?</control>
+		<answers>
+			<answer correct="true">18</answer>
+			<answer correct="false">19</answer>
+			<answer correct="false">20</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Her lugter lidt af sprit, mon der bliver destilliseret her rundt omkring?</clue>
+		<control>Hvad nummer har bygningen der destilliserer?</control>
+		<answers>
+			<answer correct="false">10</answer>
+			<answer correct="true">12</answer>
+			<answer correct="false">14</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Det er højt, og giver klokkeklang på forskellige tidspunkter af døgnet</clue>
+		<control>Hvem holder til i bygningen?</control>
+		<answers>
+			<answer correct="true">En præst</answer>
+			<answer correct="false">En politimand</answer>
+			<answer correct="false">En læge</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Den kan blive åbnet og give adgang til guds hjem </clue>
+		<control>Hvad farve har den?</control>
+		<answers>
+			<answer correct="false">Grøn</answer>
+			<answer correct="false">Blå</answer>
+			<answer correct="true">Brun</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Jeg ser mennesker så hårde som sten</clue>
+		<control>I hvilket år havde Georg Severin Kayerröd’s virken?</control>
+		<answers>
+			<answer correct="true">1822</answer>
+			<answer correct="false">1844</answer>
+			<answer correct="false">1866</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Vi bør følge vejen ensrettet</clue>
+		<control>Hvad nummer har det gule hus?</control>
+		<answers>
+			<answer correct="false">26</answer>
+			<answer correct="true">28</answer>
+			<answer correct="false">30</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Hvis du er i kørestol, kan din bil finde hvile her</clue>
+		<control>Hvor mange biler er der plads til på pladsen?</control>
+		<answers>
+			<answer correct="true">1</answer>
+			<answer correct="false">2</answer>
+			<answer correct="false">3</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Jeg er blå og kan åbnes, men dette kræver at du går nogle trin op</clue>
+		<control>Hvad nummer står ovenover?</control>
+		<answers>
+			<answer correct="false">8</answer>
+			<answer correct="false">10</answer>
+			<answer correct="true">12</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Lad os følge den vej der virker mest rationel!</clue>
+		<control>Hvilken forretning ligger i nærheden?</control>
+		<answers>
+			<answer correct="true">Rationel</answer>
+			<answer correct="false">Netto</answer>
+			<answer correct="false">Poul M</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Hvor man kan få kød og ben, ligger planeter og stjerner i skjul</clue>
+		<control>Hvem har malet det?</control>
+		<answers>
+			<answer correct="true">Don John</answer>
+			<answer correct="false">Jonas Pihl</answer>
+			<answer correct="false">Alexis Diaz</answer>
+		</answers>
+	</riddle>
+</riddles>

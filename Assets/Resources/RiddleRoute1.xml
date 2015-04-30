@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<riddles>
+	<riddle>
+		<clue>Jeg er lyserød og beboelig</clue>
+		<control>Hvem boede her i 1700-tallet? </control>
+		<answers>
+			<answer correct="true"> Mortens Kro </answer>
+			<answer correct="false"> Jensens Bøfhus </answer>
+			<answer correct="false"> Bones </answer>
+		</answers>
+	</riddle>	
+	<riddle>
+		<clue>Jeg er vild med nødder og tiltrukket af lys</clue>
+		<control>Hvilken farve er lyset? </control>
+		<answers>
+			<answer correct="true"> Gul </answer>
+			<answer correct="false"> Grøn </answer>
+			<answer correct="false"> Hvid </answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Vi er der for enden, overfor hinanden og har samme farve</clue>
+		<control>Hvilken farve har de? </control>
+		<answers>
+			<answer correct="false"> Rød </answer>
+			<answer correct="true"> Gul </answer>
+			<answer correct="false"> Grøn </answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Jeg er høj og du kan se igennem mig</clue>
+		<control>Hvad står der på skiltet under det du kan se igennem?</control>
+		<answers>
+			<answer correct="false"> Oldemors børnebørn </answer>
+			<answer correct="false"> Chao Chao </answer>
+			<answer correct="true"> Mølleå arkaden </answer>
+		</answers>
+	</riddle>	
+	<riddle>
+		<clue>Jeg ser lys for enden af tunnelsen</clue>
+		<control>Hvilken restaurant ligger i tunnelen?</control>
+		<answers>
+			<answer correct="true">Mortens kro</answer>
+			<answer correct="false">Jensen's bøfhus</answer>
+			<answer correct="false">Bones</answer>
+		</answers>
+	</riddle>	
+	<riddle>
+		<clue>En sti af fliser vil føre dig, hvis du vælger at gå på nedtrapning</clue>
+		<control>Hvor mange niveauer skal du ned?</control>
+		<answers>
+			<answer correct="true">3</answer>
+			<answer correct="false">4</answer>
+			<answer correct="false">5</answer>
+		</answers>
+	</riddle>	
+	<riddle>
+		<clue>Vælg vejen som er dækket af skygge på alle døgnets tidspunkter</clue>
+		<control>Hvilken nummer står angivet for enden?</control>
+		<answers>
+			<answer correct="false">20a</answer>
+			<answer correct="false">30a</answer>
+			<answer correct="true">40a</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Venstre eller højre.. hmm lad os mødes på halvvejen og få en ny frisure</clue>
+		<control>Hvad hedder frisøren?</control>
+		<answers>
+			<answer correct="false">Poul M</answer>
+			<answer correct="true">Klippehuset</answer>
+			<answer correct="false">Salon Sisters</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Jeg kan ikke lide skotske hund, lad os gå den anden vej</clue>
+		<control>Hvilken dagligdagsbutik ligger i nærheden?</control>
+		<answers>
+			<answer correct="true">Netto</answer>
+			<answer correct="false">Super Brugsen</answer>
+			<answer correct="false">Fakta</answer>
+		</answers>
+	</riddle>	
+	<riddle>
+		<clue>En gade hvor klokker bliver støbt er der hvor vi skal ind</clue>
+		<control>Hvad hedder gaden?</control>
+		<answers>
+			<answer correct="false">Niels Ebbesen gade</answer>
+			<answer correct="true">Klokkerstøbegade</answer>
+			<answer correct="false">Pederstrede</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Når enden er nær, vælger vi den mørke side</clue>
+		<control>Hvad nummer har huset i den mørke side?</control>
+		<answers>
+			<answer correct="false">9</answer>
+			<answer correct="true">11</answer>
+			<answer correct="false">13</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Det er stort of gult, og leder forbi et hjørne</clue>
+		<control>Hvornår er klokkerstøbergaarden fra?</control>
+		<answers>
+			<answer correct="false">Anno 1862</answer>
+			<answer correct="false">Anno 1872</answer>
+			<answer correct="true">Anno 1882</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Hvis du er i kørestol, kan din bil finde hvile her</clue>
+		<control>Hvor mange båse har pladsen?</control>
+		<answers>
+			<answer correct="true">1</answer>
+			<answer correct="false">2</answer>
+			<answer correct="false">3</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Jeg er rød og sprøjter med vand i nødstilfælde</clue>
+		<control>Hvilke tal står der over den grønne og gule dør?</control>
+		<answers>
+			<answer correct="false">1915</answer>
+			<answer correct="true">1925</answer>
+			<answer correct="false">1945</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Vi er seks, står op af jorden og er ens</clue>
+		<control>Hvad farve har husene der ligger til venstre for?</control>
+		<answers>
+			<answer correct="false">blå og grøn</answer>
+			<answer correct="true">lyserød og gul</answer>
+			<answer correct="false">hvid og grøn</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>En båd med gøglere i vil finde, så længe vejen følges </clue>
+		<control>En båd med gøglere i vil finde, så længe vejen følges </control>
+		<answers>
+			<answer correct="false">Caféministeriet</answer>
+			<answer correct="false">Kims Kitchen</answer>
+			<answer correct="true">Gøglerbåden</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Mon der ligger en grav i øst? Den gade må vi følge</clue>
+		<control>Hvad hedder gaden?</control>
+		<answers>
+			<answer correct="false">Søndergade</answer>
+			<answer correct="true">Østergravensgade</answer>
+			<answer correct="false">Kayerødsgade</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Jeg var ikke så vild med min tidligere frisure, lad os få en ny!</clue>
+		<control>Hvad hedder frisøren?</control>
+		<answers>
+			<answer correct="true">Hair By Harritz</answer>
+			<answer correct="false">Galleri Hair</answer>
+			<answer correct="false">Art of Hair</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>Vi skal i gaden hvor der brændes hekse af</clue>
+		<control>Hvad hedder gaden?</control>
+		<answers>
+			<answer correct="false">Østerbro</answer>
+			<answer correct="false">Danmarksgade</answer>
+			<answer correct="true">Sankt Hans Gade</answer>
+		</answers>
+	</riddle>
+	<riddle>
+		<clue>I skjul en mand og dreng vil føre jer på vej</clue>
+		<control>Hvad sidder drengen på?</control>
+		<answers>
+			<answer correct="false">En stol</answer>
+			<answer correct="false">En sofa</answer>
+			<answer correct="true">En tønde</answer>
+		</answers>
+	</riddle>
+</riddles>

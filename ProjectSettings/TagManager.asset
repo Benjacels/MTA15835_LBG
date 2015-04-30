@@ -11,6 +11,9 @@ TagManager:
   - Mouth
   - SpeechBubble
   - Shadow
+  - Button_Answer
+  - Button_NextControl
+  - Button_NextRiddle
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

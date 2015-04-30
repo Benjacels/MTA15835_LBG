@@ -160,9 +160,11 @@ public class AgentBehavior : MonoBehaviour {
 	private bool triggerOnce = true;
 
 	// MAIN FSM
-	IEnumerator Start () {
-
-		while(true)
+	IEnumerator Start ()
+	{
+        GameManager.Instance.CurrentState = GameManager.State.GameStart;
+       
+        while(true)
 		{
 			switch(GameManager.Instance.CurrentState)
 			{
@@ -179,7 +181,7 @@ public class AgentBehavior : MonoBehaviour {
 
 			case GameManager.State.GameStart:
 
-				// First time in the state
+                // First time in the state
 				if(GameManager.Instance.CurrentState != GameManager.Instance.PrevState)
 				{
 					AgentManager.Instance.CurrentState = AgentManager.State.None;
@@ -188,8 +190,11 @@ public class AgentBehavior : MonoBehaviour {
 //					agentRigidBody.gravityScale = 1;
 					
 					// Initial State
-					if(GameManager.Instance.Relational)
-						AgentManager.Instance.CurrentState = AgentManager.State.Greating;
+				    if (GameManager.Instance.Relational)
+				    {
+                        AgentManager.Instance.CurrentState = AgentManager.State.Greating;
+                        
+				    }
 					else
 						AgentManager.Instance.CurrentState = AgentManager.State.Instructing;
 

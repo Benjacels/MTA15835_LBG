@@ -41,7 +41,7 @@ public class SwapSprites : MonoBehaviour {
 			monsterArtSpriteRenderers.Add(monsterObj2[i].GetComponent<SpriteRenderer>());
 		}
 
-		InitializeBlackSprites();
+		InitializeArtSprites();
 	}
 
 	public void SwapSprite()
