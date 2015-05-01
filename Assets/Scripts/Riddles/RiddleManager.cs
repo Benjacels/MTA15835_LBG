@@ -21,6 +21,8 @@ public class RiddleManager : MonoBehaviour {
 
     private int _riddleCounter = 0;
 
+    List<string> _currentOptions = new List<string>();
+
     // Use this for initialization
     void Start()
     {
@@ -41,7 +43,6 @@ public class RiddleManager : MonoBehaviour {
            _answers.Add(tran.GetComponent<Button>());
            tran.GetComponent<Button>().active = false;
         }
-
         _nextRiddle.active = false;
         _controlText.active = false;
         _nextControl.active = true;
@@ -61,7 +62,16 @@ public class RiddleManager : MonoBehaviour {
         foreach (Button but in _answers)
             but.active = true;
 
-        _controlText.text = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[1].InnerXml;
+        var riddle = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter);
+        
+        _controlText.text = riddle.ChildNodes[1].InnerXml;
+
+        
+        for (int i = 0; i < 3; i++)
+        {
+            _currentOptions.Add(riddle.ChildNodes[2].ChildNodes[i].Attributes[0].Value);
+            _answers[i].transform.FindChild("Text").GetComponent<UnityEngine.UI.Text>().text = riddle.ChildNodes[2].ChildNodes[i].InnerXml;
+        }
     }
     public void Answer(int answer)
     {
@@ -72,19 +82,15 @@ public class RiddleManager : MonoBehaviour {
 
         _nextRiddle.active = true;
 
-        List<string> options = new List<string>();
-
         for (int i = 0; i < 3; i++)
-        {
-            options.Add(_xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[2].ChildNodes[i].Attributes[0].Value);
-            if(options[i] == "true" && i == answer)
+            if(_currentOptions[i] == "true" && i == answer)
                 print("YES!");
-        }
     }
 
     public void NextRiddle()
     {
         _riddleCounter++;
+        _currentOptions.RemoveRange(0, 3);
 
         _nextRiddle.active = false;
         _nextControl.active = true;
