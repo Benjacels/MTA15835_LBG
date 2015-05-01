@@ -3,11 +3,11 @@
 <riddles>
 	<riddle>
 		<clue>Jeg er lyserød og beboelig</clue>
-		<control>Hvem boede her i 1700-tallet? </control>
+		<control>Hvem boede her i 1700-tallet? </control>		
 		<answers>
-			<answer correct="true"> Mortens Kro </answer>
-			<answer correct="false"> Jensens Bøfhus </answer>
-			<answer correct="false"> Bones </answer>
+			<answer correct="false">Johannes</answer>
+			<answer correct="false">Esther</answer>
+			<answer correct="true">Johane</answer>
 		</answers>
 	</riddle>	
 	<riddle>
