@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 3
   AndroidProfiler: 0
   defaultScreenOrientation: 4
-  targetDevice: 2
+  targetDevice: 1
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
@@ -247,12 +247,6 @@ PlayerSettings:
   tizenGPSPermissions: 0
   tizenMicrophonePermissions: 0
   stvDeviceAddress: 
-  wp8UnprocessedPlugins: []
-  intPropertyNames:
-  - iOS::Architecture
-  - iOS::ScriptingBackend
-  iOS::Architecture: 2
-  iOS::ScriptingBackend: 0
   firstStreamedLevelWithResources: 0
   unityRebuildLibraryVersion: 9
   unityForwardCompatibleVersion: 39
