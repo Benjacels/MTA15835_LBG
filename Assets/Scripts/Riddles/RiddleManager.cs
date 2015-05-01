@@ -52,6 +52,7 @@ public class RiddleManager : MonoBehaviour {
         _nextRiddle.active = false;
         _controlText.active = false;
         _nextControl.active = true;
+        _answerImage.active = false;
     }
 
     // Update is called once per frame
@@ -95,7 +96,7 @@ public class RiddleManager : MonoBehaviour {
         _answerImage.active = true;
 
         //TODO: Use a higher riddleCounter for riddles on route 2
-        _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+_riddleCounter.ToString());
+        _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+1).ToString());
     }
 
     public void NextRiddle()
