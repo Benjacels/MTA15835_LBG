@@ -14,6 +14,7 @@ TagManager:
   - Button_Answer
   - Button_NextControl
   - Button_NextRiddle
+  - MainManager
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

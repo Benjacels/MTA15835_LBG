@@ -30,7 +30,11 @@ public class RiddleManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        _xmlDoc = loadLocalXml("RiddleRoute1");
+        if(MainManager.instance.riddlesFirst)
+            _xmlDoc = loadLocalXml("RiddleRoute1");
+        else
+            _xmlDoc = loadLocalXml("RiddleRoute2");
+
         _canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
         _riddleText = _canvas.transform.FindChild("RiddleText").GetComponent<UnityEngine.UI.Text>();
@@ -72,7 +76,6 @@ public class RiddleManager : MonoBehaviour {
         var riddle = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter);
         
         _controlText.text = riddle.ChildNodes[1].InnerXml;
-
         
         for (int i = 0; i < 3; i++)
         {
@@ -95,8 +98,10 @@ public class RiddleManager : MonoBehaviour {
 
         _answerImage.active = true;
 
-        //TODO: Use a higher riddleCounter for riddles on route 2
-        _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+1).ToString());
+        if(MainManager.instance.riddlesFirst)
+            _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+1).ToString());
+        else
+            _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+21).ToString());
     }
 
     public void NextRiddle()

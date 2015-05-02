@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class AlienManager : MonoBehaviour {
     /*
@@ -14,11 +15,12 @@ public class AlienManager : MonoBehaviour {
     public string[] mouthAnimations;
     public Sprite[] speechSprites;
 
-    private SpriteRenderer _speechSprite;
+    private Image _speechSprite;
     private Animator _bodyAnimator;
     private Animator _mouthAnimator;
 
-    private string prevState;
+    private string prevBodyState;
+    private string prevMouthState;
 
     void OnEnable()
     {
@@ -35,16 +37,16 @@ public class AlienManager : MonoBehaviour {
     // Use this for initialization
 	void Start ()
 	{
-	    if (transform.FindChild("SpeechBubble").GetComponent<SpriteRenderer>() != null)
-            _speechSprite = transform.FindChild("SpeechBubble").GetComponent<SpriteRenderer>();
+	    if (MainManager.instance.currentCanvas.transform.FindChild("SpeechBubble").GetComponent<Image>() != null)
+            _speechSprite = MainManager.instance.currentCanvas.transform.FindChild("SpeechBubble").GetComponent<Image>();
 	    else
 	        print("YOU NEED TO ADD A SPEECHBUBBLE");
 
         _bodyAnimator = GameObject.FindGameObjectWithTag("MonsterContainer").GetComponent<Animator>();
         _mouthAnimator = GameObject.FindGameObjectWithTag("Mouth").GetComponent<Animator>();
 
-        _bodyAnimator.SetBool(Animator.StringToHash(bodyAnimations[0]), true);
-	    prevState = bodyAnimations[0];
+	    prevBodyState = "Idle";
+	    prevMouthState = "Idle";
 	}
 	
 	// Update is called once per frame
@@ -54,12 +56,24 @@ public class AlienManager : MonoBehaviour {
 
     void OnDialogClick(int clickCount)
     {
+        //TODO: Fade this
+        if (_speechSprite.color.a < 255)
+            _speechSprite.color = new Color(_speechSprite.color.r,_speechSprite.color.g,_speechSprite.color.b, 255);
+
         _speechSprite.sprite = speechSprites[clickCount];
 
-        _bodyAnimator.SetBool(Animator.StringToHash(prevState), false);
+        _bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
         _bodyAnimator.SetBool(Animator.StringToHash(bodyAnimations[clickCount]), true);
-        prevState = bodyAnimations[clickCount];
-        //_mouthAnimator.SetBool(Animator.StringToHash(mouthAnimations[clickCount]), true);
+        prevBodyState = bodyAnimations[clickCount];
+
+        _mouthAnimator.SetBool(Animator.StringToHash(prevMouthState), false);
+        _mouthAnimator.SetBool(Animator.StringToHash(mouthAnimations[clickCount]), true);
+        prevMouthState = mouthAnimations[clickCount];
+    }
+
+    public void OnTap()
+    {
+        //Add speech bubbles and animations
     }
 }
 
