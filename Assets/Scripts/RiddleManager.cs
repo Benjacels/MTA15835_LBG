@@ -20,6 +20,7 @@ public class RiddleManager : MonoBehaviour {
     private Button _nextControl;
 
     private Image _answerImage;
+    private GameObject _goalScreen;
 
     private Sprite[] _answerPics = new Sprite[40];
 
@@ -45,7 +46,8 @@ public class RiddleManager : MonoBehaviour {
 
         _riddleText.text = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[0].InnerXml;
 
-        _answerImage = _canvas.transform.FindChild("AnswerPic").GetComponent<Image>();
+        _answerImage = GameObject.Find("AnswerPic").GetComponent<Image>();
+        _goalScreen = _canvas.transform.FindChild("GoalScreen").gameObject;
 
         foreach (Transform tran in _canvas.transform)
         if (tran.CompareTag("Button_Answer"))
@@ -90,7 +92,10 @@ public class RiddleManager : MonoBehaviour {
         foreach (Button but in _answers)
             but.active = false;
 
-        _nextRiddle.active = true;
+        if (_xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter + 1) != null)
+            _nextRiddle.active = true;
+        else
+            _goalScreen.active = true;
 
         for (int i = 0; i < 3; i++)
             if(_currentOptions[i] == "true" && i == answer)
@@ -98,7 +103,7 @@ public class RiddleManager : MonoBehaviour {
 
         _answerImage.active = true;
 
-        if(MainManager.instance.riddlesFirst)
+        if (MainManager.instance.riddlesFirst)
             _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+1).ToString());
         else
             _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+21).ToString());

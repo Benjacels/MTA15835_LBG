@@ -2612,8 +2612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Points: 0
-  hasSeenBear: 0
   riddlesFirst: 0
+  hasSeenBear: 0
   _fromBeginning: 0
   currentCanvas: {fileID: 0}
 --- !u!1 &1425247597
