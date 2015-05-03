@@ -556,7 +556,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1429351351}
+      - m_Target: {fileID: 904817086}
         m_MethodName: OnAskCharacter
         m_Mode: 2
         m_Arguments:
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1429351351}
+      - m_Target: {fileID: 904817086}
         m_MethodName: OnChoiceButtonClick
         m_Mode: 5
         m_Arguments:
@@ -942,7 +942,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1429351351}
+      - m_Target: {fileID: 904817086}
         m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
@@ -1370,6 +1370,45 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 46761477252e144e9b6383c3f01a7641, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &904817084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 904817085}
+  - 114: {fileID: 904817086}
+  m_Layer: 0
+  m_Name: ButtonHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904817085
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904817084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 243.5, y: 183.090424, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+--- !u!114 &904817086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904817084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b162c8e166796c45ba6974991bb7db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &970743910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,7 +2115,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1429351351}
+      - m_Target: {fileID: 904817086}
         m_MethodName: OnChoiceButtonClick
         m_Mode: 5
         m_Arguments:
@@ -2226,9 +2265,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Points: 0
-  currentCanvas: {fileID: 1066619699}
+  hasSeenBear: 0
   riddlesFirst: 0
   _fromBeginning: 0
+  currentCanvas: {fileID: 1066619699}
 --- !u!1 &1432620050
 GameObject:
   m_ObjectHideFlags: 0

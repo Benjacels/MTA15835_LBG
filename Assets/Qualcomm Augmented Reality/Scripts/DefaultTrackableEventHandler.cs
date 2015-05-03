@@ -65,9 +65,10 @@ namespace Vuforia
 
         #region PRIVATE_METHODS
 
-        //TODO: Use singletons and delegates to communicate to ARMANAGER
         private void OnTrackingFound()
         {
+            ARManager.instance.OnTrackingFound();
+            
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
 
@@ -89,6 +90,8 @@ namespace Vuforia
 
         private void OnTrackingLost()
         {
+            ARManager.instance.OnTrackingLost();
+
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
 

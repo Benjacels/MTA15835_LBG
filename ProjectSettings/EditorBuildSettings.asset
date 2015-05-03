@@ -9,6 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/3 - AR.unity
   - enabled: 0
     path: Assets/Scenes/5a - Riddles.unity
+  - enabled: 0
+    path: Assets/Scenes/3 - AR.unity
   - enabled: 1
     path: Assets/Scenes/1 - Logging.unity
   - enabled: 1
@@ -24,4 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/6 - KidDialogue.unity
   - enabled: 1
+    path: Assets/Scenes/7 - End.unity
+  - enabled: 0
     path: Assets/Scenes/3 - AR.unity

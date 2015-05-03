@@ -10,7 +10,11 @@ public class MainManager : MonoBehaviour {
         get
         {
             if (_instance == null)
+            {
                 _instance = GameObject.FindObjectOfType<MainManager>();
+                DontDestroyOnLoad(_instance.gameObject);
+            }
+                
             return _instance;
         }
     }
@@ -30,11 +34,17 @@ public class MainManager : MonoBehaviour {
     public delegate void Ask();
     public event Ask OnAskEvent;
 
-    [HideInInspector]
     public float Points;
+
+    public bool riddlesFirst;
 
     [HideInInspector]
     public bool hasSeenBear = false;
+
+    [HideInInspector]
+    public bool _fromBeginning;
+
+    private List<Choices> _choices = new List<Choices>();
 
     private int _dialogueClicks = 4;
     private int _dialogueClickCount = 0;
@@ -42,19 +52,11 @@ public class MainManager : MonoBehaviour {
 
     public Canvas currentCanvas;
 
-    [HideInInspector]
-    public bool riddlesFirst;
-
-    [HideInInspector]
-    public bool _fromBeginning;
-
     private bool _finalScene;
 
     private Button _choiceFriends;
     private Button _choiceFuel;
     private Button _wayFinder;
-
-    private List<Choices> _choices = new List<Choices>();
     
     public enum State
     {
@@ -96,32 +98,38 @@ public class MainManager : MonoBehaviour {
         
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        ArrangeScenes();
+        if (_instance == null)
+        {
+            //If I am the first instance, make me the Singleton
+            _instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            //If a Singleton already exists and you find
+            //another reference in scene, destroy it!
+            if (this != _instance)
+                Destroy(this.gameObject);
+        }
 
         if (GameObject.Find("Canvas") != null)
             currentCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+
+        ArrangeScenes();
+    }
+
+    void OnLevelWasLoaded(int level)
+    {
+        if (GameObject.Find("Canvas") != null)
+            currentCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+
+        ArrangeScenes();
     }
 
     // Use this for initialization
     void Start()
     {
         
-    }
-
-    void OnLevelWasLoaded()
-    {
-        ArrangeScenes();
-
-        if (GameObject.Find("Canvas") != null)
-            currentCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-
-        var mainManagers = GameObject.FindObjectsOfType<MainManager>();
-        foreach (MainManager mm in mainManagers)
-        {
-            if (!mm._fromBeginning)
-                Destroy(mm.gameObject);
-        }
     }
 
     // Update is called once per frame
@@ -187,11 +195,13 @@ public class MainManager : MonoBehaviour {
                 _nextScene = 2;
 
                 //TODO: Put this into case 0
-                _fromBeginning = true;
                 break;
             case 2 :
                 currentState = State.AR;
-                _nextScene = 3;
+                if (!hasSeenBear)
+                    _nextScene = 3;
+                else
+                    _nextScene = 6;
                 break;
             case 3 :
                 currentState = State.BearDialogue;
@@ -251,9 +261,12 @@ public class MainManager : MonoBehaviour {
 
     public void LoadNextScene()
     {
-        if(_finalScene)
+        if (_finalScene)
             Application.Quit();
         else
+        {
             Application.LoadLevel(_nextScene);
+        }
+            
     }
 }
