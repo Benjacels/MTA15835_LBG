@@ -177,8 +177,8 @@ public class MainManager : MonoBehaviour {
         
         buttonClicked.active = false;
 
-        _choiceFuel.active = true;
-        _choiceFriends.active = true;
+		_choiceFuel.active = true;
+		_choiceFriends.active = true;
     }
 
     void ArrangeScenes()
