@@ -1251,8 +1251,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -2, y: -290}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 32, y: -327.5}
+  m_SizeDelta: {x: 716, y: 89}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &685500835
 MonoBehaviour:
@@ -1269,11 +1269,11 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2fde499cc283e44ff91b631511ec74a3, type: 3}
-    m_FontSize: 22
+    m_FontSize: 41
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 93
-    m_MaxSize: 18
+    m_MinSize: 53
+    m_MaxSize: 75
     m_Alignment: 1
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -1345,7 +1345,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.599990845, y: -.499969482}
+  m_AnchoredPosition: {x: -343, y: -329}
   m_SizeDelta: {x: 78, y: 79}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &789688546
@@ -2349,8 +2349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Points: 0
-  hasSeenBear: 0
   riddlesFirst: 0
+  hasSeenBear: 0
   _fromBeginning: 0
   currentCanvas: {fileID: 1603600419}
 --- !u!1 &1936104532
@@ -2384,7 +2384,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.599993885, y: -.499993294}
+  m_AnchoredPosition: {x: -343, y: -329}
   m_SizeDelta: {x: 78, y: 79}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1936104534

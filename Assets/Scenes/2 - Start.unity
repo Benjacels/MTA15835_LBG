@@ -308,14 +308,14 @@ RectTransform:
   m_GameObject: {fileID: 261749648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .0618937612, y: .0618937612, z: .0618937612}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1027331221}
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 194, y: -703.799988}
-  m_SizeDelta: {x: 2694, y: 1850}
+  m_AnchoredPosition: {x: 295, y: -515}
+  m_SizeDelta: {x: 377, y: 259}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &261749650
 MonoBehaviour:
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -761,7 +761,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &359996509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1733,7 +1733,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 46761477252e144e9b6383c3f01a7641, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1017984349
@@ -1858,7 +1858,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
 --- !u!224 &1027331221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1875,6 +1875,7 @@ RectTransform:
   - {fileID: 1537722958}
   - {fileID: 2015237575}
   - {fileID: 261749649}
+  - {fileID: 2024277822}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
@@ -2111,8 +2112,8 @@ Transform:
   m_PrefabInternal: {fileID: 1763002907}
   m_GameObject: {fileID: 1158734471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 276, y: -183, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 0}
+  m_LocalPosition: {x: 287, y: -113, z: 0}
+  m_LocalScale: {x: 31.0802784, y: 31.0802784, z: 0}
   m_Children:
   - {fileID: 1957850148}
   - {fileID: 1223903757}
@@ -2141,10 +2142,10 @@ MonoBehaviour:
   - Idle
   - IdleHappy
   speechSprites:
-  - {fileID: 21300000, guid: 53e6b61b03f2e6c48ad48d92c450305b, type: 3}
-  - {fileID: 21300000, guid: 2d6085311aac66342bf564bfb1fb2f5d, type: 3}
-  - {fileID: 21300000, guid: 8cb541670ca14ae40b452633c3dcd097, type: 3}
-  - {fileID: 21300000, guid: 3be63d2fc4706e742af4e45bbfc2ab99, type: 3}
+  - {fileID: 21300000, guid: b5d9bd746d6b24bd5b163e394870e67c, type: 3}
+  - {fileID: 21300000, guid: 88ef6122d56de4d2c9fc2370a744e31c, type: 3}
+  - {fileID: 21300000, guid: c46cd66e2739c46ffae3e2af3a634c87, type: 3}
+  - {fileID: 21300000, guid: f95d584a36fb749e3a28e297488da3c9, type: 3}
 --- !u!1 &1168754875
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,7 +3033,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -242, y: 66}
+  m_AnchoredPosition: {x: -225, y: 73}
   m_SizeDelta: {x: 164, y: 146}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1537722959
@@ -3686,11 +3687,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 276
+      value: 287
       objectReference: {fileID: 0}
     - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -183
+      value: -113
       objectReference: {fileID: 0}
     - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3716,6 +3717,38 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 21200726, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 31.0802784
+      objectReference: {fileID: 0}
+    - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 31.0802784
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: speechSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: b5d9bd746d6b24bd5b163e394870e67c,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: speechSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 88ef6122d56de4d2c9fc2370a744e31c,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: speechSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c46cd66e2739c46ffae3e2af3a634c87,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: speechSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: f95d584a36fb749e3a28e297488da3c9,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
   m_RootGameObject: {fileID: 1158734471}
@@ -4024,7 +4057,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -28, y: -26}
+  m_AnchoredPosition: {x: -6, y: -23}
   m_SizeDelta: {x: 274, y: 274}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1994715135
@@ -4211,7 +4244,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 21300000, guid: 91c984a391086d9438eb54c688c514cb, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4223,6 +4256,72 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2015237574}
+--- !u!1 &2024277821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 2024277822}
+  - 222: {fileID: 2024277824}
+  - 114: {fileID: 2024277823}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2024277822
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2024277821}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1027331221}
+  m_RootOrder: 6
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 136, y: 343}
+  m_SizeDelta: {x: 920, y: 172}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &2024277823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2024277821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .87843138, g: .862745106, b: .850980401, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 16d5cbae386f14eaaa2b53413854429a, type: 3}
+    m_FontSize: 135
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Faret Vild P\xE5 Jorden"
+--- !u!222 &2024277824
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2024277821}
 --- !u!1 &2034929507
 GameObject:
   m_ObjectHideFlags: 0
