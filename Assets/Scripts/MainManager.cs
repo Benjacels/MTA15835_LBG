@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine;
 
 public class MainManager : MonoBehaviour {
 
@@ -60,6 +61,10 @@ public class MainManager : MonoBehaviour {
     private Button _choiceFriends;
     private Button _choiceFuel;
     private Button _wayFinder;
+
+	private int riddleDebugIndex;
+	private bool inDebug;
+
     public enum State
     {
         None = -1,
@@ -130,6 +135,31 @@ public class MainManager : MonoBehaviour {
         _txtLogger = GameObject.FindObjectOfType<TxtLogger>();
         _txtLogger.log(currentState.ToString());
     }
+
+	/// <summary>
+	/// Gets or sets the index of the riddle debug.   Peder ændrede her!!!
+	/// </summary>
+	/// <value>The index of the riddle debug.</value>
+	
+	public int RiddleDebugIndex{
+		get { return riddleDebugIndex; }
+		set
+		{
+			riddleDebugIndex = value;
+		}
+	}
+	public bool InDebug{
+		get { return inDebug; }
+		set
+		{
+			inDebug = value;
+		}
+	}
+	/*public artsVisited{
+
+	}*/
+	
+	//
 
     // Use this for initialization
     void Start()

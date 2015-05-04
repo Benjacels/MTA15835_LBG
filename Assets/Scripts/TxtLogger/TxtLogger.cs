@@ -9,7 +9,7 @@ public class TxtLogger : MonoBehaviour {
 	private string fileContent;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		path = Path.Combine (Application.persistentDataPath, _filename);
 
 		if (System.IO.File.Exists (path)) {
@@ -28,6 +28,10 @@ public class TxtLogger : MonoBehaviour {
 			fileContent = fileContent + time + " - " + logThis + "\n";
 			saveData(fileContent);
 		}
+	}
+
+	public void reloadFile(){
+		fileContent = loadFileContent (path);	
 	}
 
 	private void saveData(string dataToSave){

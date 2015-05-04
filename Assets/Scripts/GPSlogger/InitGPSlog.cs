@@ -15,7 +15,7 @@ public class InitGPSlog : MonoBehaviour {
 	public InputField inputDescription; 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		path = Path.Combine (Application.persistentDataPath, _filename);
 		print ("_______ filepath: " + path);
 

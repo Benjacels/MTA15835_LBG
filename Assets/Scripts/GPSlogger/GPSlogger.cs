@@ -10,7 +10,7 @@ public class GPSlogger : MonoBehaviour {
 	XmlDocument xmldoc = new XmlDocument();
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		string _filename = "gpsLog.xml";
 		path = Path.Combine (Application.persistentDataPath, _filename);
 

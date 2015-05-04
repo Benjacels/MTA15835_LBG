@@ -11,6 +11,7 @@ public class SetupGame : MonoBehaviour {
 	public Button startGameBtn;
 	private bool newSessionCreated = false;
 	public string startScene;
+	TxtLogger txtlogger;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,9 @@ public class SetupGame : MonoBehaviour {
 				print ("someone changed the toggles' names");
 			}
 		}
+
+		txtlogger = GameObject.Find("LogManager").GetComponent<TxtLogger>();
+		print ("txtlogger: " + txtlogger);
 
 		print ("mainManager: " + MainManager.instance.riddlesFirst);
 
@@ -52,13 +56,17 @@ public class SetupGame : MonoBehaviour {
 
 
 	public void startGame(string sceneName){
+		txtlogger.reloadFile ();
 		if(playMap.isOn == true){
 			MainManager.instance.riddlesFirst = true;
+			txtlogger.log("Navigation type: Play --> Map");
 		}else if(mapPlay.isOn == true){
 			MainManager.instance.riddlesFirst = false;
+			txtlogger.log("Navigation type: Map --> Play");
 		}
 		print ("mainManager: " + MainManager.instance.riddlesFirst);
 		if (playMap.isOn == true || mapPlay.isOn == true) {
+			txtlogger.log("Starts game");
 			Application.LoadLevel(startScene);
 		}
 	}

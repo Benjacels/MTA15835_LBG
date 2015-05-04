@@ -12,7 +12,7 @@ public class InitTxtLog : MonoBehaviour {
 	public GameObject createfb;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		path = Path.Combine (Application.persistentDataPath, _filename);
 		print ("_______ TXT filepath: " + path);
 		
