@@ -165,10 +165,14 @@ public class MainManager : MonoBehaviour {
         }
             
 
-        _choiceFuel.active = false;
-        _choiceFriends.active = false;
+        _choiceFuel.enabled = false;
+        _choiceFuel.image.enabled = false;
 
-        _wayFinder.active = true;
+        _choiceFriends.enabled = false;
+        _choiceFriends.image.enabled = false;
+
+        _wayFinder.enabled = true;
+        _wayFinder.image.enabled = true;
     }
 
     public void OnAskCharacter(Button buttonClicked)
@@ -177,8 +181,11 @@ public class MainManager : MonoBehaviour {
         
         buttonClicked.active = false;
 
-		_choiceFuel.active = true;
-		_choiceFriends.active = true;
+        _choiceFuel.enabled = true;
+        _choiceFuel.image.enabled = true;
+
+        _choiceFriends.enabled = true;
+        _choiceFriends.image.enabled = true;
     }
 
     void ArrangeScenes()
