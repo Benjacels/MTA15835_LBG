@@ -414,11 +414,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   user: {fileID: 0}
-  simGPS: 0
+  simGPS: 1
   userSpeed: 5
   realSpeed: 0
-  fixLat: 57.0459518
-  fixLon: 9.92504883
+  fixLat: 57.046257
+  fixLon: 9.925457
   altitude: 0
   heading: 0
   accuracy: 0
@@ -436,32 +436,6 @@ MonoBehaviour:
   routePointsBack: []
   pathThere: 
   pathBack: 
-  point1: 57.04635,9.922898
-  point1a: 57.046424,9.922914
-  point2: 57.046615,9.922038
-  point3: 57.046120,9.921604
-  point4: 57.045819,9.922283
-  point5: 57.045634,9.923061
-  point6: 57.045693,9.923101
-  point7: 57.045648,9.923938
-  point8: 57.045851,9.924069
-  point9: 57.045692,9.925035
-  point10: 57.046191,9.925448
-  point11: 57.045736,9.927765
-  point12: 57.046486,9.928275
-  point13: 57.046788,9.928326
-  point14: 57.046925,9.928268
-  point15: 57.047065,9.928236
-  point16: 57.046481,9.929534
-  point17: 57.046382,9.929427
-  point18: 57.046621,9.925135
-  point19: 57.046290,9.925295
-  point20: 57.046449,9.924533
-  point21: 57.046225,9.924334
-  point22: 57.046231,9.923524
-  point23: 57.045146,9.922865
-  point24: 57.045131,9.922395
-  point25: 57.045207,9.922497
   routeThere: []
   routeBack: []
   pathStringThere: 
@@ -474,7 +448,7 @@ MonoBehaviour:
   camAngle: 40
   initTime: 3
   maxWait: 30
-  buttons: 1
+  buttons: 0
   dmsLat: 
   dmsLon: 
   updateRate: .100000001
@@ -642,14 +616,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: fixLat
-      value: 57.0459518
+      value: 57.046257
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: fixLon
-      value: 9.92504883
+      value: 9.925457
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: simGPS
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
+      propertyPath: buttons
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

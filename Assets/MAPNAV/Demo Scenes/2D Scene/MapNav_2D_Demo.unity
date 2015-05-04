@@ -141,10 +141,50 @@ MonoBehaviour:
   maxZoom: 18
   minZoom: 1
   zoom: 16
-  key: Fmjtd%7Cluur29072d%2Cbg%3Do5-908s00
+  key: AIzaSyBR8zS-eZNajMHIx8aZYgZcJBswn30IFIk
+  markerStartLat: 57.0463486
+  markerStartLon: 9.92289829
+  markerMiddleLat: 57.0467873
+  markerMiddleLon: 9.92833042
+  markerEndLat: 57.0452003
+  markerEndLon: 9.9224968
+  routePointsThere: []
+  routePointsBack: []
+  pathThere: 
+  pathBack: 
+  point1: 57.04635,9.922898
+  point1a: 57.046424,9.922914
+  point2: 57.046615,9.922038
+  point3: 57.046120,9.921604
+  point4: 57.045819,9.922283
+  point5: 57.045634,9.923061
+  point6: 57.045693,9.923101
+  point7: 57.045648,9.923938
+  point8: 57.045851,9.924069
+  point9: 57.045692,9.925035
+  point10: 57.046191,9.925448
+  point11: 57.045736,9.927765
+  point12: 57.046486,9.928275
+  point13: 57.046788,9.928326
+  point14: 57.046925,9.928268
+  point15: 57.047065,9.928236
+  point16: 57.046481,9.929534
+  point17: 57.046382,9.929427
+  point18: 57.046621,9.925135
+  point19: 57.046290,9.925295
+  point20: 57.046449,9.924533
+  point21: 57.046225,9.924334
+  point22: 57.046231,9.923524
+  point23: 57.045146,9.922865
+  point24: 57.045131,9.922395
+  point25: 57.045207,9.922497
+  routeThere: []
+  routeBack: []
+  pathStringThere: 
+  pathStringBack: 
   maptype: []
   mapSize: 
-  index: 0
+  index: 1
   indexSize: 0
   camDist: 15
   camAngle: 40
@@ -349,7 +389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!4 &18
 Transform:
   m_ObjectHideFlags: 0
@@ -361,7 +401,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!20 &19
 Camera:
   m_ObjectHideFlags: 0
@@ -750,7 +790,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!114 &511063374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,7 +879,7 @@ Transform:
   m_Children:
   - {fileID: 949216933}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!114 &906427998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,7 +1381,7 @@ Transform:
   - {fileID: 1085016342}
   - {fileID: 1983178735}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
 --- !u!114 &1566630274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1527,6 +1567,14 @@ Prefab:
     - target: {fileID: 11400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: zoom
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
+      propertyPath: key
+      value: AIzaSyBR8zS-eZNajMHIx8aZYgZcJBswn30IFIk
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
+      propertyPath: index
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}

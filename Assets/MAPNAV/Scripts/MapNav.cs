@@ -25,7 +25,6 @@ public class MapNav : MonoBehaviour
 	private float multiplier; 									//1 for a size=640x640 tile, 2 for size=1280*1280 tile, etc. Automatically set when selecting tile size
 	public string key = "Fmjtd%7Cluur29072d%2Cbg%3Do5-908s00";  //AppKey (API key) code obtained from your maps provider (MapQuest, Google, etc.). 
 																//Default MapQuest key for demo purposes only (with limitations). Please get your own key before you start yout project.															 
-
 	public float markerStartLat = 57.046350f;					//startMarker latitude position 
 	public float markerStartLon = 9.922898f;					//startMarker longitude position 
 	public float markerMiddleLat = 57.046788f;					//middleMarker latitude position 
@@ -38,41 +37,12 @@ public class MapNav : MonoBehaviour
 
 	public string pathThere;
 	public string pathBack;
-
-	//Route points there 
-	public string point1 = "57.04635,9.922898";
-	public string point1a = "57.046424,9.922914";
-	public string point2 = "57.046615,9.922038";
-	public string point3 = "57.046120,9.921604";
-	public string point4 = "57.045819,9.922283";
-	public string point5 = "57.045634,9.923061";
-	public string point6 = "57.045693,9.923101";
-	public string point7 = "57.045648,9.923938";
-	public string point8 = "57.045851,9.924069";
-	public string point9 = "57.045692,9.925035";
-	public string point10 = "57.046191,9.925448";
-	public string point11 = "57.045736,9.927765";
-	public string point12 = "57.046486,9.928275";
-	public string point13 = "57.046788,9.928326";
-
-	//Route points back  
-	public string point14 = "57.046925,9.928268";
-	public string point15 = "57.047065,9.928236";
-	public string point16 = "57.046481,9.929534";
-	public string point17 = "57.046382,9.929427";
-	public string point18 = "57.046621,9.925135";
-	public string point19 = "57.046290,9.925295";
-	public string point20 = "57.046449,9.924533";
-	public string point21 = "57.046225,9.924334";
-	public string point22 = "57.046231,9.923524";
-	public string point23 = "57.045146,9.922865";
-	public string point24 = "57.045131,9.922395";
-	public string point25 = "57.045207,9.922497";
-
+	
 	public string[] routeThere;
 	public string[] routeBack;
 	public string pathStringThere;
 	public string pathStringBack;
+
 
 	public string[] maptype;									//Array including available map types
 	public int[] mapSize;										//Array including available map sizes(pixels)
@@ -165,15 +135,12 @@ public class MapNav : MonoBehaviour
 		pathThere = Application.dataPath + "/Raw/routePointsThere.txt";
 		pathBack = Application.dataPath + "/Raw/routePointsBack.txt";
 
-		//routeThere = new string[]{point1, point2, point3, point4, point5, point6, point7, point8, 
-		//	point9, point10, point11, point12, point13};
+		ReadThere();
+		ReadBack();
 
-		//routeBack = new string[]{point13, point14, point15, point16, point17, point18, point19, 
-		//	point20, point21, point22, point23, point24, point25};
-
-		//pathStringThere = string.Join("%7C",routeThere);
-		//pathStringBack = string.Join("%7C",routeBack);
-	
+		pathStringThere = string.Join("%7C",routePointsThere.ToArray());	
+		pathStringBack = string.Join("%7C",routePointsBack.ToArray());	
+		
 		//Set the map's tag to GameController
 		transform.tag = "GameController";
 		
@@ -188,15 +155,17 @@ public class MapNav : MonoBehaviour
 		maprender = renderer;
 		screenX = Screen.width;
 		screenY = Screen.height;	
-		/*
-		//Add possible values to maptype and mapsize arrays (MAPQUEST)
+		
+		/* 
+		//Add possible values to maptype and mapsize arrays 
+		//ATENTTION: Modify if using a maps provider other than MapQuest Open Static Maps.
 		maptype = new string[]{"map", "sat", "hyb"};
 		mapSize = new int[]{640, 1280, 1920, 2560}; //in pixels
-		*/
+		*/ 
 
 		//Add possible values to maptype and mapsize arrays (GOOGLE)
 		maptype = new string[]{"satellite","roadmap","hybrid","terrain"};
-		mapSize = new int[]{1024, 768}; //in pixels
+		mapSize = new int[]{640}; //in pixels
 
 		//Set GUI "center" button label
 		if(triDView){
@@ -524,35 +493,43 @@ public class MapNav : MonoBehaviour
 				}
 			}
 		}
-
+		
 		/*
-		//MAPQUEST ==============================================================================
+		//MAPQUEST=========================================================================================
+
 		//Build a valid MapQuest OpenMaps tile request for the current location
-		multiplier=mapSize[indexSize]/640.0f; //Tile Size= 640*multiplier
-		url="http://open.mapquestapi.com/staticmap/v4/getmap?key="+key+"&size="+mapSize[indexSize].ToString()+","
-			+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"¢er="+fixLat+","+fixLon+"&scalebar=false";
-		tempLat = fixLat;
+		multiplier = mapSize[indexSize]/640.0f;  //Tile Size= 640*multiplier
+		//ATENTTION: If you want to implement maps from a different tiles provider, modify the following url accordingly to create a valid request
+        //Example code can be found at http://recursivearts.com/mapnav/faq.html
+
+		url = "http://open.mapquestapi.com/staticmap/v4/getmap?key="+key+"&size="+mapSize[indexSize].ToString()+","+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"&center="+fixLat+","+fixLon+"&scalebar=false";
+		tempLat = fixLat; 
 		tempLon = fixLon;
+
+		//=================================================================================================
 		*/ 
+
+
 
 		//GOOGLE ================================================================================
 		//Build a valid Google Maps tile request for the current location
 		multiplier=1;
-		ReadThere();
-		ReadBack();
+		//url= "http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&scale=2&size=640x640&format=jpg&maptype="+maptype[index]+"&sensor=false&key="+key;
+		
+		
+		
 
-		pathStringThere = string.Join("%7C",routePointsThere.ToArray());	
-		pathStringBack = string.Join("%7C",routePointsBack.ToArray());	
 
+//		pathStringThere = "57.046341,9.922839%7C57.046429,9.922866%7C57.046519,9.922487%7C57.046613,9.922045%7C57.046133,9.921712%7C57.046130,9.921610%7C57.045918,9.922074%7C57.045823,9.922268%7C57.045874,9.922343%7C57.045821,9.922552%7C57.045726,9.922788%7C57.045638,9.923059%7C57.045667,9.923059%7C57.045691,9.923086%7C57.045669,9.923225%7C57.045668,9.923523%7C57.045651,9.923945%7C57.045850,9.924073%7C57.045776,9.924474%7C57.045684,9.925049%7C57.045845,9.925136%7C57.045999,9.925273%7C57.046179,9.925453%7C57.045982,9.925957%7C57.045859,9.926391%7C57.045795,9.926719%7C57.045766,9.927242%7C57.045748,9.927757%7C57.045785,9.927774%7C57.045866,9.927857%7C57.046074,9.928109%7C57.046139,9.928151%7C57.046326,9.928274%7C57.046443,9.928289%7C57.046529,9.928252%7C57.046790,9.928264%7C57.046790,9.928333";
+//		pathStringBack = "57.046790,9.928333%7C57.046788,9.928259%7C57.046917,9.928272%7C57.046961,9.928243%7C57.046982,9.928190%7C57.047060,9.928255%7C57.046969,9.928540%7C57.046800,9.929032%7C57.046649,9.929246%7C57.046494,9.929518%7C57.046392,9.929440%7C57.046425,9.929035%7C57.046475,9.928264%7C57.046569,9.927382%7C";
+
+//		Debug.Log(pathStringThere);
+//		Debug.Log(pathStringBack);
 
 		url= "http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&scale=2&size=1024x768&format=jpg&maptype="+maptype[index]+"&markers=color:red%7Clabel:A%7C"+markerStartLat+","+markerStartLon+"&markers=color:blue%7Clabel:B%7C"+markerMiddleLat+","+markerMiddleLon+"&markers=color:yellow%7Clabel:C%7C"+markerEndLat+","+markerEndLon+"&path=color:0xff0000ff%7Cweight:2%7C"+pathStringThere+"&path=color:blue%7Cweight:2%7C"+pathStringBack+"&sensor=false&key="+key;
-	
 		tempLat = fixLat;
 		tempLon = fixLon;
 
-		//Debug.Log(url);
-
-		//=================================================================================================
 
 
 		//Proceed with download if a Wireless internet connection is available 
@@ -642,8 +619,6 @@ public class MapNav : MonoBehaviour
 		}
 	}
 
-
-
 	//RE-SCALE =========================================================================================================
 	IEnumerator ReScale(){
 		while(mapping){
@@ -698,7 +673,6 @@ public class MapNav : MonoBehaviour
 	}
 
 	void Update(){
-		//Debug.Log (url);
 
 		//Rename GUI "center" button label
 		if(!triDView){
@@ -881,7 +855,7 @@ public class MapNav : MonoBehaviour
 			}	
 		}																																
 	}
-	
+
 	//READ TEXT FILE =========================================================================================================
 	public void ReadThere(){
          string curlineThere; //current line
@@ -893,6 +867,8 @@ public class MapNav : MonoBehaviour
          {
              routePointsThere.Add(curlineThere);
          }
+
+         fileThere.Close();
 
      }
      
@@ -908,6 +884,8 @@ public class MapNav : MonoBehaviour
          {
              routePointsBack.Add(curlineBack);
          }
+
+         fileBack.Close();
 
      }
 	
