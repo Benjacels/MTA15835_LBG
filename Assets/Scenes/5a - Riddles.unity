@@ -734,7 +734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &457000991
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2064,7 +2064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1115443636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2244,10 +2244,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e051095a37344f048b1d87ad4adf0b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points: 0
+  FriendPoints: 0
+  FuelPoints: 0
   riddlesFirst: 1
   hasSeenBear: 0
   _fromBeginning: 0
+  choices: 
   currentCanvas: {fileID: 0}
 --- !u!1 &1213361242
 GameObject:
@@ -2724,7 +2726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1506922678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3267,13 +3269,13 @@ RectTransform:
   m_GameObject: {fileID: 1699166220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 2.6408906, y: 2.64089084, z: 2.64089084}
+  m_LocalScale: {x: 4.84994745, y: 4.84994793, z: 4.84994793}
   m_Children: []
   m_Father: {fileID: 1725136473}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -19}
+  m_AnchoredPosition: {x: 0, y: -3}
   m_SizeDelta: {x: 81.8000031, y: 327}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1699166222

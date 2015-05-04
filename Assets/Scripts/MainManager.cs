@@ -34,7 +34,8 @@ public class MainManager : MonoBehaviour {
     public delegate void Ask();
     public event Ask OnAskEvent;
 
-    public float Points;
+    public float FriendPoints;
+    public float FuelPoints;
 
     public bool riddlesFirst;
 
@@ -44,11 +45,13 @@ public class MainManager : MonoBehaviour {
     [HideInInspector]
     public bool _fromBeginning;
 
-    private List<Choices> _choices = new List<Choices>();
+    public List<Choices> choices = new List<Choices>();
 
     private int _dialogueClicks = 4;
     private int _dialogueClickCount = 0;
     private int _nextScene = 0;
+
+    private TxtLogger _txtLogger;
 
     public Canvas currentCanvas;
 
@@ -57,7 +60,6 @@ public class MainManager : MonoBehaviour {
     private Button _choiceFriends;
     private Button _choiceFuel;
     private Button _wayFinder;
-    
     public enum State
     {
         None = -1,
@@ -124,12 +126,16 @@ public class MainManager : MonoBehaviour {
             currentCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
         ArrangeScenes();
+
+        _txtLogger = GameObject.FindObjectOfType<TxtLogger>();
+        _txtLogger.log(currentState.ToString());
     }
 
     // Use this for initialization
     void Start()
     {
-        
+        _txtLogger = GameObject.FindObjectOfType<TxtLogger>();
+        _txtLogger.log(currentState.ToString());
     }
 
     // Update is called once per frame
@@ -155,13 +161,13 @@ public class MainManager : MonoBehaviour {
         if (choice == "Fuel")
         {
             OnChoiceEvent(Choices.Fuel);
-            _choices.Add(Choices.Fuel);
+            choices.Add(Choices.Fuel);
         }
             
         else if (choice == "Friends")
         {
             OnChoiceEvent(Choices.Friends);
-            _choices.Add(Choices.Friends);
+            choices.Add(Choices.Friends);
         }
             
 
@@ -222,7 +228,7 @@ public class MainManager : MonoBehaviour {
                 _choiceFriends = currentCanvas.transform.FindChild("Choice_Friends").GetComponent<Button>();
                 _choiceFuel = currentCanvas.transform.FindChild("Choice_Fuel").GetComponent<Button>();
                 _wayFinder = currentCanvas.transform.FindChild("Wayfinder").GetComponent<Button>();
-
+                
                 hasSeenBear = true;
 
                 break;

@@ -21,10 +21,15 @@ public class RiddleManager : MonoBehaviour {
 
     private Image _answerImage;
     private GameObject _goalScreen;
+    private Image _riddleBackground;
 
     private Sprite[] _answerPics = new Sprite[40];
 
     private int _riddleCounter = 0;
+
+    private TxtLogger _txtLogger;
+
+    private float _timeRiddleStarted = 0;
 
     List<string> _currentOptions = new List<string>();
 
@@ -44,7 +49,14 @@ public class RiddleManager : MonoBehaviour {
         _nextRiddle = _canvas.transform.FindChild("NextRiddle").GetComponent<Button>();
         _nextControl = _canvas.transform.FindChild("NextControl").GetComponent<Button>();
 
+        _riddleBackground = _canvas.transform.FindChild("RiddleBackground").GetComponent<Image>();
+
+        _txtLogger = GameObject.FindObjectOfType<TxtLogger>();
+
         _riddleText.text = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[0].InnerXml;
+        _txtLogger.log("Riddle started: ID - " + _riddleCounter);
+        _txtLogger.log("Riddle text: " + _riddleText.text);
+        _timeRiddleStarted = Time.time;
 
         _answerImage = GameObject.Find("AnswerPic").GetComponent<Image>();
         _goalScreen = _canvas.transform.FindChild("GoalScreen").gameObject;
@@ -72,6 +84,8 @@ public class RiddleManager : MonoBehaviour {
         _nextControl.active = false;
         _controlText.active = true;
 
+        _riddleBackground.active = false;
+
         foreach (Button but in _answers)
             but.active = true;
 
@@ -97,9 +111,17 @@ public class RiddleManager : MonoBehaviour {
         else
             _goalScreen.active = true;
 
+        var correctAnswer = false;
+
         for (int i = 0; i < 3; i++)
-            if(_currentOptions[i] == "true" && i == answer)
-                print("YES!");
+        {
+            if (_currentOptions[i] == "true" && i == answer)
+            {
+                correctAnswer = true;
+                GivePoints();
+            }
+                
+        }
 
         _answerImage.active = true;
 
@@ -107,6 +129,14 @@ public class RiddleManager : MonoBehaviour {
             _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+1).ToString());
         else
             _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+21).ToString());
+
+        _txtLogger.log("Riddle ended: ID - " + _riddleCounter);
+        var riddleTime = Time.time - _timeRiddleStarted;
+        _txtLogger.log("Riddle time: " + riddleTime);
+        _txtLogger.log("Answer correct: " + correctAnswer);
+        var answerToLog = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[2].ChildNodes[answer].InnerXml;
+        _txtLogger.log("User answered: " + answerToLog);
+        
     }
 
     public void NextRiddle()
@@ -119,8 +149,13 @@ public class RiddleManager : MonoBehaviour {
         _riddleText.active = true;
 
         _riddleText.text = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[0].InnerXml;
+        _txtLogger.log("Riddle started: ID - " + _riddleCounter);
+        _txtLogger.log("Riddle text: " + _riddleText.text);
+        _timeRiddleStarted = Time.time;
 
         _answerImage.active = false;
+
+        _riddleBackground.active = true;
     }
     XmlDocument loadLocalXml(string name)
     {
@@ -136,6 +171,24 @@ public class RiddleManager : MonoBehaviour {
         {
             print("Error: are you sure that the specified xml file exists?");
             return null;
+        }
+    }
+
+    public void GivePoints()
+    {
+        MainManager mm = MainManager.instance;
+
+        switch (mm.choices.Last())
+        {
+            case MainManager.Choices.Friends:
+                mm.FriendPoints++;
+                
+                break;
+
+            case MainManager.Choices.Fuel:
+                mm.FuelPoints++;
+
+                break;
         }
     }
 }
