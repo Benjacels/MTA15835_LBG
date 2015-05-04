@@ -15,6 +15,7 @@ public class SetupGame : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		MainManager.instance.InDebug = false;
 		startGameBtn.interactable = false;
 		toggles = Toggle.FindObjectsOfType (typeof(Toggle)) as Toggle[];
 		foreach (Toggle t in toggles) {
@@ -55,7 +56,7 @@ public class SetupGame : MonoBehaviour {
 	}
 
 
-	public void startGame(string sceneName){
+	public void startGame(){
 		txtlogger.reloadFile ();
 		if(playMap.isOn == true){
 			MainManager.instance.riddlesFirst = true;
@@ -69,5 +70,9 @@ public class SetupGame : MonoBehaviour {
 			txtlogger.log("Starts game");
 			Application.LoadLevel(startScene);
 		}
+	}
+
+	public void goToScene(string sceneName){
+		Application.LoadLevel(sceneName);
 	}
 }
