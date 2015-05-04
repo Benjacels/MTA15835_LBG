@@ -120,6 +120,11 @@ public class ARManager : MonoBehaviour
                 var img = tran.GetComponent<UnityEngine.UI.Image>();
                 img.color = new Color(img.color.r, img.color.g, img.color.b, alphaValue);
             }
+            else if (tran.GetComponent<UnityEngine.UI.Text>())
+            {
+                var txt = tran.GetComponent<UnityEngine.UI.Text>();
+                txt.color = new Color(txt.color.r, txt.color.g, txt.color.b, alphaValue);
+            }
         }
     }
 

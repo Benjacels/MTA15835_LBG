@@ -199,13 +199,11 @@ public class MainManager : MonoBehaviour {
             OnChoiceEvent(Choices.Friends);
             choices.Add(Choices.Friends);
         }
-            
 
-        _choiceFuel.enabled = false;
-        _choiceFuel.image.enabled = false;
 
-        _choiceFriends.enabled = false;
-        _choiceFriends.image.enabled = false;
+        _choiceFuel.active = false;
+
+        _choiceFriends.active = false;
 
         _wayFinder.enabled = true;
         _wayFinder.image.enabled = true;

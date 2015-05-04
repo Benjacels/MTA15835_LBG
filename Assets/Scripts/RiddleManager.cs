@@ -8,6 +8,24 @@ using Text = UnityEngine.UI.Text;
 
 public class RiddleManager : MonoBehaviour {
 
+    public static RiddleManager instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<RiddleManager>();
+            }
+
+            return _instance;
+        }
+    }
+
+    private static RiddleManager _instance;
+
+    public delegate void TutorialClick(string buttonClicked);
+    public event TutorialClick OnTutorialEvent;
+
     private TextAsset textAsset;
     private Canvas _canvas;
     private List<Button> _answers = new List<Button>();
@@ -16,10 +34,14 @@ public class RiddleManager : MonoBehaviour {
     private UnityEngine.UI.Text _riddleText;
     private UnityEngine.UI.Text _controlText;
 
+    public string winText;
+
     private Button _nextRiddle;
     private Button _nextControl;
 
     private Image _answerImage;
+    private UnityEngine.UI.Text _answerText;
+
     private GameObject _goalScreen;
     private Image _riddleBackground;
 
@@ -31,7 +53,13 @@ public class RiddleManager : MonoBehaviour {
 
     private float _timeRiddleStarted = 0;
 
+    public bool tutorialMode = false;
+
     List<string> _currentOptions = new List<string>();
+
+    public Sprite correctAnswerSprite;
+    public Sprite wrongAnswerSprite;
+    public Sprite neutralSprite;
 
     // Use this for initialization
     void Start()
@@ -59,6 +87,7 @@ public class RiddleManager : MonoBehaviour {
         _timeRiddleStarted = Time.time;
 
         _answerImage = GameObject.Find("AnswerPic").GetComponent<Image>();
+        _answerText = GameObject.Find("AnswerText").GetComponent<UnityEngine.UI.Text>();
         _goalScreen = _canvas.transform.FindChild("GoalScreen").gameObject;
 
         foreach (Transform tran in _canvas.transform)
@@ -69,8 +98,17 @@ public class RiddleManager : MonoBehaviour {
         }
         _nextRiddle.active = false;
         _controlText.active = false;
-        _nextControl.active = true;
+        _nextControl.active = false;
         _answerImage.active = false;
+        _answerText.active = false;
+        _riddleText.active = false;
+        _riddleBackground.active = false;
+        _goalScreen.active = false;
+
+        tutorialMode = true;
+
+        //DEBUG ONLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!:
+        //MainManager.instance.choices.Add(MainManager.Choices.Friends);
     }
 
     // Update is called once per frame
@@ -87,7 +125,10 @@ public class RiddleManager : MonoBehaviour {
         _riddleBackground.active = false;
 
         foreach (Button but in _answers)
+        {
+            but.enabled = true;
             but.active = true;
+        }
 
         var riddle = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter);
         
@@ -98,42 +139,63 @@ public class RiddleManager : MonoBehaviour {
             _currentOptions.Add(riddle.ChildNodes[2].ChildNodes[i].Attributes[0].Value);
             _answers[i].transform.FindChild("Text").GetComponent<UnityEngine.UI.Text>().text = riddle.ChildNodes[2].ChildNodes[i].InnerXml;
         }
+
+        if (tutorialMode)
+            OnTutorialEvent("Riddle");
     }
     public void Answer(int answer)
     {
         _controlText.active = false;
 
         foreach (Button but in _answers)
-            but.active = false;
+            but.enabled = false;
 
         if (_xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter + 1) != null)
-            _nextRiddle.active = true;
+        {
+            if (!tutorialMode)
+                _nextRiddle.active = true;
+        }
         else
+        {
+            _answerText.text = winText;
             _goalScreen.active = true;
+        }
 
-        var correctAnswer = false;
+        var userCorrect = false;
 
         for (int i = 0; i < 3; i++)
         {
             if (_currentOptions[i] == "true" && i == answer)
             {
-                correctAnswer = true;
+                userCorrect = true;
                 GivePoints();
+                //TODO: Fade-in
+                _answers[answer].image.sprite = correctAnswerSprite;
             }
-                
+            else //TODO: Fade-in
+            {
+                _answers[answer].image.sprite = wrongAnswerSprite;
+                _answers[_currentOptions.IndexOf("true")].image.sprite = correctAnswerSprite;
+            }
         }
-
-        _answerImage.active = true;
+        if (!tutorialMode)
+        {
+            _answerImage.active = true;
+            _answerText.active = true;
+        }
 
         if (MainManager.instance.riddlesFirst)
             _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+1).ToString());
         else
             _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+21).ToString());
 
+        if (tutorialMode)
+            OnTutorialEvent(userCorrect.ToString());
+
         _txtLogger.log("Riddle ended: ID - " + _riddleCounter);
         var riddleTime = Time.time - _timeRiddleStarted;
         _txtLogger.log("Riddle time: " + riddleTime);
-        _txtLogger.log("Answer correct: " + correctAnswer);
+        _txtLogger.log("Answer correct: " + userCorrect);
         var answerToLog = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[2].ChildNodes[answer].InnerXml;
         _txtLogger.log("User answered: " + answerToLog);
         
@@ -143,6 +205,12 @@ public class RiddleManager : MonoBehaviour {
     {
         _riddleCounter++;
         _currentOptions.RemoveRange(0, 3);
+
+        foreach (Button but in _answers)
+        {
+            but.active = false;
+            but.image.sprite = neutralSprite;
+        }
 
         _nextRiddle.active = false;
         _nextControl.active = true;
@@ -154,6 +222,7 @@ public class RiddleManager : MonoBehaviour {
         _timeRiddleStarted = Time.time;
 
         _answerImage.active = false;
+        _answerText.active = false;
 
         _riddleBackground.active = true;
     }
@@ -178,16 +247,15 @@ public class RiddleManager : MonoBehaviour {
     {
         MainManager mm = MainManager.instance;
 
+
         switch (mm.choices.Last())
         {
             case MainManager.Choices.Friends:
                 mm.FriendPoints++;
-                
                 break;
 
             case MainManager.Choices.Fuel:
                 mm.FuelPoints++;
-
                 break;
         }
     }
