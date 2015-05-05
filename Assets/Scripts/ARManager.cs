@@ -33,10 +33,15 @@ public class ARManager : MonoBehaviour
 	void Start ()
 	{
 	    if (!MainManager.instance.hasSeenBear)
-	        MainManager.instance.currentCanvas.transform.Find("Bear").active = true;
-        else if(MainManager.instance.hasSeenBear)
+	    {
+            MainManager.instance.currentCanvas.transform.Find("Bear").active = true;
+            MainManager.instance.currentCanvas.transform.Find("Kid").active = false;
+	    }
+        else if (MainManager.instance.hasSeenBear)
+        {
             MainManager.instance.currentCanvas.transform.Find("Kid").active = true;
-
+            MainManager.instance.currentCanvas.transform.Find("Bear").active = false;
+        }
 	    _augmentBack = GameObject.FindObjectOfType<Mask>().transform.GetChild(0).gameObject;
 	    _augmentPic = MainManager.instance.currentCanvas.transform.Find("AugmentPic").gameObject;
         _successScreen = MainManager.instance.currentCanvas.transform.Find("SuccessScreen").gameObject;
@@ -91,6 +96,7 @@ public class ARManager : MonoBehaviour
         {
             case MainManager.State.BearDialogue:
                 MainManager.instance.artsSeen.Add("hjelmerstald");
+                MainManager.instance.hasSeenBear = true;
                 break;
             case MainManager.State.KidDialogue:
                 MainManager.instance.artsSeen.Add("pyramide");
