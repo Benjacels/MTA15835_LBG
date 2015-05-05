@@ -362,6 +362,8 @@ MonoBehaviour:
   fuel: {fileID: 0}
   checkPlaceCorrect: {fileID: 0}
   checkPlaceWrong: {fileID: 0}
+  thoughtBubbleFriends: {fileID: 0}
+  thoughtBubbleFuel: {fileID: 0}
 --- !u!1 &129731716
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 1c0f3029cb2bc6148985cbc8ded73357, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 288584c3193f0434d8a36a28d9b47f76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1873,8 +1875,8 @@ MonoBehaviour:
   questionSpeechBubble: {fileID: 21300000, guid: 119a7513969de4c7ca2b7237588252f5,
     type: 3}
   choiceAnim: 
-  fuelSpeechBubble: {fileID: 21300000, guid: 9b2d0eea2542c45ddbbbb602fedd8aac, type: 3}
-  friendsSpeechBubble: {fileID: 21300000, guid: 311a57533440b4529a5bb383affa8951,
+  fuelSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4, type: 3}
+  friendsSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4,
     type: 3}
 --- !u!1 &1195022645
 GameObject:
@@ -2342,6 +2344,7 @@ MonoBehaviour:
   hasSeenBear: 0
   _fromBeginning: 0
   choices: 
+  artsSeen: []
   currentCanvas: {fileID: 1066619699}
 --- !u!1 &1432620050
 GameObject:

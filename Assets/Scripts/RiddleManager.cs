@@ -61,6 +61,9 @@ public class RiddleManager : MonoBehaviour {
     public Sprite wrongAnswerSprite;
     public Sprite neutralSprite;
 
+    private UnityEngine.UI.Text _fuelPointsTxt;
+    private UnityEngine.UI.Text _friendPointsTxt;
+
     // Use this for initialization
     void Start()
     {
@@ -84,6 +87,9 @@ public class RiddleManager : MonoBehaviour {
         _answerImage = GameObject.Find("AnswerPic").GetComponent<Image>();
         _answerText = GameObject.Find("AnswerText").GetComponent<UnityEngine.UI.Text>();
         _goalScreen = _canvas.transform.FindChild("GoalScreen").gameObject;
+
+        _fuelPointsTxt = _canvas.transform.FindChild("PointsLeft").transform.Find("PointsNum").GetComponent<UnityEngine.UI.Text>();
+        _friendPointsTxt = _canvas.transform.FindChild("PointsRight").transform.Find("PointsNum").GetComponent<UnityEngine.UI.Text>();
 
         foreach (Transform tran in _canvas.transform)
         if (tran.CompareTag("Button_Answer"))
@@ -267,10 +273,12 @@ public class RiddleManager : MonoBehaviour {
         {
             case MainManager.Choices.Friends:
                 mm.FriendPoints++;
+                _friendPointsTxt.text = mm.FriendPoints.ToString();
                 break;
 
             case MainManager.Choices.Fuel:
                 mm.FuelPoints++;
+                _fuelPointsTxt.text = mm.FuelPoints.ToString();
                 break;
         }
     }

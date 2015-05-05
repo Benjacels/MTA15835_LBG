@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -137,8 +138,27 @@ public class MainManager : MonoBehaviour {
 
         ArrangeScenes();
 
+        if (MainManager.instance.currentState == State.KidDialogue || MainManager.instance.currentState == State.End)
+        {
+            if (choices.Any())
+            {
+                switch (choices.Last())
+                {
+                    case Choices.Fuel:
+                        FuelPoints += 10;
+                        print(FuelPoints);
+                        break;
+                    case Choices.Friends:
+                        FriendPoints += 10;
+                        print(FriendPoints);
+                        break;
+                }
+            }
+        }
+
         _txtLogger = GameObject.FindObjectOfType<TxtLogger>();
-        _txtLogger.log(currentState.ToString());
+        if (currentState != State.Logging)
+            _txtLogger.log(currentState.ToString());
     }
 
 	/// <summary>

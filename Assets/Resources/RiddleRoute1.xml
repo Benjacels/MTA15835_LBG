@@ -2,6 +2,15 @@
 
 <riddles>
 	<riddle>
+		<clue>Vi skal igennem der, hvor væggende er dækket med kunst</clue>
+		<control>Hvad står der på skiltet ude på den anden side?</control>		
+		<answers>
+			<answer correct="false">Høje</answer>
+			<answer correct="true">Lange</answer>
+			<answer correct="true">Bredde</answer>
+		</answers>
+	</riddle>	
+	<riddle>
 		<clue>Jeg er lyserød og beboelig</clue>
 		<control>Hvem boede her i 1700-tallet? </control>		
 		<answers>

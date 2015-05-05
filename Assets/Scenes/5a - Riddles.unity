@@ -729,12 +729,12 @@ GameObject:
   - 222: {fileID: 457000993}
   - 114: {fileID: 457000992}
   m_Layer: 5
-  m_Name: PointLeft
+  m_Name: PointsLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &457000991
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2359,7 +2359,7 @@ Prefab:
     - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: tapSprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 0b42203a42cc97547a2ac46ee81e2c5f,
+      objectReference: {fileID: 21300000, guid: b3d00c0ff3b18244cb3778de3882820d,
         type: 3}
     - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: tapSprites.Array.data[3]
@@ -2582,7 +2582,7 @@ MonoBehaviour:
   tapSprites:
   - {fileID: 21300000, guid: 9be32f91d9d499945900c5a111764ce6, type: 3}
   - {fileID: 21300000, guid: 791bcb0eb51fb534faac3e261de68e46, type: 3}
-  - {fileID: 21300000, guid: 0b42203a42cc97547a2ac46ee81e2c5f, type: 3}
+  - {fileID: 21300000, guid: b3d00c0ff3b18244cb3778de3882820d, type: 3}
   - {fileID: 21300000, guid: d26a5c3426f55724eb5087404bafcca9, type: 3}
   - {fileID: 21300000, guid: 0081995ebd909fc47a4177a66f33938c, type: 3}
   foundSpot: {fileID: 21300000, guid: c4e8923e2fa21044f9732eb1a599db59, type: 3}
@@ -2592,6 +2592,8 @@ MonoBehaviour:
   fuel: {fileID: 21300000, guid: 8a9a6c95b626f724f96281e33427aeac, type: 3}
   checkPlaceCorrect: {fileID: 21300000, guid: 8d958e8fdfc2b9846bf79e396bb35563, type: 3}
   checkPlaceWrong: {fileID: 21300000, guid: 346428535223ede41a00b872ccd1ce4b, type: 3}
+  thoughtBubbleFriends: {fileID: 0}
+  thoughtBubbleFuel: {fileID: 0}
 --- !u!1 &1209089065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2634,7 +2636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FriendPoints: 0
   FuelPoints: 0
-  riddlesFirst: 1
+  riddlesFirst: 0
   hasSeenBear: 0
   _fromBeginning: 0
   choices: 
@@ -3176,12 +3178,12 @@ GameObject:
   - 222: {fileID: 1506922680}
   - 114: {fileID: 1506922679}
   m_Layer: 5
-  m_Name: PointRight
+  m_Name: PointsRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1506922678
 RectTransform:
   m_ObjectHideFlags: 0
