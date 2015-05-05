@@ -2024,6 +2024,7 @@ MonoBehaviour:
   hasSeenBear: 0
   _fromBeginning: 0
   choices: 
+  artsSeen: []
   currentCanvas: {fileID: 0}
 --- !u!1 &1880759396
 GameObject:

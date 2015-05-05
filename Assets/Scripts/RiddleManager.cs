@@ -91,7 +91,9 @@ public class RiddleManager : MonoBehaviour {
            _answers.Add(tran.GetComponent<Button>());
            tran.GetComponent<Button>().active = false;
         }
-        
+
+        if (MainManager.instance.InDebug)
+            _riddleCounter = MainManager.instance.RiddleDebugIndex;
 
         if (MainManager.instance.InDebug && _riddleCounter != 0)
         {
@@ -99,7 +101,6 @@ public class RiddleManager : MonoBehaviour {
             _riddleBackground.active = true;
             _nextControl.active = true;
         }
-            
         else if (_riddleCounter == 0)
         {
             _nextRiddle.active = false;

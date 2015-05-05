@@ -55,6 +55,8 @@ public class MainManager : MonoBehaviour {
     private int _dialogueClickCount = 0;
     private int _nextScene = 0;
 
+    private int _choicePoints = 10;
+
     private TxtLogger _txtLogger;
 
     public Canvas currentCanvas;
@@ -195,14 +197,15 @@ public class MainManager : MonoBehaviour {
         {
             OnChoiceEvent(Choices.Fuel);
             choices.Add(Choices.Fuel);
+            FriendPoints += _choicePoints;
         }
             
         else if (choice == "Friends")
         {
             OnChoiceEvent(Choices.Friends);
             choices.Add(Choices.Friends);
+            FuelPoints += _choicePoints;
         }
-
 
         _choiceFuel.active = false;
 
