@@ -8,15 +8,16 @@ public class MapNavInspector : Editor {
 	bool showZoom =true;
 	bool showTouch =true;
 
+	/*
 	//MapQuest
 	private string[] mapTypes = new string[]{"map","sat","hyb"}; 
 	private string[] mapSizes = new string[]{"640x640","1280x1280","1920x1920","2560x2560"};
-	
+	*/ 
 	//Google
-	/*
+	
 	private string[] mapTypes = new string[]{"satellite","roadmap","hybrid","terrain"};
-	private string[] mapSizes = new string[]{"640x640"};
-	*/
+	private string[] mapSizes = new string[]{"1024x768"};
+	
 
 	/*
 	//Bing

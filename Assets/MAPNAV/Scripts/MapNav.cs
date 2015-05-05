@@ -197,7 +197,7 @@ public class MapNav : MonoBehaviour
 
 		//Add possible values to maptype and mapsize arrays (GOOGLE)
 		maptype = new string[]{"satellite","roadmap","hybrid","terrain"};
-		mapSize = new int[]{640}; //in pixels
+		mapSize = new int[]{1024,768}; //in pixels
 
 		//Set GUI "center" button label
 		if(triDView){
