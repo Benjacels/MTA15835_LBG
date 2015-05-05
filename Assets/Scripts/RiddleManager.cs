@@ -100,11 +100,11 @@ public class RiddleManager : MonoBehaviour {
 
         _nextRiddle.active = false;
         _controlText.active = false;
-        _nextControl.active = false;
+        _nextControl.active = true;
         _answerImage.active = false;
         _answerText.active = false;
-        _riddleText.active = false;
-        _riddleBackground.active = false;
+        _riddleText.active = true;
+        _riddleBackground.active = true;
         _goalScreen.active = false;
 
         if (MainManager.instance.InDebug)
@@ -118,7 +118,7 @@ public class RiddleManager : MonoBehaviour {
         }
         else if (_riddleCounter == 0)
         {
-            tutorialMode = true;
+            //tutorialMode = true;
         }
 
         _riddleText.text = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[0].InnerXml;
@@ -180,7 +180,6 @@ public class RiddleManager : MonoBehaviour {
             _goalScreen.active = true;
             if (!MainManager.instance.riddlesFirst)
                 MainManager.instance.artsSeen.Add("space");
-                
         }
 
         var userCorrect = false;

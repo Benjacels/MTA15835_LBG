@@ -44,8 +44,7 @@ public class MainManager : MonoBehaviour {
     [HideInInspector]
     public bool hasSeenBear = false;
 
-    [HideInInspector]
-    public bool _fromBeginning;
+    public bool fromBeginning;
 
     public List<Choices> choices = new List<Choices>();
 
@@ -157,7 +156,7 @@ public class MainManager : MonoBehaviour {
         }
 
         _txtLogger = GameObject.FindObjectOfType<TxtLogger>();
-        if (currentState != State.Logging)
+        if (currentState != State.Logging && fromBeginning)
             _txtLogger.log(currentState.ToString());
     }
 

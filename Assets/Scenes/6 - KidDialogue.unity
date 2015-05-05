@@ -2342,7 +2342,7 @@ MonoBehaviour:
   FuelPoints: 0
   riddlesFirst: 0
   hasSeenBear: 0
-  _fromBeginning: 0
+  fromBeginning: 0
   choices: 
   artsSeen: []
   currentCanvas: {fileID: 1066619699}

@@ -2439,9 +2439,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FriendPoints: 0
   FuelPoints: 0
-  riddlesFirst: 0
+  riddlesFirst: 1
   hasSeenBear: 0
-  _fromBeginning: 0
+  fromBeginning: 0
   choices: 
   artsSeen: []
   currentCanvas: {fileID: 1066619699}

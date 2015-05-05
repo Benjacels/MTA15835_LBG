@@ -90,7 +90,7 @@ namespace Vuforia
 
         private void OnTrackingLost()
         {
-            ARManager.instance.OnTrackingLost();
+            //ARManager.instance.OnTrackingLost();
 
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
