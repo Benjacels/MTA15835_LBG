@@ -32,6 +32,8 @@ public class MapNav : MonoBehaviour
 
 	public List<string> routePoints = new List<string>(); 		//Where the values from the text file will be stored 
 
+	private GPSlogger myGPSlogger; 
+
 /*
 	public List<string> routePointsThere = new List<string>(); 		//Where the values from the text file will be stored 
 	public List<string> routePointsBack = new List<string>(); 		//Where the values from the text file will be stored
@@ -136,6 +138,9 @@ public class MapNav : MonoBehaviour
 
 	void Awake(){
 		
+		//Create instance of GPS logger 
+        myGPSlogger = GameObject.Find("LogManager").GetComponent<GPSlogger>();
+
 		if(MainManager.instance.riddlesFirst == false){
 			markerStartLat = "57.046341";
 			markerStartLon = "9.922839";
@@ -382,6 +387,10 @@ public class MapNav : MonoBehaviour
 				dmsLat = convertdmsLat(userLat);
 				dmsLon = convertdmsLon(userLon);
 			}
+
+			//Log to GPSlogger
+	        myGPSlogger.logCoordinate(userLon, userLat);
+
 		}	
 	} 
 	
