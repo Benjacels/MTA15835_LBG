@@ -25,16 +25,21 @@ public class MapNav : MonoBehaviour
 	private float multiplier; 									//1 for a size=640x640 tile, 2 for size=1280*1280 tile, etc. Automatically set when selecting tile size
 	public string key = "Fmjtd%7Cluur29072d%2Cbg%3Do5-908s00";  //AppKey (API key) code obtained from your maps provider (MapQuest, Google, etc.). 
 																//Default MapQuest key for demo purposes only (with limitations). Please get your own key before you start yout project.															 
-	public float markerStartLat = 57.046350f;					//startMarker latitude position 
-	public float markerStartLon = 9.922898f;					//startMarker longitude position 
-	public float markerMiddleLat = 57.046788f;					//middleMarker latitude position 
-	public float markerMiddleLon = 9.92833f;					//middleMarker longitude position 
-	public float markerEndLat = 57.04520f;						//endMarker latitude position 
-	public float markerEndLon = 9.922497f;						//endMarker longitude position 
+	public string markerStartLat;								//startMarker latitude position 
+	public string markerStartLon;								//startMarker longitude position 
+	public string markerEndLat;									//endMarker latitude position 
+	public string markerEndLon;									//endMarker longitude position 
 
+	public List<string> routePoints = new List<string>(); 		//Where the values from the text file will be stored 
+
+/*
 	public List<string> routePointsThere = new List<string>(); 		//Where the values from the text file will be stored 
 	public List<string> routePointsBack = new List<string>(); 		//Where the values from the text file will be stored
+*/
+	public string path;
+	public string pathStringPoints;
 
+/*
 	public string pathThere;
 	public string pathBack;
 	
@@ -42,8 +47,7 @@ public class MapNav : MonoBehaviour
 	public string[] routeBack;
 	public string pathStringThere;
 	public string pathStringBack;
-
-
+*/
 	public string[] maptype;									//Array including available map types
 	public int[] mapSize;										//Array including available map sizes(pixels)
 	public int index;											//maptype array index. 
@@ -130,17 +134,40 @@ public class MapNav : MonoBehaviour
 	private Vector2 focusScreenPoint;
 	private Vector3 focusWorldPoint; 
 
-
 	void Awake(){
+		
+		if(MainManager.instance.riddlesFirst == false){
+			markerStartLat = "57.046341";
+			markerStartLon = "9.922839";
+			markerEndLat = "57.046790";
+			markerEndLon = "9.928333";
+			path = Application.dataPath + "/Raw/routePointsThere.txt";
+		}
+
+		if(MainManager.instance.riddlesFirst == true){
+			markerStartLat = "57.046790";
+			markerStartLon = "9.928333";
+			markerEndLat = "57.045178";
+			markerEndLon = "9.922402";
+			path = Application.dataPath + "/Raw/routePointsBack.txt";
+		}
+
+		ReadPoints();
+
+		pathStringPoints = string.Join("%7C",routePoints.ToArray());
+
+		/*
 		pathThere = Application.dataPath + "/Raw/routePointsThere.txt";
 		pathBack = Application.dataPath + "/Raw/routePointsBack.txt";
+		*/ 
 
-		ReadThere();
+		/*
 		ReadBack();
 
 		pathStringThere = string.Join("%7C",routePointsThere.ToArray());	
 		pathStringBack = string.Join("%7C",routePointsBack.ToArray());	
-		
+		*/ 
+
 		//Set the map's tag to GameController
 		transform.tag = "GameController";
 		
@@ -526,11 +553,16 @@ public class MapNav : MonoBehaviour
 //		Debug.Log(pathStringThere);
 //		Debug.Log(pathStringBack);
 
-		url= "http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&scale=2&size=1024x768&format=jpg&maptype="+maptype[index]+"&markers=color:red%7Clabel:A%7C"+markerStartLat+","+markerStartLon+"&markers=color:blue%7Clabel:B%7C"+markerMiddleLat+","+markerMiddleLon+"&markers=color:yellow%7Clabel:C%7C"+markerEndLat+","+markerEndLon+"&path=color:0xff0000ff%7Cweight:2%7C"+pathStringThere+"&path=color:blue%7Cweight:2%7C"+pathStringBack+"&sensor=false&key="+key;
+		/* WORKING  
+			url= "http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&scale=2&size=1024x768&format=jpg&maptype="+maptype[index]+"&markers=color:red%7Clabel:A%7C"+markerStartLat+","+markerStartLon+"&markers=color:blue%7Clabel:B%7C"+markerMiddleLat+","+markerMiddleLon+"&markers=color:yellow%7Clabel:C%7C"+markerEndLat+","+markerEndLon+"&path=color:0xff0000ff%7Cweight:2%7C"+pathStringThere+"&path=color:blue%7Cweight:2%7C"+pathStringBack+"&sensor=false&key="+key;
+			tempLat = fixLat;
+			tempLon = fixLon;
+		*/ 
+
+		url= "http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&scale=2&size=1024x768&format=jpg&maptype="+maptype[index]+"&markers=color:red%7Clabel:A%7C" + markerStartLat + "," + markerStartLon + "&markers=color:blue%7Clabel:B%7C" + markerEndLat + "," + markerEndLon + "&path=color:0xff0000ff%7Cweight:2%7C" + pathStringPoints + "&sensor=false&key="+key;
 		tempLat = fixLat;
 		tempLon = fixLon;
-
-
+	
 
 		//Proceed with download if a Wireless internet connection is available 
 		if(Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork){
@@ -857,6 +889,21 @@ public class MapNav : MonoBehaviour
 	}
 
 	//READ TEXT FILE =========================================================================================================
+	public void ReadPoints(){
+         string curline; //current line
+         
+         System.IO.StreamReader fileThere = new System.IO.StreamReader(path);
+
+         while((curline = fileThere.ReadLine()) != null)
+         {
+             routePoints.Add(curline);
+         }
+
+         fileThere.Close();
+
+     }
+
+/*
 	public void ReadThere(){
          string curlineThere; //current line
          //System.IO.StreamReader fileThere = new System.IO.StreamReader("/Users/stephaniegitha/Desktop/MTA15835_LBG - GPSWORK/Assets/Scenes/routePointsThere.txt");
@@ -888,7 +935,7 @@ public class MapNav : MonoBehaviour
          fileBack.Close();
 
      }
-	
+*/
 	void CheckBorders(){
 		//Reached left tile border
 		if(Mathf.Round((mycam.ScreenToWorldPoint(new Vector3(0, 0.5f, cam.position.y)).x)*100.0f)/100.0f <= Mathf.Round((mymap.position.x-mymap.localScale.x*5)*100.0f)/100.0f){
