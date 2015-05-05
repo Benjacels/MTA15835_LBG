@@ -7,12 +7,13 @@ public class InOut : MonoBehaviour
 {
 	void OnTriggerEnter(Collider other){
 		if(other.tag == "Player"){
-			transform.Find("Status").guiText.text = "IN";
+			//transform.Find("Status").guiText.text = "IN";
+			MainManager.instance.LoadNextScene();
 		}
 	}
 	void OnTriggerExit(Collider other){
 		if(other.tag == "Player"){
-			transform.Find("Status").guiText.text = "OUT";
+			//transform.Find("Status").guiText.text = "OUT";
 		}
 	}
 }
