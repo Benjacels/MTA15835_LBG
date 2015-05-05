@@ -281,8 +281,6 @@ public class MainManager : MonoBehaviour {
                 _choiceFriends = currentCanvas.transform.FindChild("Choice_Friends").GetComponent<Button>();
                 _choiceFuel = currentCanvas.transform.FindChild("Choice_Fuel").GetComponent<Button>();
                 _wayFinder = currentCanvas.transform.FindChild("Wayfinder").GetComponent<Button>();
-                
-                hasSeenBear = true;
 
                 break;
             case 4 :
