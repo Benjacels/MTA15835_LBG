@@ -15,6 +15,13 @@ public class InfoscreenController : MonoBehaviour {
 	public GameObject spaceInfo;
 	public Image notificationImg;
 	private List<string> _streetarts = new List<string>();
+	private int numberOfNotifications;
+	public Sprite firstNotificationImg;
+	public Sprite secondNotificationImg;
+	public Sprite thridNotificationImg;
+	public Sprite pyramidImg;
+	public Sprite spaceImg;
+	//public Sprite 
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +30,9 @@ public class InfoscreenController : MonoBehaviour {
 		updateSeenStreetart ();
 
 		//newStreetartNotification ();
+		//newStreetartNotification ();
+		//newStreetartNotification ();
+		streetartToShow ("hjelmerstald");
 	}
 
 	public void updateSeenStreetart(){
@@ -41,6 +51,7 @@ public class InfoscreenController : MonoBehaviour {
 			infoScreen.SetActive(true);
 			isInfoscreenActive = true;
 			notificationImg.gameObject.SetActive (false);
+			numberOfNotifications = 0;
 		}else if(isInfoscreenActive == true){
 			infoScreen.SetActive(false);
 			isInfoscreenActive = false;
@@ -48,6 +59,7 @@ public class InfoscreenController : MonoBehaviour {
 	}
 
 	public void streetartToShow (string streetart){
+		print ("streetartToShow");
 		int indexInArrayToShow = _streetarts.IndexOf(streetart);
 		if (indexInArrayToShow != -1) {
 			showStreetart (_streetarts[indexInArrayToShow]);
@@ -62,9 +74,13 @@ public class InfoscreenController : MonoBehaviour {
 		}
 		if(toShow == "pyramide"){
 			pyramidInfo.SetActive (true);
+			print ("pyramid unlocked");
+			_pyramidBtn.image.sprite = pyramidImg;
 		}
 		if(toShow == "space"){
 			spaceInfo.SetActive (true);
+			print ("space unlocked");
+			_spaceBtn.image.sprite = spaceImg;
 		}
 	}
 
@@ -75,6 +91,14 @@ public class InfoscreenController : MonoBehaviour {
 	}
 
 	public void newStreetartNotification(){
+		numberOfNotifications++;
+		if(numberOfNotifications == 1){
+			notificationImg.sprite = firstNotificationImg;
+		}else if(numberOfNotifications == 2){
+			notificationImg.sprite = secondNotificationImg;
+		}else if(numberOfNotifications == 3){
+			notificationImg.sprite = thridNotificationImg;
+		}
 		notificationImg.gameObject.SetActive (true);
 	}
 }
