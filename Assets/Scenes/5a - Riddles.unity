@@ -766,7 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 763ad8df1fdd14dd6b7787c91844b7af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 937633d60d3374c93875b280ec0a9462, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2638,7 +2638,7 @@ MonoBehaviour:
   FuelPoints: 0
   riddlesFirst: 0
   hasSeenBear: 0
-  _fromBeginning: 0
+  fromBeginning: 0
   choices: 
   artsSeen: []
   currentCanvas: {fileID: 0}
@@ -3192,7 +3192,7 @@ RectTransform:
   m_GameObject: {fileID: 1506922677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6227181, y: 1.6227181, z: 1.6227181}
+  m_LocalScale: {x: -1.62271798, y: 1.6227181, z: 1.6227181}
   m_Children:
   - {fileID: 1700088380}
   m_Father: {fileID: 301161678}
@@ -3215,7 +3215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 39294deff36bc4c35a5cb21458b18202, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1f26be2dc9634d72953f8a537b99c0d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3787,7 +3787,7 @@ RectTransform:
   m_GameObject: {fileID: 1700088379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .616249979, y: .616249979, z: .616249979}
+  m_LocalScale: {x: -.616249979, y: .616249979, z: .616249979}
   m_Children: []
   m_Father: {fileID: 1506922678}
   m_RootOrder: 0

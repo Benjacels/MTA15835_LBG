@@ -7,7 +7,7 @@
 		<answers>
 			<answer correct="false">Høje</answer>
 			<answer correct="true">Lange</answer>
-			<answer correct="true">Bredde</answer>
+			<answer correct="false">Bredde</answer>
 		</answers>
 	</riddle>	
 	<riddle>

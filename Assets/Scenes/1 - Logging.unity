@@ -1993,7 +1993,7 @@ MonoBehaviour:
   FuelPoints: 0
   riddlesFirst: 0
   hasSeenBear: 0
-  fromBeginning: 0
+  fromBeginning: 1
   choices: 
   artsSeen: []
   currentCanvas: {fileID: 0}

@@ -100,11 +100,11 @@ public class RiddleManager : MonoBehaviour {
 
         _nextRiddle.active = false;
         _controlText.active = false;
-        _nextControl.active = true;
+        _nextControl.active = false;
         _answerImage.active = false;
         _answerText.active = false;
-        _riddleText.active = true;
-        _riddleBackground.active = true;
+        _riddleText.active = false;
+        _riddleBackground.active = false;
         _goalScreen.active = false;
 
         if (MainManager.instance.InDebug)
@@ -118,7 +118,7 @@ public class RiddleManager : MonoBehaviour {
         }
         else if (_riddleCounter == 0)
         {
-            //tutorialMode = true;
+            tutorialMode = true;
         }
 
         _riddleText.text = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[0].InnerXml;
@@ -206,7 +206,7 @@ public class RiddleManager : MonoBehaviour {
         }
 
         if (MainManager.instance.riddlesFirst)
-            _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+1).ToString());
+            _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter).ToString());
         else
             _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+21).ToString());
 
