@@ -172,6 +172,9 @@ public class RiddleManager : MonoBehaviour {
         {
             _answerText.text = winText;
             _goalScreen.active = true;
+            if (!MainManager.instance.riddlesFirst)
+                MainManager.instance.artsSeen.Add("space");
+                
         }
 
         var userCorrect = false;
@@ -259,7 +262,6 @@ public class RiddleManager : MonoBehaviour {
     public void GivePoints()
     {
         MainManager mm = MainManager.instance;
-
 
         switch (mm.choices.Last())
         {

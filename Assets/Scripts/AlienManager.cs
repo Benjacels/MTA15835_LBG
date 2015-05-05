@@ -27,6 +27,9 @@ public class AlienManager : MonoBehaviour {
     public Sprite checkPlaceCorrect;
     public Sprite checkPlaceWrong;
 
+    public GameObject thoughtBubbleFriends;
+    public GameObject thoughtBubbleFuel;
+
     private Image _speechSprite;
     private Image _answerImage;
     private UnityEngine.UI.Text _answerText;
@@ -126,6 +129,18 @@ public class AlienManager : MonoBehaviour {
         _mouthAnimator.SetBool(Animator.StringToHash(prevMouthState), false);
         _mouthAnimator.SetBool(Animator.StringToHash(mouthAnimations[clickCount]), true);
         prevMouthState = mouthAnimations[clickCount];
+
+        if (MainManager.instance.CurrentState == MainManager.State.Start && clickCount == 2)
+            StartCoroutine(ThinkingBubbles());
+    }
+
+    IEnumerator ThinkingBubbles()
+    {
+        yield return new WaitForSeconds(1);
+        thoughtBubbleFuel.active = true;
+        yield return new WaitForSeconds(2);
+        thoughtBubbleFriends.active = true;
+        yield return null;
     }
 
     public void OnTap()

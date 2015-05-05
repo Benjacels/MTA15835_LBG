@@ -90,10 +90,10 @@ public class ARManager : MonoBehaviour
         switch (MainManager.instance.CurrentState)
         {
             case MainManager.State.BearDialogue:
-                MainManager.instance.artsSeen.Add(MainManager.State.BearDialogue.ToString());
+                MainManager.instance.artsSeen.Add("hjelmerstald");
                 break;
             case MainManager.State.KidDialogue:
-                MainManager.instance.artsSeen.Add(MainManager.State.KidDialogue.ToString());
+                MainManager.instance.artsSeen.Add("pyramide");
                 break;
         }
 
