@@ -412,8 +412,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 194, y: -703.799988}
-  m_SizeDelta: {x: 2694, y: 1850}
+  m_AnchoredPosition: {x: 223, y: -527}
+  m_SizeDelta: {x: 3322, y: 4036}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &261749650
 MonoBehaviour:
@@ -1851,7 +1851,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
 --- !u!224 &1027331221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2102,7 +2102,7 @@ Transform:
   m_PrefabInternal: {fileID: 1763002907}
   m_GameObject: {fileID: 1158734471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 276, y: -183, z: 0}
+  m_LocalPosition: {x: 285.339996, y: -117.5, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 0}
   m_Children:
   - {fileID: 1957850148}
@@ -2132,10 +2132,10 @@ MonoBehaviour:
   - Idle
   - IdleHappy
   speechSprites:
-  - {fileID: 21300000, guid: 53e6b61b03f2e6c48ad48d92c450305b, type: 3}
-  - {fileID: 21300000, guid: 2d6085311aac66342bf564bfb1fb2f5d, type: 3}
-  - {fileID: 21300000, guid: 8cb541670ca14ae40b452633c3dcd097, type: 3}
-  - {fileID: 21300000, guid: 3be63d2fc4706e742af4e45bbfc2ab99, type: 3}
+  - {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d, type: 3}
+  - {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d, type: 3}
+  - {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d, type: 3}
+  - {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d, type: 3}
   tapSprites: []
   foundSpot: {fileID: 0}
   tutorialWrong: {fileID: 0}
@@ -2144,6 +2144,8 @@ MonoBehaviour:
   fuel: {fileID: 0}
   checkPlaceCorrect: {fileID: 0}
   checkPlaceWrong: {fileID: 0}
+  thoughtBubbleFriends: {fileID: 0}
+  thoughtBubbleFuel: {fileID: 0}
 --- !u!1 &1168754875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,8 +2723,9 @@ MonoBehaviour:
   FuelPoints: 0
   riddlesFirst: 0
   hasSeenBear: 0
-  _fromBeginning: 0
+  fromBeginning: 0
   choices: 
+  artsSeen: []
   currentCanvas: {fileID: 0}
 --- !u!1 &1425247597
 GameObject:
@@ -3624,13 +3627,17 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: speechSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 276
+      value: 285.339996
       objectReference: {fileID: 0}
     - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -183
+      value: -117.5
       objectReference: {fileID: 0}
     - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3656,6 +3663,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: speechSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: speechSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: speechSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: speechSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
   m_RootGameObject: {fileID: 1158734471}
