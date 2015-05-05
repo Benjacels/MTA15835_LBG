@@ -32,19 +32,27 @@ public class InfoscreenController : MonoBehaviour {
 		//newStreetartNotification ();
 		//newStreetartNotification ();
 		//newStreetartNotification ();
-		streetartToShow ("hjelmerstald");
 	}
 
 	public void updateSeenStreetart(){
 		_streetarts = MainManager.instance.artsSeen;
-		_streetarts.Add("hjelmerstald");
-		_streetarts.Add("pyramide");
-		_streetarts.Add("space");
+		//_streetarts.Add("hjelmerstald");
+		//_streetarts.Add("pyramide");
+		//_streetarts.Add("space");
 		foreach(string s in _streetarts){
-			print ("______ _streetarts: "+ s);
+            if (s == "pyramide")
+		    {
+                print("pyramid unlocked");
+                _pyramidBtn.image.sprite = pyramidImg;
+		    }
+		    if (s == "space")
+		    {
+		        print ("space unlocked");
+			    _spaceBtn.image.sprite = spaceImg;
+		    }
 		}
 	}
-	
+    
 	// Update is called once per frame
 	public void toggleInfoscreen(){
 		if (isInfoscreenActive == false) {
@@ -74,13 +82,9 @@ public class InfoscreenController : MonoBehaviour {
 		}
 		if(toShow == "pyramide"){
 			pyramidInfo.SetActive (true);
-			print ("pyramid unlocked");
-			_pyramidBtn.image.sprite = pyramidImg;
 		}
 		if(toShow == "space"){
 			spaceInfo.SetActive (true);
-			print ("space unlocked");
-			_spaceBtn.image.sprite = spaceImg;
 		}
 	}
 
