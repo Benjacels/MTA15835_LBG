@@ -90,7 +90,13 @@ public class AlienManager : MonoBehaviour {
 
 	    if (MainManager.instance.CurrentState == MainManager.State.Riddles)
 	    {
-            _speechSprite.sprite = tapSprites[0];
+	        if (RiddleManager.instance.tutorialMode)
+	        {
+                _speechSprite.active = true;
+                _speechSprite.sprite = tapSprites[0];
+	        }
+	        else
+	            _speechSprite.active = false;
 
             _nextRiddle = MainManager.instance.currentCanvas.transform.FindChild("NextRiddle").GetComponent<Button>();
             _riddleText = MainManager.instance.currentCanvas.transform.FindChild("RiddleText").GetComponent<UnityEngine.UI.Text>();

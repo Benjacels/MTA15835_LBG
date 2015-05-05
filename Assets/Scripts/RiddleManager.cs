@@ -81,11 +81,6 @@ public class RiddleManager : MonoBehaviour {
 
         _txtLogger = GameObject.FindObjectOfType<TxtLogger>();
 
-        _riddleText.text = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[0].InnerXml;
-        _txtLogger.log("Riddle started: ID - " + _riddleCounter);
-        _txtLogger.log("Riddle text: " + _riddleText.text);
-        _timeRiddleStarted = Time.time;
-
         _answerImage = GameObject.Find("AnswerPic").GetComponent<Image>();
         _answerText = GameObject.Find("AnswerText").GetComponent<UnityEngine.UI.Text>();
         _goalScreen = _canvas.transform.FindChild("GoalScreen").gameObject;
@@ -96,16 +91,33 @@ public class RiddleManager : MonoBehaviour {
            _answers.Add(tran.GetComponent<Button>());
            tran.GetComponent<Button>().active = false;
         }
-        _nextRiddle.active = false;
-        _controlText.active = false;
-        _nextControl.active = false;
-        _answerImage.active = false;
-        _answerText.active = false;
-        _riddleText.active = false;
-        _riddleBackground.active = false;
-        _goalScreen.active = false;
+        
 
-        tutorialMode = true;
+        if (MainManager.instance.InDebug && _riddleCounter != 0)
+        {
+            _riddleText.active = true;
+            _riddleBackground.active = true;
+            _nextControl.active = true;
+        }
+            
+        else if (_riddleCounter == 0)
+        {
+            _nextRiddle.active = false;
+            _controlText.active = false;
+            _nextControl.active = false;
+            _answerImage.active = false;
+            _answerText.active = false;
+            _riddleText.active = false;
+            _riddleBackground.active = false;
+            _goalScreen.active = false;
+
+            tutorialMode = true;
+        }
+
+        _riddleText.text = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[0].InnerXml;
+        _txtLogger.log("Riddle started: ID - " + _riddleCounter);
+        _txtLogger.log("Riddle text: " + _riddleText.text);
+        _timeRiddleStarted = Time.time;
 
         //DEBUG ONLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!:
         //MainManager.instance.choices.Add(MainManager.Choices.Friends);

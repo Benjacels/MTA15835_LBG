@@ -48,6 +48,9 @@ public class MainManager : MonoBehaviour {
 
     public List<Choices> choices = new List<Choices>();
 
+    [HideInInspector]
+    public List<string> artsSeen = new List<string>();
+
     private int _dialogueClicks = 4;
     private int _dialogueClickCount = 0;
     private int _nextScene = 0;
@@ -71,10 +74,10 @@ public class MainManager : MonoBehaviour {
         Logging = 0,
         Start = 1,
         AR = 2,
-        BearDialogue = 3,
+        BearDialogue = 3, //Street art
         Riddles = 4,
         Map = 5,
-        KidDialogue = 6,
+        KidDialogue = 6, //Street art
         End = 7
     }
 

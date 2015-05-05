@@ -87,6 +87,16 @@ public class ARManager : MonoBehaviour
     {
         LeanTween.cancel(gameObject);
 
+        switch (MainManager.instance.CurrentState)
+        {
+            case MainManager.State.BearDialogue:
+                MainManager.instance.artsSeen.Add(MainManager.State.BearDialogue.ToString());
+                break;
+            case MainManager.State.KidDialogue:
+                MainManager.instance.artsSeen.Add(MainManager.State.KidDialogue.ToString());
+                break;
+        }
+
         var imgT = GameObject.FindObjectsOfType<ImageTargetBehaviour>();
         foreach (ImageTargetBehaviour i in imgT)
             Destroy(i.gameObject);
