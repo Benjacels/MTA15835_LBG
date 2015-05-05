@@ -19,6 +19,10 @@ public class InitGPSlog : MonoBehaviour {
 		path = Path.Combine (Application.persistentDataPath, _filename);
 		print ("_______ filepath: " + path);
 
+		//deletes every file in persistentdata, not on iOS
+		//DirectoryInfo dataDir = new DirectoryInfo(Application.persistentDataPath);
+		//dataDir.Delete(true);
+
 		if (fileExistence () == true) {
 			docContent = loadFileContent(path);
 		} else {
@@ -37,12 +41,12 @@ public class InitGPSlog : MonoBehaviour {
 
 		//createNewPath ();
 
-		//deletes every file in persistentdata, not on iOS
-		//DirectoryInfo dataDir = new DirectoryInfo(Application.persistentDataPath);
-		//dataDir.Delete(true);
+
+
 	}
 
 	string loadFileContent(string p){
+		print ("____ asked to load this: " + p);
 		StreamReader r = File.OpenText(p); 
 		string _info = r.ReadToEnd(); 
 		r.Close(); 
@@ -61,19 +65,18 @@ public class InitGPSlog : MonoBehaviour {
 	}
 
 	void createFile(){
+		print ("will create this directory: " + path);
+		print ("platform: " + Application.platform);
 		StreamWriter fileWriter = File.CreateText(path);
 
-		string initialTxt;
+		string initialTxt = "";
 		//loads initial xml template
-		#if UNITY_IPHONE
-		initialTxt = loadFileContent (Application.dataPath + "/Raw/gpsLogInitial.xml");
-		#endif
+		if(Application.platform == RuntimePlatform.OSXEditor || Application.platform == RuntimePlatform.WindowsEditor){
+			initialTxt = loadFileContent (Application.dataPath + "/gpsLogInitial.xml");
+		}else if(Application.platform == RuntimePlatform.IPhonePlayer){
+			initialTxt = loadFileContent (Application.dataPath + "/Raw/gpsLogInitial.xml"); 
+		}
 
-		#if UNITY_EDITOR
-		initialTxt = loadFileContent (Application.dataPath + "/gpsLogInitial.xml");
-		#endif
-
-		print ("initialTxt: " + initialTxt);
 		fileWriter.WriteLine(initialTxt);
 		fileWriter.Close(); 
 	}
@@ -86,6 +89,7 @@ public class InitGPSlog : MonoBehaviour {
 		List<string> name = new List<string>();
 		List<string> beskrivelse = new List<string>();
 		foreach (XmlNode node in pm) {
+			print("existing xml placemarks, name: "+ node.ChildNodes.Item(0).InnerXml);
 			name.Add(node.ChildNodes.Item(0).InnerXml);
 			beskrivelse.Add(node.ChildNodes.Item(1).InnerXml);
 		}

@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -961,10 +961,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-
-    Jonas Phil - ''Inner Outer Space'' - Out in the Open Festival. 2014'
+  m_Text: "\n\n\nV\xE6g malet af Jonas Phil. Maleriet kalder han \u2019Inner Outer
+    Space\u2019 og blev lavet til Out in the Open Festival i 2014. Jonas var hele
+    12 meter op i luften og tog 5 \xBD dag om at f\xE6rdigg\xF8re dette maleri. Jonas
+    drager specielt sin inspiration fra popkulturen, hvor man med forskellige optiske
+    illusioner skaber et tredimensionelt og rummeligt perspektiv, der tillader beskueren
+    at blive opslugt i motivet og den historie der fort\xE6lles. "
 --- !u!222 &333218794
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1098,6 +1100,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 434992905}
+--- !u!1 &462528732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 462528734}
+  - 114: {fileID: 462528733}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &462528733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 462528732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e051095a37344f048b1d87ad4adf0b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FriendPoints: 0
+  FuelPoints: 0
+  riddlesFirst: 0
+  hasSeenBear: 0
+  _fromBeginning: 0
+  choices: 
+  artsSeen: []
+  currentCanvas: {fileID: 0}
+--- !u!4 &462528734
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 462528732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 318.94986, y: 220.879501, z: 5.1875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &486225513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,7 +1292,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: pyramid
+          m_StringArgument: pyramide
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1509,7 +1558,7 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1519,10 +1568,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-
-    Fintan Magee - ''The Pyramid'' - WE Aart Festival 2014'
+  m_Text: "\n\n\nV\xE6g malet af den ber\xF8mte australske Fintan Magee. Maleriet
+    kalder han \u2019The Pyramid\u2019 og blev lavet til WE Aart Festival 2014. Dette
+    stykke er baseret p\xE5 den ikoniske maleri \u2019The Flower Carrier\u2019 af
+    Diego Rivera. Fintan Magee har en helt unik stil der blander det surrealistiske
+    med det humoristiske eller foruroligende. Hans v\xE6rker ber\xF8rer de negative
+    aspekter i verden, lige fra krig, lidelse, forbrug og vold."
 --- !u!222 &732904259
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2409,7 +2460,7 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2419,8 +2470,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\nV\xE6g malet af Kristian Lange p\xE5 \rgavlen af Lange Kunsth\xE5ndv\xE6rk
-    \ \r\r\"Du skal ikke save i den gren af\rfamilien du selv h\xE6nger p\xE5\" 2013"
+  m_Text: "\n\n\nV\xE6g malet af Kristian Lange p\xE5 gavlen af Lange Kunsth\xE5ndv\xE6rk
+    i 2013. Kristian Lange arbejder til dagligt som Arkitekt, men han har brugt sin
+    fritid p\xE5 at udsmykke denne og flere v\xE6gge i Aalborg (en ligger endda her
+    i n\xE6rheden).\nMaleriets budskab er klart:\n-\u201DDu skal ikke save i den gren
+    af familien du selv h\xE6nger p\xE5\u201D"
 --- !u!222 &1977082465
 CanvasRenderer:
   m_ObjectHideFlags: 0

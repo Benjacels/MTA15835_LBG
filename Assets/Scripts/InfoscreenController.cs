@@ -18,12 +18,21 @@ public class InfoscreenController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_streetarts.Add ("hjelmerstald");
-		_streetarts.Add ("pyramid");
-		_streetarts.Add ("space");
 		infoScreen.SetActive (isInfoscreenActive);
 
-		newStreetartNotification ();
+		updateSeenStreetart ();
+
+		//newStreetartNotification ();
+	}
+
+	public void updateSeenStreetart(){
+		_streetarts = MainManager.instance.artsSeen;
+		_streetarts.Add("hjelmerstald");
+		_streetarts.Add("pyramide");
+		_streetarts.Add("space");
+		foreach(string s in _streetarts){
+			print ("______ _streetarts: "+ s);
+		}
 	}
 	
 	// Update is called once per frame
@@ -51,7 +60,7 @@ public class InfoscreenController : MonoBehaviour {
 		if(toShow == "hjelmerstald"){
 			hjelmerInfo.SetActive (true);
 		}
-		if(toShow == "pyramid"){
+		if(toShow == "pyramide"){
 			pyramidInfo.SetActive (true);
 		}
 		if(toShow == "space"){
