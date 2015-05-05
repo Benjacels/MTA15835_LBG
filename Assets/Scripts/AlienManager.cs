@@ -167,13 +167,13 @@ public class AlienManager : MonoBehaviour {
                     {
                         if (_correctAnswerTut)
                         {
-                            if (MainManager.instance.choices.Last() == MainManager.Choices.Fuel && !_showPlaceText)
+						if (MainManager.instance.choices[MainManager.instance.choices.Count-1] == MainManager.Choices.Fuel && !_showPlaceText)
                             {
                                 _speechSprite.sprite = fuel;
                                 _showPlaceText = true;
                                 break;
                             }
-                            if (MainManager.instance.choices.Last() == MainManager.Choices.Friends && !_showPlaceText)
+						if (MainManager.instance.choices[MainManager.instance.choices.Count-1] == MainManager.Choices.Friends && !_showPlaceText)
                             {
                                 _speechSprite.sprite = friends;
                                 _showPlaceText = true;

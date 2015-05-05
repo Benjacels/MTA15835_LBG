@@ -268,7 +268,7 @@ public class RiddleManager : MonoBehaviour {
     {
         MainManager mm = MainManager.instance;
 
-        switch (mm.choices.Last())
+		switch (mm.choices[mm.choices.Count-1])
         {
             case MainManager.Choices.Friends:
                 mm.FriendPoints++;

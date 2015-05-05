@@ -27,7 +27,7 @@ public class MainManager : MonoBehaviour {
     private static MainManager _instance;
 
     private State currentState = State.None;
-    private State currentChoice = State.None;
+    private Choices currentChoice;
     private State prevState;
     
     public delegate void ChoiceEvent(Choices choice);
@@ -89,7 +89,7 @@ public class MainManager : MonoBehaviour {
         Friends
     }
 
-    public State CurrentChoice
+    public Choices CurrentChoice
     {
         get { return currentChoice; }
         set
@@ -141,7 +141,7 @@ public class MainManager : MonoBehaviour {
         {
             if (choices.Any())
             {
-                switch (choices.Last())
+                switch (MainManager.instance.choices[choices.Count-1])
                 {
                     case Choices.Fuel:
                         FuelPoints += 10;
@@ -216,12 +216,14 @@ public class MainManager : MonoBehaviour {
         {
             OnChoiceEvent(Choices.Fuel);
             choices.Add(Choices.Fuel);
+			CurrentChoice = Choices.Fuel;
         }
             
         else if (choice == "Friends")
         {
             OnChoiceEvent(Choices.Friends);
             choices.Add(Choices.Friends);
+			CurrentChoice = Choices.Fuel;
         }
 
         _choiceFuel.active = false;

@@ -27,7 +27,7 @@ public class GPSlogger : MonoBehaviour {
 	//demands lon and lat, alt is optional
 	public void logCoordinate(float lon, float lat, float alt = 0f){
 		if (canLog == true) {
-			print ("logs coordinate");
+			//print ("logs coordinate");
 			XmlNodeList coordinates = xmldoc.GetElementsByTagName("coordinates");
 			XmlNode lastCoordinate = coordinates.Item(coordinates.Count-1);
 			lastCoordinate.InnerXml = lastCoordinate.InnerXml + " " + lon + "," + lat;
@@ -42,7 +42,7 @@ public class GPSlogger : MonoBehaviour {
 		StreamWriter fileWriter = File.CreateText(path);
 		fileWriter.Write(dataToSave);
 		fileWriter.Close(); 
-		Debug.Log("______ File saved"); 
+		//Debug.Log("______ File saved"); 
 	}
 
 	string loadFileContent(string p){
