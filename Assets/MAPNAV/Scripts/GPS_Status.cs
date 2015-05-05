@@ -24,6 +24,7 @@ public class GPS_Status : MonoBehaviour
     private float altitude;
     private bool info;
 
+
     void Awake()
     {
         //Reference to MapNav.cs script. Make sure that the map object containing the MapNav.cs script is tagged as "GameController"
@@ -36,14 +37,17 @@ public class GPS_Status : MonoBehaviour
     {
         //Get gps Status Data every "refreshRate" seconds
         InvokeRepeating("GetData", 1.0f, refreshRate);
+        
     }
 
     void GetData()
     {
         //Current latitude (decimal)
         ddLat = gps.userLat.ToString();
+
         //Current longitude (decimal)
         ddLon = gps.userLon.ToString();
+
         //Current latitude (degrees, minutes, seconds)
         dmsLat = gps.dmsLat;
         //Current longitude (degrees, minutes, seconds)
@@ -56,6 +60,7 @@ public class GPS_Status : MonoBehaviour
         zoom = gps.zoom;
         //Current altitude(meters)
         altitude = gps.altitude;
+
     }
 
     void Update()
