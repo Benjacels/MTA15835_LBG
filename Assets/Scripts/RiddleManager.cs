@@ -92,6 +92,15 @@ public class RiddleManager : MonoBehaviour {
            tran.GetComponent<Button>().active = false;
         }
 
+        _nextRiddle.active = false;
+        _controlText.active = false;
+        _nextControl.active = false;
+        _answerImage.active = false;
+        _answerText.active = false;
+        _riddleText.active = false;
+        _riddleBackground.active = false;
+        _goalScreen.active = false;
+
         if (MainManager.instance.InDebug)
             _riddleCounter = MainManager.instance.RiddleDebugIndex;
 
@@ -103,15 +112,6 @@ public class RiddleManager : MonoBehaviour {
         }
         else if (_riddleCounter == 0)
         {
-            _nextRiddle.active = false;
-            _controlText.active = false;
-            _nextControl.active = false;
-            _answerImage.active = false;
-            _answerText.active = false;
-            _riddleText.active = false;
-            _riddleBackground.active = false;
-            _goalScreen.active = false;
-
             tutorialMode = true;
         }
 

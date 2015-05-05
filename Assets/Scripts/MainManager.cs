@@ -197,14 +197,12 @@ public class MainManager : MonoBehaviour {
         {
             OnChoiceEvent(Choices.Fuel);
             choices.Add(Choices.Fuel);
-            FriendPoints += _choicePoints;
         }
             
         else if (choice == "Friends")
         {
             OnChoiceEvent(Choices.Friends);
             choices.Add(Choices.Friends);
-            FuelPoints += _choicePoints;
         }
 
         _choiceFuel.active = false;
