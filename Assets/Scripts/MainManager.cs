@@ -52,6 +52,8 @@ public class MainManager : MonoBehaviour {
     [HideInInspector]
     public List<string> artsSeen = new List<string>();
 
+	private int numberOfArtNotification;
+
     private int _dialogueClicks = 4;
     private int _dialogueClickCount = 0;
     private int _nextScene = 0;
@@ -89,6 +91,15 @@ public class MainManager : MonoBehaviour {
         Fuel,
         Friends
     }
+
+	//numberOfArtNotification
+	public int NumberOfArtNotification{
+		get { return numberOfArtNotification; }
+		set
+		{
+			numberOfArtNotification = value;
+		}
+	}
 
     public Choices CurrentChoice
     {

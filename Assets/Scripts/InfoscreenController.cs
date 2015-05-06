@@ -28,6 +28,7 @@ public class InfoscreenController : MonoBehaviour {
 		infoScreen.SetActive (isInfoscreenActive);
 
 		updateSeenStreetart ();
+		updateStreetArtNotification ();
 
 		//newStreetartNotification ();
 		//newStreetartNotification ();
@@ -40,7 +41,7 @@ public class InfoscreenController : MonoBehaviour {
 		_streetarts.Add("hjelmerstald");
 		//_streetarts.Add("pyramide");
 		//_streetarts.Add("space");
-		foreach(string s in _streetarts){
+		foreach(string s in _streetarts){ 
 			print ("updated, seen streetart: " + s);
             if (s == "pyramide")
 		    {
@@ -53,6 +54,7 @@ public class InfoscreenController : MonoBehaviour {
 			    _spaceBtn.image.sprite = spaceImg;
 		    }
 		}
+
 	}
     
 	// Update is called once per frame
@@ -98,12 +100,17 @@ public class InfoscreenController : MonoBehaviour {
 	}
 
 	public void newStreetartNotification(){
-		numberOfNotifications++;
-		if(numberOfNotifications == 1){
+		MainManager.instance.NumberOfArtNotification = MainManager.instance.NumberOfArtNotification + 1;
+		updateStreetArtNotification ();
+	}
+
+	private void updateStreetArtNotification(){
+		print ("MainManager.instance.NumberOfArtNotification: " + MainManager.instance.NumberOfArtNotification);
+		if(MainManager.instance.NumberOfArtNotification == 1){
 			notificationImg.sprite = firstNotificationImg;
-		}else if(numberOfNotifications == 2){
+		}else if(MainManager.instance.NumberOfArtNotification == 2){
 			notificationImg.sprite = secondNotificationImg;
-		}else if(numberOfNotifications == 3){
+		}else if(MainManager.instance.NumberOfArtNotification == 3){
 			notificationImg.sprite = thridNotificationImg;
 		}
 		notificationImg.gameObject.SetActive (true);
