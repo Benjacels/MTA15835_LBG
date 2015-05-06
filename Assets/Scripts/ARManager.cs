@@ -94,8 +94,9 @@ public class ARManager : MonoBehaviour
     }
     void ActivateSuccessScreen()
     {
-        LeanTween.cancel(gameObject);
+        infoScreen.active = true;
 
+        LeanTween.cancel(gameObject);
 
 		if (MainManager.instance.prevState == MainManager.State.Start) {
 						MainManager.instance.artsSeen.Add ("hjelmerstald");
