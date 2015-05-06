@@ -146,13 +146,13 @@ public class MainManager : MonoBehaviour {
                 {
                     case Choices.Fuel:
                         FuelPoints += 10;
-                        print(FuelPoints);
                         break;
                     case Choices.Friends:
                         FriendPoints += 10;
                         print(FriendPoints);
                         break;
                 }
+                
             }
         }
 
@@ -226,6 +226,8 @@ public class MainManager : MonoBehaviour {
             choices.Add(Choices.Friends);
 			CurrentChoice = Choices.Fuel;
         }
+
+        _txtLogger.log("Choice: " + CurrentChoice + ", " + "Scene: " + CurrentState);
 
         _choiceFuel.active = false;
 
@@ -327,10 +329,15 @@ public class MainManager : MonoBehaviour {
     public void LoadNextScene()
     {
         if (_finalScene)
+        {
+            _txtLogger.log("Final fuel points: " + FuelPoints);
+            _txtLogger.log("Final friend points: " + FriendPoints);
             Application.Quit();
+        }
         else
         {
 			prevState = CurrentState;
+            
             Application.LoadLevel(_nextScene);
         }
             

@@ -273,11 +273,13 @@ public class RiddleManager : MonoBehaviour {
             case MainManager.Choices.Friends:
                 mm.FriendPoints++;
                 _friendPointsTxt.text = mm.FriendPoints.ToString();
+                _txtLogger.log("Friends points: " + mm.FriendPoints);
                 break;
 
             case MainManager.Choices.Fuel:
                 mm.FuelPoints++;
                 _fuelPointsTxt.text = mm.FuelPoints.ToString();
+                _txtLogger.log("Fuel points: " + mm.FuelPoints);
                 break;
         }
     }
