@@ -15,7 +15,6 @@ public class InfoscreenController : MonoBehaviour {
 	public GameObject spaceInfo;
 	public Image notificationImg;
 	private List<string> _streetarts = new List<string>();
-	private int numberOfNotifications;
 	public Sprite firstNotificationImg;
 	public Sprite secondNotificationImg;
 	public Sprite thridNotificationImg;
@@ -31,7 +30,7 @@ public class InfoscreenController : MonoBehaviour {
 		updateStreetArtNotification ();
 
 		//newStreetartNotification ();
-		//newStreetartNotification ();
+		//newStreetartNotification (); 
 		//newStreetartNotification ();
 	}
 
@@ -63,7 +62,7 @@ public class InfoscreenController : MonoBehaviour {
 			infoScreen.SetActive(true);
 			isInfoscreenActive = true;
 			notificationImg.gameObject.SetActive (false);
-			numberOfNotifications = 0;
+			MainManager.instance.NumberOfArtNotification = 0;
 			updateSeenStreetart();
 		}else if(isInfoscreenActive == true){
 			infoScreen.SetActive(false);
@@ -113,6 +112,8 @@ public class InfoscreenController : MonoBehaviour {
 		}else if(MainManager.instance.NumberOfArtNotification == 3){
 			notificationImg.sprite = thridNotificationImg;
 		}
-		notificationImg.gameObject.SetActive (true);
+		if(MainManager.instance.NumberOfArtNotification > 0){
+			notificationImg.gameObject.SetActive (true);
+		}
 	}
 }
