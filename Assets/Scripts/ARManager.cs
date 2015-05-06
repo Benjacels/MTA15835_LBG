@@ -18,6 +18,8 @@ public class ARManager : MonoBehaviour
     }
 
     public float detectTime = 3;
+
+	public GameObject infoScreen;
     
     private GameObject _augmentBack;
     private Vector3 _backStartPos;
@@ -45,6 +47,8 @@ public class ARManager : MonoBehaviour
 	    _augmentBack = GameObject.FindObjectOfType<Mask>().transform.GetChild(0).gameObject;
 	    _augmentPic = MainManager.instance.currentCanvas.transform.Find("AugmentPic").gameObject;
         _successScreen = MainManager.instance.currentCanvas.transform.Find("SuccessScreen").gameObject;
+
+		infoScreen.active = false;
 
 	    _backStartPos = _augmentBack.transform.position;
 
@@ -92,16 +96,25 @@ public class ARManager : MonoBehaviour
     {
         LeanTween.cancel(gameObject);
 
-        switch (MainManager.instance.CurrentState)
+
+		if (MainManager.instance.prevState == MainManager.State.Start) {
+						MainManager.instance.artsSeen.Add ("hjelmerstald");
+						MainManager.instance.hasSeenBear = true;	
+				} 
+		else {
+			MainManager.instance.artsSeen.Add("pyramide");
+				}
+			
+        /*switch (MainManager.instance.prevState)
         {
-            case MainManager.State.BearDialogue:
+            case MainManager.State.Start:
                 MainManager.instance.artsSeen.Add("hjelmerstald");
                 MainManager.instance.hasSeenBear = true;
                 break;
             case MainManager.State.KidDialogue:
                 MainManager.instance.artsSeen.Add("pyramide");
                 break;
-        }
+        }*/
 
         var imgT = GameObject.FindObjectsOfType<ImageTargetBehaviour>();
         foreach (ImageTargetBehaviour i in imgT)
@@ -112,6 +125,8 @@ public class ARManager : MonoBehaviour
             if (tran.GetComponent<Button>())
                 tran.GetComponent<Button>().enabled = true;
         }
+
+		//infoScreen.active = true;
     }
 
     void ChangeColor(Color colValue)

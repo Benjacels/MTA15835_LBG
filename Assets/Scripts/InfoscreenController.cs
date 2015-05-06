@@ -36,10 +36,12 @@ public class InfoscreenController : MonoBehaviour {
 
 	public void updateSeenStreetart(){
 		_streetarts = MainManager.instance.artsSeen;
-		//_streetarts.Add("hjelmerstald");
+
+		_streetarts.Add("hjelmerstald");
 		//_streetarts.Add("pyramide");
 		//_streetarts.Add("space");
 		foreach(string s in _streetarts){
+			print ("updated, seen streetart: " + s);
             if (s == "pyramide")
 		    {
                 print("pyramid unlocked");
@@ -60,6 +62,7 @@ public class InfoscreenController : MonoBehaviour {
 			isInfoscreenActive = true;
 			notificationImg.gameObject.SetActive (false);
 			numberOfNotifications = 0;
+			updateSeenStreetart();
 		}else if(isInfoscreenActive == true){
 			infoScreen.SetActive(false);
 			isInfoscreenActive = false;

@@ -27,8 +27,9 @@ public class MainManager : MonoBehaviour {
     private static MainManager _instance;
 
     private State currentState = State.None;
+	[HideInInspector]
+	public State prevState = State.None;
     private Choices currentChoice;
-    private State prevState;
     
     public delegate void ChoiceEvent(Choices choice);
     public event ChoiceEvent OnChoiceEvent;
@@ -287,7 +288,7 @@ public class MainManager : MonoBehaviour {
                 currentState = State.Riddles;
 
                 if (riddlesFirst)
-                    _nextScene = 6;
+                    _nextScene = 2;
                 else
                     _nextScene = 7;
 
@@ -298,7 +299,7 @@ public class MainManager : MonoBehaviour {
                 if (riddlesFirst)
                     _nextScene = 7;
                 else
-                    _nextScene = 6;
+                    _nextScene = 2;
 
                 break;
             case 6:
@@ -329,6 +330,7 @@ public class MainManager : MonoBehaviour {
             Application.Quit();
         else
         {
+			prevState = CurrentState;
             Application.LoadLevel(_nextScene);
         }
             

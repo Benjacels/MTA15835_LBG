@@ -3163,11 +3163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e051095a37344f048b1d87ad4adf0b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prevState: -1
   FriendPoints: 0
   FuelPoints: 0
   riddlesFirst: 1
   hasSeenBear: 0
-  _fromBeginning: 1
+  fromBeginning: 0
   choices: 
   artsSeen: []
   currentCanvas: {fileID: 0}
