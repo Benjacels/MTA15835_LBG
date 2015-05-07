@@ -26,6 +26,12 @@ public class RiddleManager : MonoBehaviour {
     public delegate void TutorialClick(string buttonClicked);
     public event TutorialClick OnTutorialEvent;
 
+    public delegate void FuelEvent();
+    public event FuelEvent OnFuelEvent;
+
+    public delegate void FriendEvent();
+    public event FriendEvent OnFriendEvent;
+
     private TextAsset textAsset;
     private Canvas _canvas;
     private List<Button> _answers = new List<Button>();
@@ -275,12 +281,14 @@ public class RiddleManager : MonoBehaviour {
                 mm.FriendPoints++;
                 _friendPointsTxt.text = mm.FriendPoints.ToString();
                 _txtLogger.log("Friends points: " + mm.FriendPoints);
+                OnFriendEvent();
                 break;
 
             case MainManager.Choices.Fuel:
                 mm.FuelPoints++;
                 _fuelPointsTxt.text = mm.FuelPoints.ToString();
                 _txtLogger.log("Fuel points: " + mm.FuelPoints);
+                OnFuelEvent();
                 break;
         }
     }

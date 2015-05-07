@@ -238,7 +238,7 @@ public class MainManager : MonoBehaviour {
         {
             OnChoiceEvent(Choices.Friends);
             choices.Add(Choices.Friends);
-			CurrentChoice = Choices.Fuel;
+			CurrentChoice = Choices.Friends;
         }
 
         _txtLogger.log("Choice: " + CurrentChoice + ", " + "Scene: " + CurrentState);
