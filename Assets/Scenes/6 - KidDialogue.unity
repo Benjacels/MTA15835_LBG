@@ -393,6 +393,7 @@ MonoBehaviour:
   mouthAnimations: []
   speechSprites: []
   tapSprites: []
+  monsterTapSprites: []
   foundSpot: {fileID: 0}
   tutorialWrong: {fileID: 0}
   tutorialCorrect: {fileID: 0}
@@ -3923,6 +3924,8 @@ MonoBehaviour:
   choices: 
   artsSeen: []
   currentCanvas: {fileID: 1066619699}
+  rocket: {fileID: 0}
+  fuelMeterPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1432620050
 GameObject:
   m_ObjectHideFlags: 0

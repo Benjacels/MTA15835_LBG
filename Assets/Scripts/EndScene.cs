@@ -15,8 +15,6 @@ public class EndScene : MonoBehaviour
 
     void Awake()
     {
-        //MainManager.instance.FuelPoints = 1;
-        MainManager.instance.FriendPoints = 5;
         if (MainManager.instance.FuelPoints > 0)
         {
             fuelNext.active = true;
@@ -32,7 +30,7 @@ public class EndScene : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-        print(MainManager.instance.FriendPoints);
+        
 	}
 	
 	// Update is called once per frame

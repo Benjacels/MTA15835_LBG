@@ -40,8 +40,8 @@ public class MainManager : MonoBehaviour {
     public delegate void Ask();
     public event Ask OnAskEvent;
 
-    public int FriendPoints;
-    public int FuelPoints;
+    public int FriendPoints = 0;
+    public int FuelPoints = 0;
 
     public bool riddlesFirst;
 
@@ -75,6 +75,12 @@ public class MainManager : MonoBehaviour {
 
 	private int riddleDebugIndex;
 	private bool inDebug;
+
+    [HideInInspector] 
+    public GameObject rocket;
+
+    [HideInInspector] 
+    public Vector3 fuelMeterPos;
 
     public enum State
     {
@@ -309,6 +315,12 @@ public class MainManager : MonoBehaviour {
                 else
                     _nextScene = 7;
 
+                if (GameObject.Find("Rocket") != null)
+                {
+                    rocket = GameObject.Find("Rocket");
+                    rocket.active = true;
+                }
+
                 break;
             case 5 :
                 currentState = State.Map;
@@ -337,6 +349,9 @@ public class MainManager : MonoBehaviour {
                 currentState = State.End;
                 NewStreetArt();
                 _finalScene = true;
+
+                if (rocket != null)
+                    rocket.active = true;
 
                 break;
         }
