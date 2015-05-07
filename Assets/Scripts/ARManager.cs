@@ -105,6 +105,8 @@ public class ARManager : MonoBehaviour
 		else {
 			MainManager.instance.artsSeen.Add("pyramide");
 				}
+
+        MainManager.instance.NewStreetArt();
 			
         /*switch (MainManager.instance.prevState)
         {

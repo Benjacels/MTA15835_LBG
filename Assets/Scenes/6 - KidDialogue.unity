@@ -191,7 +191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &45723516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3826,6 +3826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e051095a37344f048b1d87ad4adf0b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prevState: -1
   FriendPoints: 0
   FuelPoints: 0
   riddlesFirst: 0

@@ -34,6 +34,9 @@ public class MainManager : MonoBehaviour {
     public delegate void ChoiceEvent(Choices choice);
     public event ChoiceEvent OnChoiceEvent;
 
+    public delegate void ArtEvent();
+    public event ArtEvent OnArtEvent;
+
     public delegate void Ask();
     public event Ask OnAskEvent;
 
@@ -331,6 +334,7 @@ public class MainManager : MonoBehaviour {
                 break;
             case 7:
                 currentState = State.End;
+                NewStreetArt();
                 _finalScene = true;
 
                 break;
@@ -352,5 +356,10 @@ public class MainManager : MonoBehaviour {
             Application.LoadLevel(_nextScene);
         }
             
+    }
+
+    public void NewStreetArt()
+    {
+        OnArtEvent();
     }
 }

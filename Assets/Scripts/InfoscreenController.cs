@@ -21,6 +21,17 @@ public class InfoscreenController : MonoBehaviour {
 	public Sprite pyramidImg;
 	public Sprite spaceImg;
 	//public Sprite 
+    void OnEnable()
+    {
+        if (MainManager.instance != null)
+            MainManager.instance.OnArtEvent += newStreetartNotification;
+    }
+
+    void OnDisable()
+    {
+        if (MainManager.instance != null)
+            MainManager.instance.OnArtEvent -= newStreetartNotification;
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -101,6 +112,7 @@ public class InfoscreenController : MonoBehaviour {
 	public void newStreetartNotification(){
 		MainManager.instance.NumberOfArtNotification = MainManager.instance.NumberOfArtNotification + 1;
 		updateStreetArtNotification ();
+        print("stuff");
 	}
 
 	private void updateStreetArtNotification(){

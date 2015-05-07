@@ -180,6 +180,7 @@ public class RiddleManager : MonoBehaviour {
             _goalScreen.active = true;
             if (!MainManager.instance.riddlesFirst)
                 MainManager.instance.artsSeen.Add("space");
+                
         }
 
         var userCorrect = false;
