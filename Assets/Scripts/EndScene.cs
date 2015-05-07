@@ -20,7 +20,6 @@ public class EndScene : MonoBehaviour
 
     void Awake()
     {
-        MainManager.instance.FuelPoints = 3;
         if (MainManager.instance.FuelPoints > 0)
         {
             fuelNext.active = true;

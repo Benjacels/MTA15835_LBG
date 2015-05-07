@@ -4049,6 +4049,8 @@ MonoBehaviour:
   choices: 
   artsSeen: []
   currentCanvas: {fileID: 0}
+  rocket: {fileID: 0}
+  fuelMeterPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1213361242
 GameObject:
   m_ObjectHideFlags: 0

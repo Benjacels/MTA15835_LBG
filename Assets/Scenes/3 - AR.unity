@@ -4614,6 +4614,8 @@ MonoBehaviour:
   choices: 
   artsSeen: []
   currentCanvas: {fileID: 1603600419}
+  rocket: {fileID: 0}
+  fuelMeterPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1914874776
 GameObject:
   m_ObjectHideFlags: 0
@@ -4765,6 +4767,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22367796, guid: 7f54afba4f92e9646b23622d3e760b4d, type: 2}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467796, guid: 7f54afba4f92e9646b23622d3e760b4d, type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467814, guid: 7f54afba4f92e9646b23622d3e760b4d, type: 2}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

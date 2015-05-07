@@ -90,7 +90,7 @@ public class ARManager : MonoBehaviour
     void FadeSuccessScreen()
     {
         LeanTween.cancel(_augmentPic);
-        LeanTween.value(gameObject, ChangeMultiAlpha, 0, 255, 1).setOnComplete(ActivateSuccessScreen);
+        LeanTween.value(gameObject, ChangeMultiAlpha, 0, 1, 1).setOnComplete(ActivateSuccessScreen);
     }
     void ActivateSuccessScreen()
     {

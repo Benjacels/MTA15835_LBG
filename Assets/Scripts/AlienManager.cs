@@ -240,7 +240,20 @@ public class AlienManager : MonoBehaviour {
     public void OnMonsterTap()
     {
         if (!RiddleManager.instance.tutorialMode && !_monsterTalking)
+        {
+            _bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
+            _bodyAnimator.SetBool("Interact", true);
+            prevBodyState = "Interact";
+
+            _mouthAnimator.SetBool(Animator.StringToHash(prevMouthState), false);
+            _mouthAnimator.SetBool("Happy", true);
+            prevMouthState = "Happy";
+
             StartCoroutine(MonsterTapSpeech());
+        }
+            
+
+        
     }
 
     IEnumerator MonsterTapSpeech()
@@ -249,6 +262,15 @@ public class AlienManager : MonoBehaviour {
         _speechSprite.sprite = monsterTapSprites[Random.Range(0, monsterTapSprites.Length - 1)];
         _speechSprite.active = true;        
         yield return new WaitForSeconds(3);
+
+        _bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
+        _bodyAnimator.SetBool("Idle", true);
+        prevBodyState = "Idle";
+
+        _mouthAnimator.SetBool(Animator.StringToHash(prevMouthState), false);
+        _mouthAnimator.SetBool("Idle", true);
+        prevMouthState = "Idle";
+
         _monsterTalking = false;
         _speechSprite.active = false;
         yield return null;
