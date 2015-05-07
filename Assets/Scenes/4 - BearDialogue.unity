@@ -735,6 +735,7 @@ MonoBehaviour:
   mouthAnimations: []
   speechSprites: []
   tapSprites: []
+  monsterTapSprites: []
   foundSpot: {fileID: 0}
   tutorialWrong: {fileID: 0}
   tutorialCorrect: {fileID: 0}
@@ -5163,6 +5164,10 @@ Prefab:
       propertyPath: mouthAnimations.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: m_LocalPosition.x
       value: -158
@@ -5235,6 +5240,56 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 28.9851665
       objectReference: {fileID: 0}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ba2c847476cb54db7d97d686b5c44e,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1bd9072fa1179244692665767122e0a2,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: ce9a40af06988854396d0438a9f8d486,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 648c39ccef4e87b4f8edc1c4c0e35faf,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9af8b0cb83acd904892e0359b31b5b96,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 95eddee7cef7a8948b2468303fee8341,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 370bbb266ce512445ac7087395386490,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 06b307f60bb38ba4696e2a1f2e26646a,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 854cd96673a712b46bdf02b03afa37fb,
+        type: 3}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: monsterTapSprites.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: c3153713bf410e74cb217df516e8a8fd,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
   m_RootGameObject: {fileID: 116625249}

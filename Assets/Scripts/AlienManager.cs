@@ -18,6 +18,8 @@ public class AlienManager : MonoBehaviour {
 
     public Sprite[] tapSprites;
 
+    public Sprite[] monsterTapSprites;
+
     public Sprite foundSpot;
     public Sprite tutorialWrong;
     public Sprite tutorialCorrect;
@@ -50,6 +52,8 @@ public class AlienManager : MonoBehaviour {
     private bool _correctAnswerTut = false;
     private bool _showPlaceText = false;
     private bool _showPlacePic = false;
+
+    private bool _monsterTalking = false;
 
     void OnEnable()
     {
@@ -90,6 +94,13 @@ public class AlienManager : MonoBehaviour {
 
 	    prevBodyState = "Idle";
 	    prevMouthState = "Idle";
+
+	    if (MainManager.instance.CurrentState == MainManager.State.BearDialogue ||
+	        MainManager.instance.CurrentState == MainManager.State.KidDialogue)
+	    {
+            _bodyAnimator.SetBool(Animator.StringToHash("Idle"), true);
+            _mouthAnimator.SetBool(Animator.StringToHash("Idle"), true);
+	    }
 
 	    if (MainManager.instance.CurrentState == MainManager.State.Riddles)
 	    {
@@ -224,6 +235,23 @@ public class AlienManager : MonoBehaviour {
                 _correctAnswerTut = false;
                 break;
         }
+    }
+
+    public void OnMonsterTap()
+    {
+        if (!RiddleManager.instance.tutorialMode && !_monsterTalking)
+            StartCoroutine(MonsterTapSpeech());
+    }
+
+    IEnumerator MonsterTapSpeech()
+    {
+        _monsterTalking = true;
+        _speechSprite.sprite = monsterTapSprites[Random.Range(0, monsterTapSprites.Length - 1)];
+        _speechSprite.active = true;        
+        yield return new WaitForSeconds(3);
+        _monsterTalking = false;
+        _speechSprite.active = false;
+        yield return null;
     }
 }
 

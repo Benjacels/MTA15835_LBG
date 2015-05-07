@@ -2643,7 +2643,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1172762176}
-        m_MethodName: OnTap
+        m_MethodName: OnMonsterTap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3980,6 +3980,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b3d00c0ff3b18244cb3778de3882820d, type: 3}
   - {fileID: 21300000, guid: d26a5c3426f55724eb5087404bafcca9, type: 3}
   - {fileID: 21300000, guid: 0081995ebd909fc47a4177a66f33938c, type: 3}
+  monsterTapSprites:
+  - {fileID: 21300000, guid: e0ba2c847476cb54db7d97d686b5c44e, type: 3}
+  - {fileID: 21300000, guid: 1bd9072fa1179244692665767122e0a2, type: 3}
+  - {fileID: 21300000, guid: ce9a40af06988854396d0438a9f8d486, type: 3}
+  - {fileID: 21300000, guid: 648c39ccef4e87b4f8edc1c4c0e35faf, type: 3}
+  - {fileID: 21300000, guid: 9af8b0cb83acd904892e0359b31b5b96, type: 3}
+  - {fileID: 21300000, guid: 95eddee7cef7a8948b2468303fee8341, type: 3}
+  - {fileID: 21300000, guid: 370bbb266ce512445ac7087395386490, type: 3}
+  - {fileID: 21300000, guid: 06b307f60bb38ba4696e2a1f2e26646a, type: 3}
+  - {fileID: 21300000, guid: 854cd96673a712b46bdf02b03afa37fb, type: 3}
+  - {fileID: 21300000, guid: c3153713bf410e74cb217df516e8a8fd, type: 3}
   foundSpot: {fileID: 21300000, guid: c4e8923e2fa21044f9732eb1a599db59, type: 3}
   tutorialWrong: {fileID: 21300000, guid: 2380a42fd78aaed4884f3f69e76fc54a, type: 3}
   tutorialCorrect: {fileID: 21300000, guid: a94075b62ea2cde41911960f395e2b88, type: 3}

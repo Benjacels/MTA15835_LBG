@@ -18,7 +18,7 @@ public class NewPoint : MonoBehaviour
             GetComponent<Image>().sprite = fuelPointSprite;
 	    transform.localScale = Vector3.zero;
 
-	    LeanTween.move(gameObject, transform.position + (Vector3.up*1100), 4f);
+	    LeanTween.move(gameObject, transform.position + (Vector3.up*700), 2f);
         LeanTween.scale(gameObject, Vector3.one, 1).setEase(LeanTweenType.easeOutBounce).setOnComplete(DestroyPoint);
 	}
 	
