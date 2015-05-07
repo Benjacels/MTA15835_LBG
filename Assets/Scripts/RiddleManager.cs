@@ -215,7 +215,7 @@ public class RiddleManager : MonoBehaviour {
         if (MainManager.instance.riddlesFirst)
             _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter).ToString());
         else
-            _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+21).ToString());
+            _answerImage.sprite = Resources.Load<Sprite>("AnswerPics/"+(_riddleCounter+20).ToString());
 
         if (tutorialMode)
             OnTutorialEvent(userCorrect.ToString());
@@ -226,7 +226,6 @@ public class RiddleManager : MonoBehaviour {
         _txtLogger.log("Answer correct: " + userCorrect);
         var answerToLog = _xmlDoc.GetElementsByTagName("riddle").Item(_riddleCounter).ChildNodes[2].ChildNodes[answer].InnerXml;
         _txtLogger.log("User answered: " + answerToLog);
-        
     }
 
     public void NextRiddle()

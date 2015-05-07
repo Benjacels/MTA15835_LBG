@@ -44,7 +44,7 @@ public class FriendPoint : MonoBehaviour
 
         for (int i = 0; i < MainManager.instance.FriendPoints; i++)
         {
-            if (friendsPos[i] == null)
+            if (friendsPos[i] != null)
                 friendsPos[i].active = true;
         }
 	}
