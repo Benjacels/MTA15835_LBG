@@ -1525,6 +1525,67 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 685500833}
+--- !u!1 &786658728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 786658729}
+  - 222: {fileID: 786658731}
+  - 114: {fileID: 786658730}
+  m_Layer: 5
+  m_Name: infoButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &786658729
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 786658728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -107}
+  m_LocalScale: {x: .293918163, y: .293918222, z: .293918222}
+  m_Children: []
+  m_Father: {fileID: 1035947112}
+  m_RootOrder: 4
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 10, y: 129}
+  m_SizeDelta: {x: 96, y: 96}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &786658730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 786658728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 21300000, guid: bfbc76a5343954fadacc393e13303d64, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &786658731
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 786658728}
 --- !u!1 &789688544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2154,8 @@ Transform:
   - {fileID: 143820399}
   - {fileID: 1720803143}
   - {fileID: 1578061747}
+  - {fileID: 1942281628}
+  - {fileID: 786658729}
   m_Father: {fileID: 1603600420}
   m_RootOrder: 6
 --- !u!1 &1036223160
@@ -3817,8 +3880,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 39, y: 205.300003}
-  m_SizeDelta: {x: 848, y: 351}
+  m_AnchoredPosition: {x: 43, y: 211}
+  m_SizeDelta: {x: 933, y: 327}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1578061748
 MonoBehaviour:
@@ -3835,17 +3898,17 @@ MonoBehaviour:
   m_Color: {r: .87843138, g: .862745106, b: .850980401, a: 0}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 16d5cbae386f14eaaa2b53413854429a, type: 3}
-    m_FontSize: 169
+    m_FontSize: 108
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Du har fundet et \nstreet art!"
+  m_Text: Du har fundet et street art!
 --- !u!222 &1578061749
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4770,6 +4833,73 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936104532}
+--- !u!1 &1942281627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1942281628}
+  - 222: {fileID: 1942281630}
+  - 114: {fileID: 1942281629}
+  m_Layer: 5
+  m_Name: "L\xE6sMereText"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1942281628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1942281627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -107}
+  m_LocalScale: {x: .481445134, y: .481445134, z: .481445134}
+  m_Children: []
+  m_Father: {fileID: 1035947112}
+  m_RootOrder: 3
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 43, y: 152}
+  m_SizeDelta: {x: 933, y: 327}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1942281629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1942281627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .87843138, g: .862745106, b: .850980401, a: 0}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2fde499cc283e44ff91b631511ec74a3, type: 3}
+    m_FontSize: 67
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: .769999981
+  m_Text: "L\xE6s mere om dette street art ved at \ntrykke p\xE5        i venstre
+    hj\xF8rne"
+--- !u!222 &1942281630
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1942281627}
 --- !u!1 &1969865297
 GameObject:
   m_ObjectHideFlags: 0
