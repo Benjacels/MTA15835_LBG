@@ -2,7 +2,7 @@
 
 <riddles>
 	<riddle>
-		<clue>Vi skal igennem der, hvor væggende er dækket med kunst</clue>
+		<clue>Vi skal igennem der, hvor væggene er dækket med kunst</clue>
 		<control>Hvad står der på skiltet ude på den anden side?</control>		
 		<answers>
 			<answer correct="false">Høje</answer>
@@ -20,17 +20,8 @@
 		</answers>
 	</riddle>	
 	<riddle>
-		<clue>Jeg er vild med nødder og tiltrukket af lys</clue>
-		<control>Hvilken farve er lyset? </control>
-		<answers>
-			<answer correct="true"> Gul </answer>
-			<answer correct="false"> Grøn </answer>
-			<answer correct="false"> Hvid </answer>
-		</answers>
-	</riddle>
-	<riddle>
 		<clue>Vi er der for enden, overfor hinanden og har samme farve</clue>
-		<control>Hvilken farve har de? </control>
+		<control>Hvilken farve har de?</control>
 		<answers>
 			<answer correct="false"> Rød </answer>
 			<answer correct="true"> Gul </answer>
@@ -47,7 +38,7 @@
 		</answers>
 	</riddle>	
 	<riddle>
-		<clue>Jeg ser lys for enden af tunnelsen</clue>
+		<clue>Jeg ser lys for enden af tunnelen</clue>
 		<control>Hvilken restaurant ligger i tunnelen?</control>
 		<answers>
 			<answer correct="true">Mortens kro</answer>
@@ -83,7 +74,7 @@
 		</answers>
 	</riddle>
 	<riddle>
-		<clue>Jeg kan ikke lide skotske hund, lad os gå den anden vej</clue>
+		<clue>Jeg kan ikke lide skotske hunde, lad os gå den anden vej</clue>
 		<control>Hvilken dagligdagsbutik ligger i nærheden?</control>
 		<answers>
 			<answer correct="true">Netto</answer>
@@ -110,12 +101,12 @@
 		</answers>
 	</riddle>
 	<riddle>
-		<clue>Det er stort of gult, og leder forbi et hjørne</clue>
+		<clue>Det er stort og gult, og leder forbi et hjørne</clue>
 		<control>Hvornår er klokkerstøbergaarden fra?</control>
 		<answers>
-			<answer correct="false">Anno 1862</answer>
 			<answer correct="false">Anno 1872</answer>
-			<answer correct="true">Anno 1882</answer>
+			<answer correct="false">Anno 1882</answer>
+			<answer correct="true">Anno 1892</answer>
 		</answers>
 	</riddle>
 	<riddle>
@@ -129,7 +120,7 @@
 	</riddle>
 	<riddle>
 		<clue>Jeg er rød og sprøjter med vand i nødstilfælde</clue>
-		<control>Hvilke tal står der over den grønne og gule dør?</control>
+		<control>Hvad står der ovenover den grønne og gule dør?</control>
 		<answers>
 			<answer correct="false">1915</answer>
 			<answer correct="true">1925</answer>
@@ -146,8 +137,8 @@
 		</answers>
 	</riddle>
 	<riddle>
-		<clue>En båd med gøglere i vil finde, så længe vejen følges </clue>
-		<control>En båd med gøglere i vil finde, så længe vejen følges </control>
+		<clue>En båd med gøglere i vil finde, så længe vejen følges</clue>
+		<control>Hvad hedder den nærliggende restuarent?</control>
 		<answers>
 			<answer correct="false">Caféministeriet</answer>
 			<answer correct="false">Kims Kitchen</answer>
@@ -182,12 +173,12 @@
 		</answers>
 	</riddle>
 	<riddle>
-		<clue>I skjul en mand og dreng vil føre jer på vej</clue>
-		<control>Hvad sidder drengen på?</control>
+		<clue>I skjul en mand og dreng vil føre jer på rette vej</clue>
+		<control>Hvem har malet manden og drengen?</control>
 		<answers>
-			<answer correct="false">En stol</answer>
-			<answer correct="false">En sofa</answer>
-			<answer correct="true">En tønde</answer>
+			<answer correct="false">Pihl</answer>
+			<answer correct="false">Diaz</answer>
+			<answer correct="true">Magee</answer>
 		</answers>
 	</riddle>
 </riddles>

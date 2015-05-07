@@ -47,7 +47,7 @@
 		</answers>
 	</riddle>
 	<riddle>
-		<clue>Her kan der handles ind både sommer, forår, vinder og efterår</clue>
+		<clue>Her kan der handles ind både sommer, forår, vinter og efterår</clue>
 		<control>Hvad hedder stedet?</control>
 		<answers>
 			<answer correct="false">Fandango</answer>
@@ -86,9 +86,9 @@
 		<clue>Lad os følge vejen hvor man kan få en GØL pølse med</clue>
 		<control>Hvad koster en rød pølse?</control>
 		<answers>
-			<answer correct="true">18</answer>
-			<answer correct="false">19</answer>
-			<answer correct="false">20</answer>
+			<answer correct="true">18 kr</answer>
+			<answer correct="false">19 kr</answer>
+			<answer correct="false">20 kr</answer>
 		</answers>
 	</riddle>
 	<riddle>
@@ -110,7 +110,7 @@
 		</answers>
 	</riddle>
 	<riddle>
-		<clue>Den kan blive åbnet og give adgang til guds hjem </clue>
+		<clue>Den kan blive åbnet og give adgang til guds hjem</clue>
 		<control>Hvad farve har den?</control>
 		<answers>
 			<answer correct="false">Grøn</answer>
@@ -155,7 +155,7 @@
 		</answers>
 	</riddle>
 	<riddle>
-		<clue>Lad os følge den vej der virker mest rationel!</clue>
+		<clue>Lad os gå rundt om det hjørne der virker mest rationel</clue>
 		<control>Hvilken forretning ligger i nærheden?</control>
 		<answers>
 			<answer correct="true">Rationel</answer>

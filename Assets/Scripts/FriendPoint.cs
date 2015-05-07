@@ -41,6 +41,7 @@ public class FriendPoint : MonoBehaviour
     {
         _newFriend = Instantiate(newFriendObject, transform.position, Quaternion.identity) as GameObject;
         _newFriend.transform.parent = _pointCanvas.transform;
+        _newFriend.transform.position = transform.position;
         var friendPos = new Vector3(Random.Range(upperBounds.position.x, lowerBounds.position.x),
             Random.Range(upperBounds.position.y, lowerBounds.position.y), 0);
         _friendObject = Instantiate(friendObject, friendPos, Quaternion.identity) as GameObject;
