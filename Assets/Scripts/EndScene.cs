@@ -8,6 +8,8 @@ public class EndScene : MonoBehaviour
     public GameObject friendNext;
     public GameObject monsterRocketObj;
 
+    public Image fadeScreen;
+
     public Image speechBubble;
     public Sprite monsterRocket;
 
@@ -29,6 +31,8 @@ public class EndScene : MonoBehaviour
             fuelNext.active = false;
             friendNext.active = true;
         }
+
+        fadeScreen.active = false;
     }
 
 	// Use this for initialization
@@ -55,7 +59,7 @@ public class EndScene : MonoBehaviour
 
             monsterRocketObj.GetComponent<SpriteRenderer>().sprite = monsterRocket;
             monsterRocketObj.GetComponent<Animator>().enabled = true;
-            LeanTween.scale(GameObject.Find("shadow"), Vector3.zero, 2).setEase(LeanTweenType.easeInCubic).setOnComplete(EndGame);
+            LeanTween.scale(GameObject.Find("shadow"), Vector3.zero, 2).setEase(LeanTweenType.easeInCubic).setOnComplete(FadeScreen);
         }
     }
 
@@ -66,7 +70,26 @@ public class EndScene : MonoBehaviour
         if (SpeechBubbleCounter < friendSpeech.Length)
             speechBubble.sprite = friendSpeech[SpeechBubbleCounter];
         else
-            EndGame();
+            FadeScreen();
+    }
+
+    void FadeScreen()
+    {
+        fadeScreen.active = true;
+        StartCoroutine(Fade());
+    }
+
+    IEnumerator Fade()
+    {
+        float alpha = 0;
+        while (fadeScreen.color.a < 1)
+        {
+            alpha += Time.deltaTime/2;
+            fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, alpha);
+
+            yield return null;
+        }
+        EndGame();
     }
 
     void EndGame()
