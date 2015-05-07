@@ -3224,6 +3224,7 @@ GameObject:
   - 222: {fileID: 1158898594}
   - 114: {fileID: 1158898593}
   - 114: {fileID: 1158898595}
+  - 95: {fileID: 1158898596}
   m_Layer: 5
   m_Name: StreetChar
   m_TagString: Untagged
@@ -3286,7 +3287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5429c50f08a5f34abb2d0f440112277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialAnim: 
+  initialAnim: BearTalking
   initialSpeech:
   - {fileID: 21300000, guid: ea7905ef0bbb4432696d242087619313, type: 3}
   - {fileID: 21300000, guid: 839b4e0367b52428f9ccb7aaa9dc85c9, type: 3}
@@ -3294,13 +3295,28 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e6a37d6de9172434098f156d0c1d4a71, type: 3}
   - {fileID: 21300000, guid: 8affb097f50d14b4e92b467224f19261, type: 3}
   - {fileID: 21300000, guid: e6ef174ad6b9046089971ea26c8bc9fe, type: 3}
-  questionAnim: 
+  questionAnim: BearTalking
   questionSpeechBubble: {fileID: 21300000, guid: 119a7513969de4c7ca2b7237588252f5,
     type: 3}
-  choiceAnim: 
+  choiceAnim: BearTalking
   fuelSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4, type: 3}
   friendsSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4,
     type: 3}
+--- !u!95 &1158898596
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158898591}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 998c06313dda9d64380e72833b6de1e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1179568919
 GameObject:
   m_ObjectHideFlags: 0

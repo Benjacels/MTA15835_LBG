@@ -44,6 +44,8 @@ public class StreetChar : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+        GetComponent<Animator>().StartPlayback();
+        
         if (MainManager.instance.currentCanvas.transform.FindChild("StreetCharSpeechBubble").GetComponent<Image>() != null)
             _speechSprite = MainManager.instance.currentCanvas.transform.FindChild("StreetCharSpeechBubble").GetComponent<Image>();
         else
