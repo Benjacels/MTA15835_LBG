@@ -1945,8 +1945,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e2254aeae5df2449e84afca418865e1c, type: 3}
   questionSpeechBubble: {fileID: 21300000, guid: 119a7513969de4c7ca2b7237588252f5,
     type: 3}
-  fuelSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4, type: 3}
-  friendsSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4,
+  helpSpeechBubble: {fileID: 21300000, guid: 8bc25e001ad37484cafae1142e56e7be, type: 3}
+  wayFinderSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4,
     type: 3}
 --- !u!1 &734600993
 GameObject:

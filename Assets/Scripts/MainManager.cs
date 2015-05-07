@@ -40,8 +40,8 @@ public class MainManager : MonoBehaviour {
     public delegate void Ask();
     public event Ask OnAskEvent;
 
-    public float FriendPoints;
-    public float FuelPoints;
+    public int FriendPoints;
+    public int FuelPoints;
 
     public bool riddlesFirst;
 
@@ -152,21 +152,25 @@ public class MainManager : MonoBehaviour {
 
         ArrangeScenes();
 
-        if (MainManager.instance.currentState == State.KidDialogue || MainManager.instance.currentState == State.End)
+        if (prevState == State.Map)
         {
             if (choices.Any())
             {
-                switch (MainManager.instance.choices[choices.Count-1])
+                int pointsToGive = 0;
+                if (MainManager.instance.currentState == State.KidDialogue)
+                    pointsToGive = 20;
+                else if (MainManager.instance.currentState == State.End)
+                    pointsToGive = 19;
+
+                switch (MainManager.instance.choices[choices.Count - 1])
                 {
                     case Choices.Fuel:
-                        FuelPoints += 10;
+                        FuelPoints += pointsToGive;
                         break;
                     case Choices.Friends:
-                        FriendPoints += 10;
-                        print(FriendPoints);
+                        FriendPoints += pointsToGive;
                         break;
                 }
-                
             }
         }
 
@@ -246,9 +250,6 @@ public class MainManager : MonoBehaviour {
         _choiceFuel.active = false;
 
         _choiceFriends.active = false;
-
-        _wayFinder.enabled = true;
-        _wayFinder.image.enabled = true;
     }
 
     public void OnAskCharacter(Button buttonClicked)
@@ -360,6 +361,7 @@ public class MainManager : MonoBehaviour {
 
     public void NewStreetArt()
     {
-        OnArtEvent();
+        if(OnArtEvent != null)
+            OnArtEvent();
     }
 }

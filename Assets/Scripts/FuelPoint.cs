@@ -36,14 +36,9 @@ public class FuelPoint : MonoBehaviour
     void IncreaseFuel()
     {
         _newFuel = Instantiate(newFuelObject, transform.position, Quaternion.identity) as GameObject;
-        _newFuel.transform.parent = _pointCanvas.transform;
+        //_newFuel.transform.parent = _pointCanvas.transform;
+        _newFuel.transform.SetParent(_pointCanvas.transform, false);
         _newFuel.transform.position = transform.position;
-        LeanTween.move(fuel, fuel.transform.position + (Vector3.up*2), 1f).setOnComplete(DestroyPoint);
+        LeanTween.move(fuel, fuel.transform.position + (Vector3.up*2), 1f);
     }
-
-    void DestroyPoint()
-    {
-        Destroy(gameObject);
-    }
-
 }

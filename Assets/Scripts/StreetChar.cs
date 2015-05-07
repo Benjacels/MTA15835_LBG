@@ -8,14 +8,15 @@ public class StreetChar : MonoBehaviour {
 
     public Sprite questionSpeechBubble;
 
-    public Sprite fuelSpeechBubble;
-    public Sprite friendsSpeechBubble;
+    public Sprite helpSpeechBubble;
+    public Sprite wayFinderSpeechBubble;
 
     private Image _speechSprite;
 
     private string _prevAnimState;
 
     private float timeBetweenInitAnim = 5;
+    private float timeForLastSpeech = 2;
 
     private IEnumerator coroutine;
 
@@ -64,10 +65,8 @@ public class StreetChar : MonoBehaviour {
 
     void OnChoiceClick(MainManager.Choices choice)
     {
-        if (choice == MainManager.Choices.Fuel)
-            _speechSprite.sprite = fuelSpeechBubble;
-        else if (choice == MainManager.Choices.Friends)
-            _speechSprite.sprite = friendsSpeechBubble;
+        _speechSprite.sprite = helpSpeechBubble;
+        StartCoroutine(WaitAndChangeSpeech());
     }
 
     IEnumerator LoopSprites()
@@ -81,5 +80,14 @@ public class StreetChar : MonoBehaviour {
             yield return new WaitForSeconds(timeBetweenInitAnim);
         }
         StartCoroutine(LoopSprites());
+    }
+    IEnumerator WaitAndChangeSpeech()
+    {
+        yield return new WaitForSeconds(timeForLastSpeech);
+        _speechSprite.sprite = wayFinderSpeechBubble;
+        var wayFinder = MainManager.instance.currentCanvas.transform.FindChild("Wayfinder").GetComponent<Button>();
+        wayFinder.enabled = true;
+        wayFinder.image.enabled = true;
+        yield return null;
     }
 }

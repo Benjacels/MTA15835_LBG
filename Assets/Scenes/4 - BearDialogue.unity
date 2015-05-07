@@ -1344,6 +1344,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 233656611}
+  - 114: {fileID: 233656612}
   m_Layer: 0
   m_Name: StreetChar
   m_TagString: Untagged
@@ -1366,6 +1367,29 @@ Transform:
   - {fileID: 1080568704}
   m_Father: {fileID: 1066619696}
   m_RootOrder: 3
+--- !u!114 &233656612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233656610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5429c50f08a5f34abb2d0f440112277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialSpeech:
+  - {fileID: 21300000, guid: ea7905ef0bbb4432696d242087619313, type: 3}
+  - {fileID: 21300000, guid: 839b4e0367b52428f9ccb7aaa9dc85c9, type: 3}
+  - {fileID: 21300000, guid: 720efc8a88abf4b419dcfd3667c01a05, type: 3}
+  - {fileID: 21300000, guid: e6a37d6de9172434098f156d0c1d4a71, type: 3}
+  - {fileID: 21300000, guid: 8affb097f50d14b4e92b467224f19261, type: 3}
+  - {fileID: 21300000, guid: e6ef174ad6b9046089971ea26c8bc9fe, type: 3}
+  questionSpeechBubble: {fileID: 21300000, guid: 119a7513969de4c7ca2b7237588252f5,
+    type: 3}
+  helpSpeechBubble: {fileID: 21300000, guid: 8bc25e001ad37484cafae1142e56e7be, type: 3}
+  wayFinderSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4,
+    type: 3}
 --- !u!1 &240398125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1649,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490382, guid: a6289cbc5766de84c950ff99efca0199, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6289cbc5766de84c950ff99efca0199, type: 2}
@@ -3444,9 +3468,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e6ef174ad6b9046089971ea26c8bc9fe, type: 3}
   questionSpeechBubble: {fileID: 21300000, guid: 119a7513969de4c7ca2b7237588252f5,
     type: 3}
-  fuelSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4, type: 3}
-  friendsSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4,
-    type: 3}
+  helpSpeechBubble: {fileID: 0}
+  wayFinderSpeechBubble: {fileID: 0}
 --- !u!95 &1158898596
 Animator:
   serializedVersion: 3
@@ -4348,7 +4371,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 467794, guid: 7f54afba4f92e9646b23622d3e760b4d, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 167800, guid: 7f54afba4f92e9646b23622d3e760b4d, type: 2}
       propertyPath: m_IsActive
@@ -5170,7 +5193,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400734, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 21200736, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
       propertyPath: m_SortingOrder
@@ -5534,7 +5557,6 @@ GameObject:
   - 4: {fileID: 1873920188}
   - 212: {fileID: 1873920190}
   - 95: {fileID: 1873920189}
-  - 114: {fileID: 1873920191}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -5594,29 +5616,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1325437062b717742bd1013eab6b18b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &1873920191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1873920187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5429c50f08a5f34abb2d0f440112277, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialSpeech:
-  - {fileID: 21300000, guid: ea7905ef0bbb4432696d242087619313, type: 3}
-  - {fileID: 21300000, guid: 839b4e0367b52428f9ccb7aaa9dc85c9, type: 3}
-  - {fileID: 21300000, guid: 720efc8a88abf4b419dcfd3667c01a05, type: 3}
-  - {fileID: 21300000, guid: e6a37d6de9172434098f156d0c1d4a71, type: 3}
-  - {fileID: 21300000, guid: 8affb097f50d14b4e92b467224f19261, type: 3}
-  - {fileID: 21300000, guid: e6ef174ad6b9046089971ea26c8bc9fe, type: 3}
-  questionSpeechBubble: {fileID: 21300000, guid: 119a7513969de4c7ca2b7237588252f5,
-    type: 3}
-  fuelSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4, type: 3}
-  friendsSpeechBubble: {fileID: 21300000, guid: e3cce100d29264c27ac1c87a9170c1f4,
-    type: 3}
 --- !u!1 &1915296575
 GameObject:
   m_ObjectHideFlags: 0
