@@ -2574,7 +2574,7 @@ MonoBehaviour:
   - Happy
   - Idle
   - Idle
-  - IdleHappy
+  - I
   speechSprites:
   - {fileID: 21300000, guid: b5d9bd746d6b24bd5b163e394870e67c, type: 3}
   - {fileID: 21300000, guid: 88ef6122d56de4d2c9fc2370a744e31c, type: 3}
@@ -4249,6 +4249,10 @@ Prefab:
       propertyPath: thoughtBubbleFuel
       value: 
       objectReference: {fileID: 1049092071}
+    - target: {fileID: 11400712, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
+      propertyPath: mouthAnimations.Array.data[3]
+      value: I
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61318eb633eb9f3469586f6fca78c223, type: 2}
   m_RootGameObject: {fileID: 1158734471}
