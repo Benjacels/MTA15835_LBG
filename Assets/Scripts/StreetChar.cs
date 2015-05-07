@@ -4,18 +4,14 @@ using UnityEngine.UI;
 
 public class StreetChar : MonoBehaviour {
 
-    public string initialAnim;
     public Sprite[] initialSpeech;
 
-    public string questionAnim;
     public Sprite questionSpeechBubble;
 
-    public string choiceAnim;
     public Sprite fuelSpeechBubble;
     public Sprite friendsSpeechBubble;
 
     private Image _speechSprite;
-    private Animator _animator;
 
     private string _prevAnimState;
 
@@ -44,10 +40,8 @@ public class StreetChar : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        GetComponent<Animator>().StartPlayback();
-        
-        if (MainManager.instance.currentCanvas.transform.FindChild("StreetCharSpeechBubble").GetComponent<Image>() != null)
-            _speechSprite = MainManager.instance.currentCanvas.transform.FindChild("StreetCharSpeechBubble").GetComponent<Image>();
+        if (GameObject.Find("StreetCharSpeechBubble").GetComponent<Image>() != null)
+            _speechSprite = GameObject.Find("StreetCharSpeechBubble").GetComponent<Image>();
         else
             print("YOU NEED TO ADD A SPEECHBUBBLE");
 
