@@ -267,7 +267,22 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: c9ab581263f37406b95cffd1805b659d, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: -124, y: 61, z: 0}
+  m_Position: {x: -120, y: 60, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110203186
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Interact
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: fd58dd36fcafbb94b8395f4e946ce89c, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: -9, y: 254, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -353,7 +368,7 @@ StateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110200000}
+  m_DefaultState: {fileID: 110203186}
   m_States:
   - {fileID: 110200000}
   - {fileID: 110249394}
@@ -361,6 +376,7 @@ StateMachine:
   - {fileID: 110252751}
   - {fileID: 110222290}
   - {fileID: 110253447}
+  - {fileID: 110203186}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
