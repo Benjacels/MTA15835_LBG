@@ -167,8 +167,8 @@
 		<clue>Hvor man kan få kød og ben, ligger planeter og stjerner i skjul</clue>
 		<control>Hvem har malet det?</control>
 		<answers>
-			<answer correct="true">Don John</answer>
-			<answer correct="false">Jonas Pihl</answer>
+			<answer correct="false">Don John</answer>
+			<answer correct="true">Jonas Pihl</answer>
 			<answer correct="false">Alexis Diaz</answer>
 		</answers>
 	</riddle>
