@@ -3,7 +3,11 @@ using System.Collections;
 
 public class FuelPoint : MonoBehaviour
 {
-    public GameObject fuel;
+    private GameObject fuel;
+    public GameObject noFuel;
+    public GameObject halfFuel;
+    public GameObject fullFuel;
+
     public GameObject newFuelObject;
     private GameObject _newFuel;
     private GameObject _pointCanvas;
@@ -24,15 +28,27 @@ public class FuelPoint : MonoBehaviour
     // Use this for initialization
 	void Start ()
 	{
-	    if (MainManager.instance.CurrentState == MainManager.State.Riddles)
-	        _pointCanvas = GameObject.Find("PointCanvas");
+        if (MainManager.instance.CurrentState == MainManager.State.Riddles)
+	    {
+            _pointCanvas = GameObject.Find("PointCanvas");
+	        if (MainManager.instance.FuelPoints > 0)
+	        {
+	            halfFuel.active = true;
+	            fuel = halfFuel;
+	        }
+	        else
+	        {
+	            noFuel.active = true;
+                fuel = noFuel;
+	        }
+	    }
 
 	    if (MainManager.instance.CurrentState == MainManager.State.End)
 	    {
 	        if (MainManager.instance.FuelPoints > 0)
-	            fuel.active = true;
+	            fullFuel.active = true;
 	        else
-	            fuel.active = false;
+                fullFuel.active = false;
 	    }
 
         //if (fuel.transform.position != Vector3.zero)
@@ -56,7 +72,7 @@ public class FuelPoint : MonoBehaviour
         //_newFuel.transform.parent = _pointCanvas.transform;
         _newFuel.transform.SetParent(_pointCanvas.transform, false);
         _newFuel.transform.position = transform.position;
-        LeanTween.move(fuel, fuel.transform.position + (Vector3.up*2), 1f).setOnComplete(SavePos);
+        LeanTween.move(fuel, fuel.transform.position + (Vector3.up), 1f).setOnComplete(SavePos);
     }
 
     void SavePos()

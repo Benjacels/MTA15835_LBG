@@ -29,6 +29,9 @@ public class RiddleManager : MonoBehaviour {
     public delegate void FuelEvent();
     public event FuelEvent OnFuelEvent;
 
+    public delegate void AnswerEvent(bool correct);
+    public event AnswerEvent OnAnswerEvent;
+
     public delegate void FriendEvent();
     public event FriendEvent OnFriendEvent;
 
@@ -199,17 +202,18 @@ public class RiddleManager : MonoBehaviour {
                 GivePoints();
                 //TODO: Fade-in
                 _answers[answer].image.sprite = correctAnswerSprite;
+                OnAnswerEvent(true);
             }
             else //TODO: Fade-in
             {
                 _answers[answer].image.sprite = wrongAnswerSprite;
                 _answers[_currentOptions.IndexOf("true")].image.sprite = correctAnswerSprite;
+                OnAnswerEvent(false);
             }
         }
         if (!tutorialMode)
         {
-            _answerImage.active = true;
-            _answerText.active = true;
+            StartCoroutine(DelayAndActivate());
         }
 
         if (MainManager.instance.riddlesFirst)
@@ -247,6 +251,9 @@ public class RiddleManager : MonoBehaviour {
         _txtLogger.log("Riddle started: ID - " + _riddleCounter);
         _txtLogger.log("Riddle text: " + _riddleText.text);
         _timeRiddleStarted = Time.time;
+
+        _answerImage.color = new Color(_answerImage.color.r, _answerImage.color.g, _answerImage.color.b, 0);
+        _answerText.color = new Color(_answerText.color.r, _answerText.color.g, _answerText.color.b, 0);
 
         _answerImage.active = false;
         _answerText.active = false;
@@ -289,6 +296,30 @@ public class RiddleManager : MonoBehaviour {
                 _txtLogger.log("Fuel points: " + mm.FuelPoints);
                 OnFuelEvent();
                 break;
+        }
+    }
+
+    IEnumerator DelayAndActivate()
+    {
+        _nextRiddle.active = false;
+        yield return new WaitForSeconds(1);
+        StartCoroutine(Fade());
+        _answerImage.active = true;
+        _answerText.active = true;
+        _nextRiddle.active = true;
+        yield return null;
+    }
+
+    IEnumerator Fade()
+    {
+        float alpha = 0;
+        while (alpha < 1)
+        {
+            alpha += Time.deltaTime * 2;
+            _answerImage.color = new Color(_answerImage.color.r, _answerImage.color.g, _answerImage.color.b, alpha);
+            _answerText.color = new Color(_answerText.color.r, _answerText.color.g, _answerText.color.b, alpha);
+
+            yield return null;
         }
     }
 }

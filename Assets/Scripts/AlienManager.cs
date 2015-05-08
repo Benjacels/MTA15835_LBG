@@ -60,8 +60,13 @@ public class AlienManager : MonoBehaviour {
         if (MainManager.instance != null)
             MainManager.instance.OnDialogueEvent += OnDialogClick;
 
+
         if (RiddleManager.instance != null)
+        {
             RiddleManager.instance.OnTutorialEvent += OnTutorialClick;
+            RiddleManager.instance.OnAnswerEvent += AnswerAnim;
+        }
+            
     }
 
     void OnDisable()
@@ -70,7 +75,11 @@ public class AlienManager : MonoBehaviour {
             MainManager.instance.OnDialogueEvent -= OnDialogClick;
 
         if (RiddleManager.instance != null)
+        {
             RiddleManager.instance.OnTutorialEvent -= OnTutorialClick;
+            RiddleManager.instance.OnAnswerEvent -= AnswerAnim;
+        }
+            
     }
 
     void Awake()
@@ -210,6 +219,8 @@ public class AlienManager : MonoBehaviour {
                             _answerText.active = true;
                             _nextRiddle.active = true;
                             RiddleManager.instance.tutorialMode = false;
+
+                            StartCoroutine(Fade());
                         }
                     }
                 }
@@ -274,6 +285,36 @@ public class AlienManager : MonoBehaviour {
         _monsterTalking = false;
         _speechSprite.active = false;
         yield return null;
+    }
+
+    void AnswerAnim(bool answer)
+    {
+        /*if (answer)
+        {
+            _bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
+            _bodyAnimator.SetBool("PointCorrect", true);
+            prevBodyState = "PointCorrect";
+            print("stuff");
+        }
+        else
+        {
+            _bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
+            _bodyAnimator.SetBool("PointWrong", true);
+            prevBodyState = "PointWrong";
+        }*/
+    }
+
+    IEnumerator Fade()
+    {
+        float alpha = 0;
+        while (alpha < 1)
+        {
+            alpha += Time.deltaTime * 2;
+            _answerImage.color = new Color(_answerImage.color.r, _answerImage.color.g, _answerImage.color.b, alpha);
+            _answerText.color = new Color(_answerText.color.r, _answerText.color.g, _answerText.color.b, alpha);
+
+            yield return null;
+        }
     }
 }
 

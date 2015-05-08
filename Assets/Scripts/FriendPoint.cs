@@ -32,7 +32,8 @@ public class FriendPoint : MonoBehaviour
     }
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
         if (MainManager.instance.CurrentState == MainManager.State.Riddles)
             _pointCanvas = GameObject.Find("PointCanvas");
 

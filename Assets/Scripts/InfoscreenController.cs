@@ -112,7 +112,6 @@ public class InfoscreenController : MonoBehaviour {
 	public void newStreetartNotification(){
 		MainManager.instance.NumberOfArtNotification = MainManager.instance.NumberOfArtNotification + 1;
 		updateStreetArtNotification ();
-        print("stuff");
 	}
 
 	private void updateStreetArtNotification(){

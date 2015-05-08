@@ -1445,13 +1445,13 @@ RectTransform:
   m_GameObject: {fileID: 261894124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.01250064, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1027331221}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -6, y: -250}
+  m_AnchoredPosition: {x: 0, y: -250}
   m_SizeDelta: {x: 1023.99994, y: 1535.99988}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &261894126
@@ -2636,7 +2636,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744e0b5fce242bd42b20d00f6edb779e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuel: {fileID: 88026239}
+  noFuel: {fileID: 0}
+  halfFuel: {fileID: 0}
+  fullFuel: {fileID: 88026239}
   newFuelObject: {fileID: 199382, guid: e5ca69b45f4933f4ca3a78bd4f34f616, type: 2}
 --- !u!212 &528193267
 SpriteRenderer:
@@ -6347,6 +6349,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d, type: 3}
   - {fileID: 21300000, guid: a71c4bcb9573b4fc6abf9181f6157fea, type: 3}
   - {fileID: 21300000, guid: 7f50b7d2a473b41e582aee19cad576fe, type: 3}
+  - {fileID: 21300000, guid: a6b7982ee6ccb4374b21fb57e2197038, type: 3}
 --- !u!1 &1335059968
 GameObject:
   m_ObjectHideFlags: 0

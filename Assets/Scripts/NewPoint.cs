@@ -11,7 +11,6 @@ public class NewPoint : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-        print(MainManager.instance.CurrentChoice);
 	    if (MainManager.instance.CurrentChoice == MainManager.Choices.Friends)
             GetComponent<Image>().sprite = friendPointSprite;
         else if (MainManager.instance.CurrentChoice == MainManager.Choices.Fuel)
