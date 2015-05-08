@@ -289,7 +289,7 @@ public class AlienManager : MonoBehaviour {
 
     void AnswerAnim(bool answer)
     {
-        /*if (answer)
+        if (answer)
         {
             _bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
             _bodyAnimator.SetBool("PointCorrect", true);
@@ -301,7 +301,7 @@ public class AlienManager : MonoBehaviour {
             _bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
             _bodyAnimator.SetBool("PointWrong", true);
             prevBodyState = "PointWrong";
-        }*/
+        }
     }
 
     IEnumerator Fade()
@@ -316,6 +316,8 @@ public class AlienManager : MonoBehaviour {
             yield return null;
         }
     }
+
+
 }
 
 
