@@ -187,8 +187,8 @@ public class RiddleManager : MonoBehaviour {
         {
             _answerText.text = winText;
             _goalScreen.active = true;
-            if (!MainManager.instance.riddlesFirst)
-                MainManager.instance.artsSeen.Add("space");
+            //if (!MainManager.instance.riddlesFirst)
+                //MainManager.instance.artsSeen.Add("space");
                 
         }
 

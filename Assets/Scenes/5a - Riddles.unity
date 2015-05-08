@@ -2915,6 +2915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noFuel: {fileID: 1276899789}
   halfFuel: {fileID: 1184779175}
+  fullFuel: {fileID: 0}
   newFuelObject: {fileID: 199382, guid: e5ca69b45f4933f4ca3a78bd4f34f616, type: 2}
 --- !u!1 &902019105
 GameObject:
@@ -4192,7 +4193,7 @@ MonoBehaviour:
   prevState: -1
   FriendPoints: 0
   FuelPoints: 0
-  riddlesFirst: 1
+  riddlesFirst: 0
   hasSeenBear: 0
   fromBeginning: 0
   choices: 

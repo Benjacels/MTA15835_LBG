@@ -41,7 +41,8 @@ public class EndScene : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-        
+		MainManager.instance.artsSeen.Add("space");
+		MainManager.instance.NewStreetArt();
 	}
 	
 	// Update is called once per frame

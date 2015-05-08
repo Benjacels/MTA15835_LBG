@@ -3167,7 +3167,7 @@ MonoBehaviour:
   prevState: -1
   FriendPoints: 0
   FuelPoints: 0
-  riddlesFirst: 1
+  riddlesFirst: 0
   hasSeenBear: 0
   fromBeginning: 0
   choices: 

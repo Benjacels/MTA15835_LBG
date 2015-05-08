@@ -163,7 +163,7 @@ public class MainManager : MonoBehaviour {
             if (choices.Any())
             {
                 int pointsToGive = 0;
-                if (MainManager.instance.currentState == State.KidDialogue)
+                if (MainManager.instance.currentState == State.AR)
                     pointsToGive = 20;
                 else if (MainManager.instance.currentState == State.End)
                     pointsToGive = 19;
@@ -220,8 +220,8 @@ public class MainManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-            LoadNextScene();
+		if(Input.GetKeyDown(KeyCode.Space))
+		   LoadNextScene();
     }
 
     public void OnDialogueButtonClick()
