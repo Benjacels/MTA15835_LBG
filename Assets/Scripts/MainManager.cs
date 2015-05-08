@@ -220,7 +220,8 @@ public class MainManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.Space))
+            LoadNextScene();
     }
 
     public void OnDialogueButtonClick()
