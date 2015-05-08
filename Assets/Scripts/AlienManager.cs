@@ -321,7 +321,7 @@ public class AlienManager : MonoBehaviour {
 
 	IEnumerator SetIdle()
 	{
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (1);
 
 		_bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
 		_bodyAnimator.SetBool("Idle", true);
