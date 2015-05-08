@@ -295,12 +295,14 @@ public class AlienManager : MonoBehaviour {
             _bodyAnimator.SetBool("PointCorrect", true);
             prevBodyState = "PointCorrect";
             print("stuff");
+			StartCoroutine(SetIdle());
         }
         else
         {
             _bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
             _bodyAnimator.SetBool("PointWrong", true);
             prevBodyState = "PointWrong";
+			StartCoroutine(SetIdle());
         }
     }
 
@@ -317,7 +319,16 @@ public class AlienManager : MonoBehaviour {
         }
     }
 
+	IEnumerator SetIdle()
+	{
+		yield return new WaitForSeconds (2);
 
+		_bodyAnimator.SetBool(Animator.StringToHash(prevBodyState), false);
+		_bodyAnimator.SetBool("Idle", true);
+		prevBodyState = "Idle";
+	}
+	
+	
 }
 
 

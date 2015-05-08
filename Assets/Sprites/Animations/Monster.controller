@@ -250,6 +250,10 @@ Transition:
     m_ConditionEvent: 
     m_EventTreshold: 0
     m_ExitTime: .958333313
+  - m_ConditionMode: 2
+    m_ConditionEvent: PointCorrect
+    m_EventTreshold: 0
+    m_ExitTime: .958333313
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
