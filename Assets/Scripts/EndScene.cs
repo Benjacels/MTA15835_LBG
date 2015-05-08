@@ -13,6 +13,8 @@ public class EndScene : MonoBehaviour
     public Image speechBubble;
     public Sprite monsterRocket;
 
+	public Sprite monsterFriendsRocket;
+
     public Sprite[] fuelSpeech;
     public Sprite[] friendSpeech;
 
@@ -20,6 +22,8 @@ public class EndScene : MonoBehaviour
 
     void Awake()
     {
+		//MainManager.instance.FriendPoints = 10;
+		//MainManager.instance.FuelPoints = 10;
         if (MainManager.instance.FuelPoints > 0)
         {
             fuelNext.active = true;
@@ -56,7 +60,11 @@ public class EndScene : MonoBehaviour
             speechBubble.active = false;
             GameObject.Find("Friends").active = false;
 
-            monsterRocketObj.GetComponent<SpriteRenderer>().sprite = monsterRocket;
+			if(MainManager.instance.FriendPoints > 0)
+				monsterRocketObj.GetComponent<SpriteRenderer>().sprite = monsterFriendsRocket;
+			else
+            	monsterRocketObj.GetComponent<SpriteRenderer>().sprite = monsterRocket;
+
             monsterRocketObj.GetComponent<Animator>().enabled = true;
             LeanTween.scale(GameObject.Find("shadow"), Vector3.zero, 2).setEase(LeanTweenType.easeInCubic).setOnComplete(FadeScreen);
         }

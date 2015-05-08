@@ -475,7 +475,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -13, y: 0}
+  m_AnchoredPosition: {x: -13.0004091, y: 1.92821026e-05}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &88026241
@@ -1117,7 +1117,7 @@ RectTransform:
   m_Children:
   - {fileID: 1391745754}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4935,6 +4935,7 @@ RectTransform:
   - {fileID: 1239102233}
   - {fileID: 2015237575}
   - {fileID: 1281447498}
+  - {fileID: 1806605433}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
@@ -6341,6 +6342,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 1391745755}
   speechBubble: {fileID: 261749650}
   monsterRocket: {fileID: 21300000, guid: 1f6d03887ae86ee4fb6412531d07bb9e, type: 3}
+  monsterFriendsRocket: {fileID: 0}
   fuelSpeech:
   - {fileID: 21300000, guid: 28c7ee772bce34ee48acb926fda6234d, type: 3}
   - {fileID: 21300000, guid: 57089189c191547b2b8c76c09c865c95, type: 3}
@@ -8496,12 +8498,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1806605432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89, y: -225, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -339.393951, y: -820.363647, z: 0}
+  m_LocalScale: {x: 1.939394, y: 1.939394, z: 1.939394}
   m_Children:
   - {fileID: 528193265}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1027331221}
+  m_RootOrder: 6
 --- !u!1 &1833660239
 GameObject:
   m_ObjectHideFlags: 0
