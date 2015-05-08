@@ -202,15 +202,18 @@ public class RiddleManager : MonoBehaviour {
                 GivePoints();
                 //TODO: Fade-in
                 _answers[answer].image.sprite = correctAnswerSprite;
-                OnAnswerEvent(true);
             }
             else //TODO: Fade-in
             {
                 _answers[answer].image.sprite = wrongAnswerSprite;
                 _answers[_currentOptions.IndexOf("true")].image.sprite = correctAnswerSprite;
-                OnAnswerEvent(false);
             }
         }
+		if(userCorrect)
+		   OnAnswerEvent(true);
+		else
+		   OnAnswerEvent(false);
+
         if (!tutorialMode)
         {
             StartCoroutine(DelayAndActivate());
